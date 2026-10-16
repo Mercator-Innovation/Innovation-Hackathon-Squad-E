@@ -16,8 +16,9 @@
 | Roqiya Hassan | User Researcher | In person |  |
 | Bose Adeyemi | Business Analyst | In person | Yes |
 | Daniel Lambert-Maddocks | Service Designer | In person |  |
+| Sruthi James | User Researcher | TBC |  |
 
-The **squad lead** runs the squad's setup before the day: agreeing the two roles and getting everyone into the Teams channel. They're the product owner unless the squad agrees otherwise.
+The **squad lead** runs the squad's setup before the day: agreeing the two roles and getting everyone into the Teams chat. They're the product owner unless the squad agrees otherwise.
 
 ## Roles
 
