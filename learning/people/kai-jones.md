@@ -5,7 +5,7 @@ profession: Data Specialist
 role: none
 location: in person
 # At setup
-ai_use_before: 1
+ai_use_before: 4
 hopes: [new-people]
 feeling: excited
 # At 19:00
@@ -23,7 +23,7 @@ ai_use_week_after:
 # Kai Jones: learning log
 
 ## At setup
-- How much I use AI tools in my work today: Never or hardly ever
+- How much I use AI tools in my work today: Every day
 - What I'm hoping to get from the hackathon: Work with people I don't usually work with
 - How I feel about using AI in my work: Excited
 
