@@ -15,11 +15,17 @@
     <p data-text="home.intro"></p>
     <p class="note" data-text="service.prototypeNote"></p>
 
-    <!-- Daniel's explainer, playing right here on the home page -->
-    <section class="explainer-embed" aria-labelledby="explainer-heading">
-      <h2 id="explainer-heading" data-text="home.explainer"></h2>
-      <iframe id="explainer" src="explainer.html" title="Night Neighbours: three journeys, a self-playing explainer"></iframe>
-      <p><a href="explainer.html" data-text="home.explainerFull"></a></p>
+    <!-- "Who is this for?" Each button shows one group below. Without JavaScript, all groups show. -->
+    <section class="picker" aria-labelledby="pick-title">
+      <h2 id="pick-title" data-text="home.pickTitle"></h2>
+      <div class="picker-buttons">
+        <button type="button" class="secondary" data-show="group-self" aria-pressed="false" data-text="home.pickSelf"></button>
+        <button type="button" class="secondary" data-show="group-others" aria-pressed="false" data-text="home.pickOthers"></button>
+        <button type="button" class="secondary" data-show="group-volunteer" aria-pressed="false" data-text="home.pickVolunteer"></button>
+        <button type="button" class="secondary" data-show="group-services" aria-pressed="false" data-text="home.pickServices"></button>
+        <button type="button" class="secondary" data-show="group-word" aria-pressed="false" data-text="home.pickWord"></button>
+      </div>
+      <p class="note" id="pick-prompt" data-text="home.pickPrompt"></p>
     </section>
 
     <!-- Grouped by who's using it. To add a page, put its card in the right group. -->
@@ -112,6 +118,13 @@
           <span data-text="home.marketingHint"></span>
         </a>
       </div>
+    </section>
+
+    <!-- Daniel's explainer -->
+    <section class="explainer-embed" aria-labelledby="explainer-heading">
+      <h2 id="explainer-heading" data-text="home.explainer"></h2>
+      <iframe id="explainer" src="explainer.html" title="Night Neighbours: three journeys, a self-playing explainer"></iframe>
+      <p><a href="explainer.html" data-text="home.explainerFull"></a></p>
     </section>
 
     <p class="emergency" data-text="safety.emergency"></p>

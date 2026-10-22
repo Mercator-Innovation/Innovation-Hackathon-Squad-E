@@ -33,6 +33,14 @@ window.CONTENT = {
     explainer: "Watch how it works",
     explainerHint: "A short, self-playing walk through three people's nights.",
     explainerFull: "Open it full screen",
+    // "Who is this for?" buttons at the top of the home page
+    pickTitle: "Who is this for?",
+    pickSelf: "Me",
+    pickOthers: "Someone I care about",
+    pickVolunteer: "I volunteer, or would like to",
+    pickServices: "I work in support or services",
+    pickWord: "I help spread the word",
+    pickPrompt: "Choose one to see what's there for you.",
     // The home page groups, by who's using it
     groupSelf: "If you'd like some company tonight",
     groupSelfHint: "Ask the way that suits you: an app, a text, or a help point with no phone needed.",
