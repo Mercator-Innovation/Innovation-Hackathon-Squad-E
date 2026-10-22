@@ -63,7 +63,7 @@
 
     // Tear-off strips along the bottom of the poster
     document.getElementById("tear-offs").innerHTML = Array.from({ length: 8 },
-      () => `<li>${t("outreach.tearOff")}</li>`).join("");
+      (_, i) => `<li${i ? ' aria-hidden="true"' : ""}>${t("outreach.tearOff")}</li>`).join("");
 
     // Where the cards and posters go
     document.getElementById("where").innerHTML = t("outreach.where")

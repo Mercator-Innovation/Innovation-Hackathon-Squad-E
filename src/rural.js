@@ -17,7 +17,7 @@ function show() {
   const volunteer = window.VOLUNTEERS.find((v) => v.town === town);
   const hub = window.HUBS.find((h) => h.town === town);
   const point = window.HELP_POINTS.find((p) => p.town === town);
-  const fact = (ok, text) => `<li class="${ok ? "yes" : "no"}">${text}</li>`;
+  const fact = (ok, text) => `<li class="${ok ? "yes" : "no"}"><span class="visually-hidden">${ok ? t("rural.yes") : t("rural.no")}</span>${text}</li>`;
 
   document.getElementById("tonight-title").textContent = t("rural.tonightTitle", { town });
   document.getElementById("tonight").innerHTML = [

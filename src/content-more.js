@@ -129,6 +129,8 @@ Object.assign(window.CONTENT, {
     title: "When there's no one nearby",
     intro: "Some places have no volunteer on call, no hub open, or no help point. Choose a town to see what happens there tonight.",
     madeUp: "The towns are real. Everything else is made up.",
+    yes: "Yes: ",
+    no: "No: ",
     townLabel: "Choose a town",
     tonightTitle: "Tonight in {town}",
     volunteerYes: "A volunteer is on call: {name}, about {miles} miles away.",

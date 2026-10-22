@@ -41,7 +41,7 @@ document.querySelectorAll("#walk-stops button").forEach((button) => {
   button.addEventListener("click", () => {
     const checked = button.getAttribute("aria-pressed") !== "true";
     button.setAttribute("aria-pressed", checked);
-    button.textContent = checked ? `✓ ${t("volunteer.walkChecked")}` : t("volunteer.walkCheck");
+    button.innerHTML = checked ? `<span aria-hidden="true">✓</span> ${t("volunteer.walkChecked")}` : t("volunteer.walkCheck");
   });
 });
 
