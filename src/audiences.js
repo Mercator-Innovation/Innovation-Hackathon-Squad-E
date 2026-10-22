@@ -7,6 +7,7 @@ window.AUDIENCES = [
     cards: [
       { href: "help.html",       title: "home.help",      hint: "home.helpHint" },
       { href: "text.html",       title: "home.text",      hint: "home.textHint" },
+      { href: "walk.html",       title: "walk.homeTitle", hint: "walk.homeHint" },
       { href: "help-point.html", title: "home.helpPoint", hint: "home.helpPointHint" },
       { href: "plan.html",       title: "more.plan",      hint: "more.planHint" },
       { href: "privacy.html",    title: "more.privacy",   hint: "more.privacyHint" }

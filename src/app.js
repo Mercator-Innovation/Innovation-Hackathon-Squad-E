@@ -120,7 +120,7 @@ addWhoNav();
 addLanguageSwitch();
 
 // Reassurance at the bottom of the pages people use to ask for help: it's private, no name needed, you choose.
-const REASSURE_PAGES = ["index", "help", "text", "help-point", "for", "plan"];
+const REASSURE_PAGES = ["index", "help", "text", "help-point", "for", "plan", "walk"];
 const ICONS = {
   lock: '<path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="5" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="16" r="1.4"/>',
   mask: '<path d="M3 9c3-1.5 15-1.5 18 0 0 5-3 8-6 8-1.5 0-2-1.5-3-1.5S10.5 17 9 17c-3 0-6-3-6-8Z"/><path d="M8 11.5h2.5M13.5 11.5H16"/>',
