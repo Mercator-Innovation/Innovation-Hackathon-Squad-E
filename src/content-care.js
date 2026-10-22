@@ -15,14 +15,14 @@ Object.assign(window.CONTENT, {
     youSend: "Tell us",
     youReplies: {
       fine: "Good. Get home safe, and text your partner when you're in.",
-      hard: "Thank you for being there. The on-call coordinator will ring you tomorrow for a chat. There's no rush to go out again.",
-      talk: "The on-call coordinator will ring you in the next 10 minutes. You don't have to be OK."
+      hard: "Thank you for being there. Your team leader will ring you tomorrow for a chat. There's no rush to go out again.",
+      talk: "Your team leader will ring you in the next 10 minutes. You don't have to be OK."
     },
     supportTitle: "Support for you",
     support: [
-      "A short check-in from the coordinator after every night you go out.",
-      "A get-together with other volunteers each month, to talk about the hard ones.",
-      "Free, confidential counselling if you need it. Example only: a real service would arrange this."
+      "A short chat with your team leader after every night out.",
+      "A monthly meet-up with other volunteers, to talk about the hard nights.",
+      "Someone trained to listen, free and private, if you need it. (Example only: a real service would set this up.)"
     ],
     breakTitle: "Need a break?",
     breakText: "Take as long as you need. We won't send you any requests until you come back.",
