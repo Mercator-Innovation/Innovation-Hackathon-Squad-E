@@ -87,7 +87,8 @@
     behindLinks: [
       { href: "worker.html#rota", label: "Rota heno" },
       { href: "coordinator.html", label: "Ble mae angen help" },
-      { href: "privacy.html", label: "Beth rydyn ni'n ei gadw amdanoch chi" }
+      { href: "privacy.html", label: "Beth rydyn ni'n ei gadw amdanoch chi" },
+      { href: "journey-maps.html", label: "Mapiau taith ar gyfer pob rhan (Saesneg)" }
     ]
   };
 
@@ -161,7 +162,8 @@
     behindLinks: [
       { href: "worker.html#rota", label: "Rota na h-oidhche seo" },
       { href: "coordinator.html", label: "Far a bheil feum air cuideachadh" },
-      { href: "privacy.html", label: "Na chumas sinn mud dheidhinn" }
+      { href: "privacy.html", label: "Na chumas sinn mud dheidhinn" },
+      { href: "journey-maps.html", label: "Mapaichean turais airson gach pàirt (Beurla)" }
     ]
   };
 })();
