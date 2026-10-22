@@ -184,7 +184,10 @@ window.CONTENT = {
     callMeSent: "Our night support worker will ring you in a few minutes.",
     heardSent: "Thanks for letting us know. We've closed tonight's check-in.",
     forYouTitle: "Support for you",
-    forYou: "Worried, or just need to talk? Text TALK to 60000 any time, day or night. (This is a made-up number.)"
+    forYou: "Worried, or just need to talk? Text TALK to 60000 any time, day or night. (This is a made-up number.)",
+    noPlanTitle: "Worried about someone who hasn't set anything up?",
+    noPlan: "Text WORRIED and their town to 60000. We'll text them once, kindly, to say someone's thinking of them and how to reach us tonight. We won't say who asked unless you want us to.",
+    noPlanWhy: "We don't visit anyone without their agreement. If you think their life is in danger, call 999."
   },
 
   help: {
@@ -264,7 +267,7 @@ window.CONTENT = {
     safetyChecks: [
       "Meet in a public place or at the hub, not in their home.",
       "Tell tonight's team leader you're going.",
-      "Check they're awake and breathing normally. If not, call 999.",
+      "Check they're awake and breathing normally. If not, call 999 straight away. If you're trained and carry naloxone, use it while you wait, and stay with them.",
       "You don't have to fix anything. Being there is enough."
     ],
     backup: "Call for backup",
