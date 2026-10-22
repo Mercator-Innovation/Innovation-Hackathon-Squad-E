@@ -31,7 +31,19 @@ window.CONTENT = {
     marketing: "I help spread the word",
     marketingHint: "Posters, beer mats and posts that tell people we're here.",
     explainer: "Watch how it works",
-    explainerHint: "A short, self-playing walk through three people's nights."
+    explainerHint: "A short, self-playing walk through three people's nights.",
+    explainerFull: "Open it full screen",
+    // The home page groups, by who's using it
+    groupSelf: "If you'd like some company tonight",
+    groupSelfHint: "Ask the way that suits you: an app, a text, or a help point with no phone needed.",
+    groupOthers: "If you're worried about someone",
+    groupOthersHint: "For family, friends and anyone who wants to point someone our way.",
+    groupVolunteer: "If you'd like to help",
+    groupVolunteerHint: "Local people who are checked, trained and never sent out alone.",
+    groupServices: "If you support people or plan services",
+    groupServicesHint: "Support workers, coordinators and planners. No names, only what you need.",
+    groupWord: "Spreading the word",
+    groupWordHint: "How people find out about Night Neighbours before the night they need it."
   },
 
   // Cards and posters. They never say "drugs", so a card is safe to keep in a wallet.

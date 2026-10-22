@@ -1,5 +1,8 @@
 /* Styles for index.html only. */
 
+/* The home page can be a little wider, so the cards sit side by side */
+main.home { max-width: 52rem; }
+
 .explainer-embed iframe {
   display: block;
   width: 100%;
@@ -7,4 +10,29 @@
   border: 2px solid var(--line);
   border-radius: var(--radius);
   background: var(--bg);
+}
+
+/* One group per kind of person */
+.group {
+  background: var(--card);
+  border-radius: var(--radius);
+  border-top: 6px solid var(--night);
+  padding: 0.25rem 1rem 1rem;
+  margin: 1.5rem 0;
+}
+.group h2 { margin-top: 1rem; margin-bottom: 0.25rem; }
+.group > .note { margin-top: 0; }
+
+/* The first group is the one that matters most: make it stand out */
+.group:first-of-type { border-top-color: var(--lamp); }
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+.cards .card { margin: 0; background: var(--bg); }
+
+@media (min-width: 40rem) {
+  .cards { grid-template-columns: 1fr 1fr; }
 }
