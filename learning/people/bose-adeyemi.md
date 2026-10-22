@@ -41,6 +41,10 @@ ai_use_week_after:
 - "make it work well on a small screen, with a thumb. Make this work properly at phone width": Claude measured all 16 pages first, found only the tap targets were too small, and fixed them all in one small change.
 - "can we introduce a virtual companion? A feature that keeps someone compay while walking home with check in reminders?": built "Walk me home" in about 10 minutes, with check-ins, a person as back-up and no tracking, to keep our privacy promise.
 - Five of us shared to the same files all afternoon, and there were only two small clashes. Both were sorted by keeping both changes. Small, frequent shares made working as a squad easy.
+- "fix the hub closing time for Jamie": the Lamp Room now stays open till 4am to cover his hardest hours, and every hub says what to do after it closes, so nobody is left at a closed door.
+- "should the care workers, social workers, ambulance service and NHS workers also have access to the service?", then "build the Refer someone screen": professionals can pass people in, but the person decides by replying YES, and nothing about them comes back.
+- "let's fix points 3 and 4": volunteers now get asked "And how are you?" after a hard night and can take a break; people get one anonymous "did tonight help?" text; the planner shows whether it helped, not just where people asked.
+- Fixed two clashes with squad mates along the way: Daniel and I had both made a Discovery Wall (we kept his), and Sruthi and I had both added styles to the same file (we kept both). Neither took more than a couple of minutes.
 
 ## At 19:00
 - What I worked on: <answers>
