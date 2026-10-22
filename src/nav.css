@@ -1,0 +1,65 @@
+/* The "Who is this for?" banner on every page. app.js adds it, and this file. */
+
+.who-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+.who-nav .who-label { color: #fff; font-weight: 600; }
+.who-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.who-nav a {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.who-nav a:hover { background: rgba(255, 255, 255, 0.15); text-decoration: none; }
+.who-nav a[aria-current="page"] {
+  background: var(--lamp);
+  border-color: var(--lamp);
+  color: var(--ink);
+}
+
+/* The fold-up button only shows on smaller screens */
+.who-toggle { display: none; }
+
+@media (max-width: 60rem) {
+  /* Brand and languages share the first row; "Who is this for?" gets its own row */
+  .who-nav { order: 3; flex-basis: 100%; }
+  .who-nav .who-label { display: none; }
+
+  .who-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    color: #fff;
+    padding: 0.45rem 0.9rem;
+  }
+  .who-toggle:hover { background: rgba(255, 255, 255, 0.15); }
+  .who-toggle::after { content: "▾"; }
+  .who-toggle[aria-expanded="true"]::after { content: "▴"; }
+
+  .who-nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+  .who-nav.open ul { display: flex; }
+  .who-nav a { display: block; border-radius: var(--radius); }
+}

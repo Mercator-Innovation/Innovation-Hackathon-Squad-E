@@ -78,6 +78,45 @@ function addLanguageSwitch() {
   main.prepend(note);
 }
 
+// "Who is this for?" in the banner of every page. Each opens that person's page, for.html?who=...
+// (the options on those pages are in audiences.js). On a phone it folds into one button.
+const WHO = [
+  { id: "self", label: "home.pickSelf" },
+  { id: "others", label: "home.pickOthers" },
+  { id: "volunteer", label: "home.pickVolunteer" },
+  { id: "services", label: "home.pickServices" },
+  { id: "word", label: "home.pickWord" }
+];
+
+function addWhoNav() {
+  const header = document.querySelector("header.top");
+  if (!header) return;
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "nav.css";
+  document.head.append(link);
+
+  const current = WHO.find((w) => w.id === new URLSearchParams(location.search).get("who"));
+  const nav = document.createElement("nav");
+  nav.className = "who-nav";
+  nav.setAttribute("aria-label", t("home.pickTitle"));
+  nav.innerHTML = `
+    <button type="button" class="who-toggle" aria-expanded="false" aria-controls="who-list">${t("home.pickTitle")}${current ? `: ${t(current.label)}` : ""}</button>
+    <span class="who-label">${t("home.pickTitle")}</span>
+    <ul id="who-list">${WHO.map((w) => `<li><a href="for.html?who=${w.id}"${w === current ? ' aria-current="page"' : ""}>${t(w.label)}</a></li>`).join("")}</ul>`;
+
+  const brand = header.querySelector("a");
+  if (brand) brand.after(nav); else header.prepend(nav);
+
+  const toggle = nav.querySelector(".who-toggle");
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", open);
+    nav.classList.toggle("open", open);
+  });
+}
+
+addWhoNav();
 addLanguageSwitch();
 
 // Reassurance at the bottom of the pages people use to ask for help: it's private, no name needed, you choose.
