@@ -37,6 +37,10 @@ ai_use_week_after:
 - "Rewrite the words on each page so they are plain and kind. Reading age 9": Claude measured every sentence first and rewrote only the 32 hardest, rather than everything. Most were already plain. "Out-of-hours support worker" became "our night support worker".
 - "Who else is solving this problem, and where's the gap? Short answers with sources": in a few minutes, found that after 11pm almost everything in Scotland is a phone line, and that our main assumption mostly holds (63% of drug deaths are people aged 35 to 54). Research, outside my usual job.
 - Dead end: as product owner I missed recording the 17:15 look together until about 17:45. Building was so absorbing that the squad steps slipped. Next time, set a timer.
+- "Look through the 'On the day playbook' again and tell us what we have missed and how to fix it": found we'd skipped recording the 17:15 look together and hadn't named presenters. Checking against the plan caught what building had pushed aside.
+- "make it work well on a small screen, with a thumb. Make this work properly at phone width": Claude measured all 16 pages first, found only the tap targets were too small, and fixed them all in one small change.
+- "can we introduce a virtual companion? A feature that keeps someone compay while walking home with check in reminders?": built "Walk me home" in about 10 minutes, with check-ins, a person as back-up and no tracking, to keep our privacy promise.
+- Five of us shared to the same files all afternoon, and there were only two small clashes. Both were sorted by keeping both changes. Small, frequent shares made working as a squad easy.
 
 ## At 19:00
 - What I worked on: <answers>
