@@ -8,6 +8,15 @@
   T.cy = T.cy || {};
   T.gd = T.gd || {};
 
+  T.cy.now = {
+    button: "Mae angen rhywun arna i heno",
+    orText: "Neu anfonwch HELP a'ch tref i 60000, o unrhyw ffôn. Does dim angen data."
+  };
+  T.gd.now = {
+    button: "Tha feum agam air cuideigin a-nochd",
+    orText: "No cuir HELP agus do bhaile gu 60000, bho fòn sam bith. Chan fheum thu dàta."
+  };
+
   T.cy.journey = {
     homeLink: "Sut mae'n gweithio, mewn 5 cam",
     intro: "Mae Night Neighbours yn syml yn ei hanfod: rydych chi'n anfon neges neu'n tapio, mae gwirfoddolwr lleol yn cysylltu â chi, ac mae lle cynnes i fynd iddo os hoffech chi.",
@@ -52,7 +61,8 @@
         text: "O fewn munudau, mae gwirfoddolwr yn agos atoch chi yn ffonio neu'n anfon neges. Os hoffech chi, maen nhw'n dod atoch chi neu'n cwrdd â chi mewn hyb. Mae gwirfoddolwyr wedi'u gwirio a'u hyfforddi, a dydyn nhw byth yn mynd allan ar eu pen eu hunain.",
         links: [
           { href: "volunteer.html", label: "Beth mae'r gwirfoddolwr yn ei weld" },
-          { href: "join.html", label: "Sut mae gwirfoddolwyr yn ymuno" }
+          { href: "join.html", label: "Sut mae gwirfoddolwyr yn ymuno" },
+          { href: "worker.html#rota", label: "Pwy sydd ar alwad heno" }
         ]
       },
       {
@@ -73,8 +83,9 @@
       }
     ],
     behindTitle: "Y tu ôl i'r cyfan",
-    behindText: "Mae gwasanaethau lleol yn rhannu'r nos rhyngddynt, ac mae cyfansymiau dienw yn dangos ble mae angen mwy o wirfoddolwyr. Does dim byd byth am un person.",
+    behindText: "Mae elusennau lleol yn rhannu'r nos rhyngddynt, ar un rota, felly mae rhywun ar alwad bob amser. Mae cyfansymiau dienw yn dangos ble mae angen mwy o wirfoddolwyr. Does dim byd byth am un person.",
     behindLinks: [
+      { href: "worker.html#rota", label: "Rota heno" },
       { href: "coordinator.html", label: "Ble mae angen help" },
       { href: "privacy.html", label: "Beth rydyn ni'n ei gadw amdanoch chi" }
     ]
@@ -124,7 +135,8 @@
         text: "Taobh a-staigh beagan mhionaidean, cuiridh saor-thoileach faisg ort fòn no teacsa. Ma thogras tu, thig iad thugad no coinnichidh iad riut aig ionad. Tha saor-thoilich air an sgrùdadh agus air an trèanadh, agus cha tèid iad a-mach nan aonar gu bràth.",
         links: [
           { href: "volunteer.html", label: "Na chì an saor-thoileach" },
-          { href: "join.html", label: "Mar a thig saor-thoilich a-steach" }
+          { href: "join.html", label: "Mar a thig saor-thoilich a-steach" },
+          { href: "worker.html#rota", label: "Cò a tha air gairm a-nochd" }
         ]
       },
       {
@@ -145,8 +157,9 @@
       }
     ],
     behindTitle: "Air cùl a h-uile càil",
-    behindText: "Bidh seirbheisean ionadail a' roinn na h-oidhche eatarra, agus tha àireamhan gun ainm a' sealltainn far a bheil feum air barrachd shaor-thoileach. Chan eil càil a-riamh mu aon neach.",
+    behindText: "Bidh carthannasan ionadail a' roinn na h-oidhche eatarra, air aon rota, gus am bi cuideigin air gairm an-còmhnaidh. Tha àireamhan gun ainm a' sealltainn far a bheil feum air barrachd shaor-thoileach. Chan eil càil a-riamh mu aon neach.",
     behindLinks: [
+      { href: "worker.html#rota", label: "Rota na h-oidhche seo" },
       { href: "coordinator.html", label: "Far a bheil feum air cuideachadh" },
       { href: "privacy.html", label: "Na chumas sinn mud dheidhinn" }
     ]
