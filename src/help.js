@@ -79,6 +79,7 @@ function showResult() {
     ? `<div class="card">
          <h3>${hub.name}, ${hub.town}</h3>
          <p>${t("help.hubHours", { opens: hub.opens, closes: hub.closes })}</p>
+         <p class="note">${t("help.afterHub", { closes: hub.closes })}</p>
          <ul class="tags">${hub.offers.map((o) => `<li>${o}</li>`).join("")}</ul>
        </div>`
     : `<p>${t("help.noHub")}</p>`;

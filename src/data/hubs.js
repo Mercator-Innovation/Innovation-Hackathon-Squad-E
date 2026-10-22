@@ -1,6 +1,6 @@
 // Made-up community hubs. The hub names are invented; the towns are real.
 window.HUBS = [
-  { name: "The Lamp Room", town: "Annan", area: "Dumfries and Galloway", opens: "6pm", closes: "2am",
+  { name: "The Lamp Room", town: "Annan", area: "Dumfries and Galloway", opens: "6pm", closes: "4am",
     offers: ["Tea and a warm seat", "Phone charging", "Someone to talk to"] },
   { name: "Riverside Drop-in", town: "Dumfries", area: "Dumfries and Galloway", opens: "7pm", closes: "6am",
     offers: ["Tea and a warm seat", "Phone charging", "A bed for the night"] },
