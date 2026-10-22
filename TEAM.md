@@ -6,7 +6,7 @@
 **Squad name:** Ctrl-Alt-Elite
 **Challenge:** 2. Help when it's needed: connecting people affected by substance use with support, out of hours
 **Why we chose it:** It has the most human impact. It's about people at their most vulnerable, and getting it right could save lives.
-**The idea:** _(one or two sentences, agreed on the day: who it's for, when they need it, and what it does)_
+**The idea:** For men aged 35 to 54 in deprived areas who feel isolated, especially in the evenings and at night when they're at their loneliest: an app that connects them to a local third space, a hub where they can meet people, be heard, stay in touch and work through problems, with their family and support workers able to connect with and support them there.
 
 ## Members
 
@@ -43,7 +43,7 @@ The **squad lead** runs the squad's setup before the day: agreeing the two roles
 
 ## Links
 
-- Discovery Wall (optional): _(added if the squad makes one)_
+- Discovery Wall: https://claude.ai/artifact/EdSrtayVW9kkCYGkYuRZxn
 
 ## Working agreements
 
