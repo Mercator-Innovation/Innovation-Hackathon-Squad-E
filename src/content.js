@@ -18,10 +18,14 @@ window.CONTENT = {
     helpHint: "Ask by app or by text. No data needed.",
     volunteer: "I'm a volunteer",
     volunteerHint: "See requests near you tonight.",
+    text: "Ask by text, on any phone",
+    textHint: "No app, no data, low battery? Try it here.",
     helpPoint: "See a help point",
     helpPointHint: "The screen at a community help point, for anyone without a phone.",
     coordinator: "I plan local support",
-    coordinatorHint: "See where and when help is needed. No names, only totals."
+    coordinatorHint: "See where and when help is needed. No names, only totals.",
+    family: "Someone I care about uses Night Neighbours",
+    familyHint: "What you see if they ask for help or miss a check-in."
   },
 
   // Text codes work from any phone, with no data. Shown on the help page and the help point.
@@ -36,6 +40,38 @@ window.CONTENT = {
     ]
   },
 
+  // Ask by text: for people with a basic phone, no data or low battery.
+  // Replies never say "drugs" or "overdose", in case someone else sees the phone, and each fits in one text.
+  text: {
+    title: "Ask by text, on any phone",
+    intro: "No app and no data. It works on an old phone with a low battery. Text a word and your town.",
+    demoNote: "Try it below. Nothing is really sent, and the number, names and places are made up.",
+    signal: "Weak signal",
+    noData: "No data",
+    thread: "Messages with 60000",
+    messageLabel: "Type a text",
+    send: "Send",
+    tryTitle: "Try a code",
+    townLabel: "Pretend you're near",
+    youSent: "You sent:",
+    theySent: "Night Neighbours sent:",
+    size: "{n} of 160 characters: 1 text",
+    replies: {
+      welcome: "Night Neighbours: text TALK, COME, BED or OK and your town, like TALK ANNAN. Free, day or night. In danger? Call 999.",
+      whichTown: "Thanks. Which town are you near? Text the word again with your town, like TALK ANNAN.",
+      talk: "Thanks for texting. {name}, a volunteer, will ring you in the next 10 mins. Can't talk? Reply TXT and {name} will text instead.",
+      txt: "OK. {name} will text you instead. Reply OK when you're alright.",
+      come: "Got it. {name} is on the way to you in {town}. Reply with where you are, like a street or shop. In danger? Call 999.",
+      where: "Thanks. {name} will meet you there soon. Stay where it's lit if you can. Reply OK if you're alright now.",
+      bed: "Open tonight: {hub}, {town}, till {closes}. Tea and a warm seat. Reply COME and a volunteer can walk there with you.",
+      noHub: "Sorry, nothing's open near you tonight. Reply TALK and someone will ring you. In danger? Call 999.",
+      noVolunteer: "Sorry, no volunteer is free near you right now. The out-of-hours support worker will text you soon. In danger? Call 999.",
+      ok: "Glad you're OK. We've let anyone you chose know. Text TALK, COME or BED any time, day or night.",
+      stop: "You won't get any more texts from us. Text TALK any time to start again.",
+      unknown: "Sorry, we didn't get that. Text TALK, COME, BED or OK and your town, like TALK ANNAN."
+    }
+  },
+
   helpPoint: {
     title: "Community help point",
     where: "Help point {id}, {place}",
@@ -47,7 +83,35 @@ window.CONTENT = {
     sentPlace: "Thanks. {hub} is open until {closes}. It's {walk} minutes' walk. {who} will meet you there.",
     sentNoHub: "Thanks. There's no hub open nearby tonight, so {who} will come to you here.",
     aVolunteer: "A volunteer",
-    startAgain: "Start again"
+    startAgain: "Start again",
+    nextVisit: "A volunteer walks past here next at {time}.",
+    noVisit: "No volunteer walks past here tonight. Press a button above and someone will come.",
+    checkInTitle: "Checking in tonight?",
+    checkInIntro: "If you've agreed to check in, type your number. We'll let the people you chose know you're OK.",
+    pinLabel: "Your 4-digit number",
+    pinHint: "Prototype: try 1234.",
+    checkIn: "Check in",
+    checkedIn: "Thanks, {name}. You're checked in. We've let {tell} know you're OK.",
+    pinWrong: "We don't recognise that number. Check it and try again, or press a button above.",
+    pinEmpty: "Type your 4-digit number first."
+  },
+
+  family: {
+    title: "Someone you care about",
+    smsLabel: "The text you'd get",
+    sms: "{name} hasn't checked in tonight. It might be nothing. Reply CALL to talk to someone, or COME to ask a volunteer to look in on him.",
+    alertTitle: "{name} hasn't checked in tonight",
+    alert: "{name} agreed to check in by {checkBy}. It's now {now} and he hasn't. It might be nothing: his phone may just be flat.",
+    whyYou: "{name} set this up himself and chose you. He can change it at any time.",
+    whatQuestion: "What would you like to do?",
+    lookIn: "Ask a volunteer to look in on him",
+    callMe: "Call me back",
+    heardFrom: "I've heard from him, he's OK",
+    lookInSent: "Thanks. {volunteer}, a volunteer near {town}, will look in on {name} and text you when they've seen him.",
+    callMeSent: "The out-of-hours support worker will ring you in the next few minutes.",
+    heardSent: "Thanks for letting us know. We've closed tonight's check-in.",
+    forYouTitle: "Support for you",
+    forYou: "Worried, or just need to talk? Text TALK to 60000 any time, day or night. (This is a made-up number.)"
   },
 
   help: {
@@ -130,7 +194,12 @@ window.CONTENT = {
     finishTitle: "How did it go?",
     outcomes: ["They're OK now", "We went to the hub", "They needed more help"],
     save: "Save",
-    done: "Thank you. We only keep the totals, never who it was."
+    done: "Thank you. We only keep the totals, never who it was.",
+    walkTitle: "Your walk tonight",
+    walkIntro: "You and {partner} walk past these help points, so people without a phone know someone's coming.",
+    walkStop: "{time}: help point {id}, {place}",
+    walkCheck: "Mark as checked",
+    walkChecked: "Checked"
   },
 
   coordinator: {
@@ -149,6 +218,9 @@ window.CONTENT = {
     areaLabel: "Show the times for",
     timesTitle: "When people ask for help",
     fewer: "fewer than 10",
+    gapsTitle: "Help points no one walks past tonight",
+    gapsIntro: "People without a phone rely on a volunteer walking past. These help points have no walk tonight.",
+    noGaps: "Every help point has a volunteer walk tonight.",
     bands: ["6pm to 8pm", "8pm to 10pm", "10pm to midnight", "Midnight to 2am", "2am to 4am", "4am to 6am"]
   }
 };

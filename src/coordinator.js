@@ -40,3 +40,9 @@ function drawTimes() {
 
 areaSelect.addEventListener("change", drawTimes);
 drawTimes();
+
+// Help points with no volunteer walk tonight
+const gaps = window.HELP_POINTS.filter((p) => !p.nextVisit);
+document.getElementById("gaps").innerHTML = gaps.length
+  ? gaps.map((p) => `<li><span class="flag">${p.town}</span>: help point ${p.id}, ${p.place}</li>`).join("")
+  : `<li>${t("coordinator.noGaps")}</li>`;
