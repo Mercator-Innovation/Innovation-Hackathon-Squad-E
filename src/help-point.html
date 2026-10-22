@@ -13,6 +13,7 @@
     <p class="note" id="where"></p>
     <p data-text="helpPoint.intro"></p>
     <p class="card charging" data-text="helpPoint.charging"></p>
+    <p class="card visit" id="next-visit"></p>
 
     <section class="step" id="step-need">
       <h2 data-text="helpPoint.needQuestion"></h2>
@@ -29,6 +30,18 @@
       <button type="button" class="secondary" id="again" data-text="helpPoint.startAgain"></button>
     </section>
 
+    <form class="card" id="check-in-form" novalidate>
+      <h2 data-text="helpPoint.checkInTitle"></h2>
+      <p data-text="helpPoint.checkInIntro"></p>
+      <label for="pin" data-text="helpPoint.pinLabel"></label>
+      <p class="note" id="pin-hint" data-text="helpPoint.pinHint"></p>
+      <div class="actions">
+        <input type="password" id="pin" class="pin" inputmode="numeric" maxlength="4" autocomplete="off" aria-describedby="pin-hint">
+        <button type="submit" data-text="helpPoint.checkIn"></button>
+      </div>
+      <p class="status" id="check-in-status" aria-live="polite"></p>
+    </form>
+
     <div class="card">
       <h3 data-text="codes.title"></h3>
       <p data-text="codes.intro"></p>
@@ -42,6 +55,7 @@
   <script src="data/help-points.js"></script>
   <script src="data/hubs.js"></script>
   <script src="data/volunteers.js"></script>
+  <script src="data/check-ins.js"></script>
   <script src="app.js"></script>
   <script src="help-point.js"></script>
 </body>
