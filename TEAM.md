@@ -6,7 +6,7 @@
 **Squad name:** Ctrl-Alt-Elite
 **Challenge:** 2. Help when it's needed: connecting people affected by substance use with support, out of hours
 **Why we chose it:** It has the most human impact. It's about people at their most vulnerable, and getting it right could save lives.
-**The idea:** For men aged 35 to 54 in deprived areas who feel isolated, especially in the evenings and at night when they're at their loneliest: an app that connects them to a local third space, a hub where they can meet people, be heard, stay in touch and work through problems, with their family and support workers able to connect with and support them there.
+**The idea:** For people affected by substance use, especially isolated men aged 35 to 54 in deprived and rural areas, when they feel alone in the evening and at night: a community support service with an app and a text fallback. They can find and join a local hub to meet people and be heard, or send an SOS (by app, or a short text if they’ve no data or low battery) to vetted community volunteers nearby, who respond, meet them or bring them to the hub, and pass them to professional help if it escalates. Family and support workers can stay connected, and anonymised totals show councils where more help is needed.
 
 ## Members
 
