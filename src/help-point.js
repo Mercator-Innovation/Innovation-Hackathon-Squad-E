@@ -30,3 +30,21 @@ document.querySelectorAll("[data-need]").forEach((button) => {
 });
 
 document.getElementById("again").addEventListener("click", () => showStep("step-need"));
+
+// When a volunteer next walks past, so people without a phone know someone's coming.
+document.getElementById("next-visit").textContent = point.nextVisit
+  ? t("helpPoint.nextVisit", { time: point.nextVisit })
+  : t("helpPoint.noVisit");
+
+// Check in with a PIN, no phone needed. The person set this up and chose who's told.
+document.getElementById("check-in-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const pin = document.getElementById("pin");
+  const status = document.getElementById("check-in-status");
+  const plan = window.CHECK_INS.find((c) => c.pin === pin.value.trim());
+
+  if (!pin.value.trim()) status.textContent = t("helpPoint.pinEmpty");
+  else if (!plan) status.textContent = t("helpPoint.pinWrong");
+  else status.textContent = t("helpPoint.checkedIn", { name: plan.name, tell: plan.tell });
+  pin.value = "";
+});

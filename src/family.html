@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Someone you care about: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="family.title"></h1>
+
+    <p class="note" data-text="family.smsLabel"></p>
+    <p class="sms" id="sms"></p>
+
+    <h2 id="alert-title"></h2>
+    <p id="alert"></p>
+    <p class="note" id="why-you"></p>
+
+    <h2 data-text="family.whatQuestion"></h2>
+    <div class="choices">
+      <button type="button" data-action="lookIn" data-text="family.lookIn"></button>
+      <button type="button" data-action="callMe" data-text="family.callMe"></button>
+      <button type="button" data-action="heard" data-text="family.heardFrom"></button>
+    </div>
+    <p class="status" id="family-status" aria-live="polite"></p>
+
+    <div class="card">
+      <h3 data-text="family.forYouTitle"></h3>
+      <p data-text="family.forYou"></p>
+    </div>
+
+    <p class="emergency" data-text="safety.emergency"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="data/check-ins.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="app.js"></script>
+  <script src="family.js"></script>
+</body>
+</html>

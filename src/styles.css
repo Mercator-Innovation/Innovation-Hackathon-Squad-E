@@ -152,3 +152,37 @@ td.num { text-align: right; }
 .bar { height: 1.2rem; background: var(--night); border-radius: 4px; }
 .bar.hidden-number { background: repeating-linear-gradient(45deg, #9aa5b8, #9aa5b8 4px, #c5ccd8 4px, #c5ccd8 8px); }
 .bar-value { flex: 0 0 6.5rem; text-align: right; font-size: 0.9rem; }
+
+/* Help point: when a volunteer next walks past */
+.visit { border-color: var(--night); border-left-width: 8px; font-weight: 600; }
+
+/* Text inputs, like the PIN */
+input.pin {
+  font: inherit;
+  font-size: 1.4rem;
+  letter-spacing: 0.4em;
+  padding: 0.6rem;
+  width: 8rem;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* A text message, as it would look on a phone */
+.sms {
+  background: #e9e9eb;
+  color: var(--ink);
+  border-radius: 18px 18px 18px 4px;
+  padding: 0.75rem 1rem;
+  max-width: 26rem;
+  margin: 0.25rem 0 1rem;
+}
+
+/* Volunteer's walk */
+.walk { list-style: none; padding: 0; margin: 0; }
+.walk li {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--line);
+}
+.walk li span { flex: 1 1 14rem; min-width: 0; }
+.walk button[aria-pressed="true"] { background: var(--lamp); border-color: var(--lamp); color: var(--ink); }
