@@ -1,0 +1,71 @@
+/* Styles for journey.html only. */
+
+main.journey { max-width: 48rem; }
+
+.no-details {
+  background: var(--card);
+  border-left: 6px solid var(--lamp);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.steps { list-style: none; padding: 0; margin: 1.5rem 0; }
+
+.step-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 0 0 1rem;
+  position: relative;
+}
+/* A line joining the steps, so it reads as one journey */
+.step-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 2.2rem;
+  bottom: -1rem;
+  width: 3px;
+  height: 1rem;
+  background: var(--night);
+}
+.step-card h2 { margin-top: 0.2rem; }
+
+.step-number {
+  flex: 0 0 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--night);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ways { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin: 0.75rem 0; }
+.way {
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+}
+.way h3 { margin-top: 0.25rem; }
+.asks { font-size: 0.95rem; color: var(--muted); }
+
+.see-links { margin: 0.5rem 0 0; }
+.see-label { font-weight: 600; }
+
+.behind {
+  border-top: 6px solid var(--night);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 0.25rem 1rem 1rem;
+}
+
+@media (min-width: 44rem) {
+  .ways { grid-template-columns: repeat(3, 1fr); }
+}
