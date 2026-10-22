@@ -2,47 +2,6 @@
 
 main.home { max-width: 52rem; }
 
-/* The banner: brand, then "Who is this for?" buttons */
-.banner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1.5rem;
-  padding: 0.9rem 1rem;
-}
-.banner .brand { font-size: 1.15rem; }
-
-#who-nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.75rem;
-}
-#who-nav .who-label { color: #fff; font-weight: 600; }
-#who-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#who-nav a {
-  display: inline-block;
-  padding: 0.45rem 0.8rem;
-  border: 2px solid #fff;
-  border-radius: 999px;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-}
-#who-nav a:hover { background: rgba(255, 255, 255, 0.15); }
-#who-nav a[aria-current="page"] {
-  background: var(--lamp);
-  border-color: var(--lamp);
-  color: var(--ink);
-}
-
 /* Daniel's explainer on the home page */
 .explainer-embed iframe {
   display: block;
