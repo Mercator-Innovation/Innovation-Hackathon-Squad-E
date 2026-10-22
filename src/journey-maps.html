@@ -33,14 +33,14 @@
     .map-body { padding: 1.25rem; }
     .why { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
     .why div { border-radius: var(--radius); padding: .75rem 1rem; }
-    .why .problem { background: #fdecea; color: #6b1a17; border-left: 5px solid #b3261e; }
-    .why .solves { background: #e8f5ec; color: #14532d; border-left: 5px solid #2f855a; }
-    .why h3 { font-size: 1rem; margin: 0 0 .25rem; color: inherit; }
+    .why .problem { background: var(--bg); color: var(--ink); border-left: 5px solid var(--muted); }
+    .why .solves { background: var(--bg); color: var(--ink); border-left: 5px solid var(--night); }
+    .why h3 { font-size: 1rem; margin: 0 0 .25rem; color: var(--night); }
     .why p { margin: 0; }
 
     /* The steps, left to right on a laptop and top to bottom on a phone */
     ol.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 1.6rem; counter-reset: step; }
-    ol.flow > li { position: relative; background: var(--bg); border: 2px solid var(--line); border-radius: var(--radius); padding: .9rem .9rem 1rem; counter-increment: step; }
+    ol.flow > li { position: relative; background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); padding: .9rem .9rem 1rem; counter-increment: step; }
     ol.flow > li::before { content: counter(step); position: absolute; top: -.85rem; left: .75rem; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--night); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: .9rem; }
     ol.flow > li:not(:last-child)::after { content: "→"; position: absolute; right: -1.35rem; top: 50%; transform: translateY(-50%); font-size: 1.3rem; font-weight: 700; color: var(--night); }
     ol.flow h3 { font-size: 1.02rem; margin: .35rem 0 .3rem; }
@@ -49,7 +49,7 @@
     .go { display: flex; flex-wrap: wrap; gap: .35rem; margin: .4rem 0 0; padding: 0; list-style: none; }
     .go a { display: inline-flex; align-items: center; min-height: 44px; padding: .2rem .7rem; background: var(--card); border: 2px solid var(--night); border-radius: 999px; color: var(--night); font-weight: 700; font-size: .9rem; text-decoration: none; }
     .go a:hover { background: var(--lamp); border-color: var(--lamp); color: var(--ink); }
-    .lamp { background: #fff4d6 !important; border-color: var(--lamp) !important; }
+    .lamp { border-color: var(--night) !important; }
 
     @media (max-width: 52rem) {
       .ring { grid-template-columns: 1fr 1fr; }
