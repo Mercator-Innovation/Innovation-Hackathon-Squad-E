@@ -29,6 +29,10 @@ ai_use_week_after:
 
 ## During
 <!-- Claude adds one line per moment: prompts that worked (word for word), dead ends, surprises, things done outside my usual job, what made working as a squad easier or harder -->
+- Prompt that worked: "Create 3 personas for me with Infograph one person for the  drug user.  one for families and all the support workers". Got an infographic page with a 24-hour help-versus-need clock for each persona, built from desk research.
+- Outside my usual job: turned my research into synthetic sample data for the prototype, and wrote the text-code messages (content design).
+- Working as a squad: Daniel and I had near-identical locker ideas at the same time. "take the best of both ideas and make one", then "merge all ideas", brought Bose's agreed idea, Daniel's and mine together, and most of it ended up in the squad's idea.
+- Prompt that worked: "give me an idea what do we when there is no phone", then "give me ideads" for a second round. I picked two: volunteers walking a regular route past help points, and a missed check-in that alerts Karen. Saved in `sketches/no-phone-ideas.md`.
 
 ## At 19:00
 - What I worked on: <answers>

@@ -29,6 +29,7 @@ ai_use_week_after:
 
 ## During
 <!-- Claude adds one line per moment: prompts that worked (word for word), dead ends, surprises, things done outside my usual job, what made working as a squad easier or harder -->
+- Walked the prototype through as Jamie ("walk it through as Jamie") and found 5 gaps; fixed two in the code: the volunteer could be unticked by accident, and there was no "what now?" after asking for help. Building a fix, outside my usual BA job.
 
 ## At 19:00
 - What I worked on: <answers>

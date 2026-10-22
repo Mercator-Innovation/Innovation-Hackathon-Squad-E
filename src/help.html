@@ -48,8 +48,13 @@
       <h2 data-text="help.whoQuestion"></h2>
       <form id="who-form">
         <fieldset>
-          <legend class="note" data-text="help.whoHint"></legend>
-          <label class="check"><input type="checkbox" name="tell" value="volunteer" checked> <span data-text="help.tellVolunteer"></span></label>
+          <legend data-text="help.contactQuestion"></legend>
+          <label class="check"><input type="radio" name="contact" value="volunteer" checked> <span data-text="help.contactVolunteer"></span></label>
+          <label class="check"><input type="radio" name="contact" value="worker"> <span data-text="help.contactWorker"></span></label>
+        </fieldset>
+        <fieldset>
+          <legend data-text="help.alsoQuestion"></legend>
+          <p class="note" data-text="help.whoHint"></p>
           <label class="check"><input type="checkbox" name="tell" value="family"> <span data-text="help.tellFamily"></span></label>
           <label class="check"><input type="checkbox" name="tell" value="worker"> <span data-text="help.tellWorker"></span></label>
           <label class="check"><input type="checkbox" name="tell" value="morning"> <span data-text="help.tellMorning"></span></label>
@@ -65,8 +70,16 @@
     <section class="step" id="step-done" hidden>
       <h2 data-text="help.doneTitle"></h2>
       <div id="done-messages"></div>
+      <h3 data-text="help.waitTitle"></h3>
+      <ul class="checklist" id="wait-list"></ul>
       <h3 data-text="help.hubTitle"></h3>
       <div id="hub"></div>
+      <h3 data-text="help.updateTitle"></h3>
+      <div class="actions">
+        <button type="button" id="im-ok" data-text="help.imOk"></button>
+        <button type="button" class="secondary" id="no-reply" data-text="help.noReply"></button>
+      </div>
+      <p class="status" id="update-note" aria-live="polite"></p>
       <div class="actions">
         <button type="button" class="secondary" data-go="step-need" data-text="help.startAgain"></button>
       </div>
