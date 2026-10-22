@@ -1,8 +1,49 @@
-/* Styles for index.html only. */
+/* Styles for the home page (index.html) and each person's page (for.html). */
 
-/* The home page can be a little wider, so the cards sit side by side */
 main.home { max-width: 52rem; }
 
+/* The banner: brand, then "Who is this for?" buttons */
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  padding: 0.9rem 1rem;
+}
+.banner .brand { font-size: 1.15rem; }
+
+#who-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+#who-nav .who-label { color: #fff; font-weight: 600; }
+#who-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#who-nav a {
+  display: inline-block;
+  padding: 0.45rem 0.8rem;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+#who-nav a:hover { background: rgba(255, 255, 255, 0.15); }
+#who-nav a[aria-current="page"] {
+  background: var(--lamp);
+  border-color: var(--lamp);
+  color: var(--ink);
+}
+
+/* Daniel's explainer on the home page */
 .explainer-embed iframe {
   display: block;
   width: 100%;
@@ -12,43 +53,14 @@ main.home { max-width: 52rem; }
   background: var(--bg);
 }
 
-/* "Who is this for?" buttons */
-.picker-buttons {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
-}
-.picker-buttons button { text-align: left; }
-.picker-buttons button[aria-pressed="true"] {
-  background: var(--night);
-  color: #fff;
-}
-.picker-buttons button[aria-pressed="true"]::before { content: "✓ "; }
-
-@media (min-width: 40rem) {
-  .picker-buttons { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* One group per kind of person */
-.group {
-  background: var(--card);
-  border-radius: var(--radius);
-  border-top: 6px solid var(--night);
-  padding: 0.25rem 1rem 1rem;
-  margin: 1.5rem 0;
-}
-.group h2 { margin-top: 1rem; margin-bottom: 0.25rem; }
-.group > .note { margin-top: 0; }
-
-/* The first group is the one that matters most: make it stand out */
-.group[aria-labelledby="group-self"] { border-top-color: var(--lamp); }
-
+/* The options on each person's page */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
 }
-.cards .card { margin: 0; background: var(--bg); }
+.cards .card { margin: 0; }
 
 @media (min-width: 40rem) {
   .cards { grid-template-columns: 1fr 1fr; }
