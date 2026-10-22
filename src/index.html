@@ -8,117 +8,17 @@
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <!-- The banner: "Who is this for?" buttons, built from audiences.js. Each opens that person's page. -->
+  <header class="top banner">
+    <a href="index.html" class="brand" data-text="service.name"></a>
+    <nav id="who-nav" aria-label="Who is this for?"></nav>
+  </header>
+
   <main class="home">
     <h1 data-text="service.name"></h1>
     <p data-text="service.tagline"></p>
     <p data-text="home.intro"></p>
     <p class="note" data-text="service.prototypeNote"></p>
-
-    <!-- "Who is this for?" Each button shows one group below. Without JavaScript, all groups show. -->
-    <section class="picker" aria-labelledby="pick-title">
-      <h2 id="pick-title" data-text="home.pickTitle"></h2>
-      <div class="picker-buttons">
-        <button type="button" class="secondary" data-show="group-self" aria-pressed="false" data-text="home.pickSelf"></button>
-        <button type="button" class="secondary" data-show="group-others" aria-pressed="false" data-text="home.pickOthers"></button>
-        <button type="button" class="secondary" data-show="group-volunteer" aria-pressed="false" data-text="home.pickVolunteer"></button>
-        <button type="button" class="secondary" data-show="group-services" aria-pressed="false" data-text="home.pickServices"></button>
-        <button type="button" class="secondary" data-show="group-word" aria-pressed="false" data-text="home.pickWord"></button>
-      </div>
-      <p class="note" id="pick-prompt" data-text="home.pickPrompt"></p>
-    </section>
-
-    <!-- Grouped by who's using it. To add a page, put its card in the right group. -->
-    <section class="group" aria-labelledby="group-self">
-      <h2 id="group-self" data-text="home.groupSelf"></h2>
-      <p class="note" data-text="home.groupSelfHint"></p>
-      <div class="cards">
-        <a class="card" href="help.html">
-          <strong data-text="home.help"></strong>
-          <span data-text="home.helpHint"></span>
-        </a>
-        <a class="card" href="text.html">
-          <strong data-text="home.text"></strong>
-          <span data-text="home.textHint"></span>
-        </a>
-        <a class="card" href="help-point.html">
-          <strong data-text="home.helpPoint"></strong>
-          <span data-text="home.helpPointHint"></span>
-        </a>
-        <a class="card" href="plan.html">
-          <strong data-text="more.plan"></strong>
-          <span data-text="more.planHint"></span>
-        </a>
-        <a class="card" href="privacy.html">
-          <strong data-text="more.privacy"></strong>
-          <span data-text="more.privacyHint"></span>
-        </a>
-      </div>
-    </section>
-
-    <section class="group" aria-labelledby="group-others">
-      <h2 id="group-others" data-text="home.groupOthers"></h2>
-      <p class="note" data-text="home.groupOthersHint"></p>
-      <div class="cards">
-        <a class="card" href="family.html">
-          <strong data-text="home.family"></strong>
-          <span data-text="home.familyHint"></span>
-        </a>
-        <a class="card" href="refer.html">
-          <strong data-text="refer.homeTitle"></strong>
-          <span data-text="refer.homeHint"></span>
-        </a>
-      </div>
-    </section>
-
-    <section class="group" aria-labelledby="group-volunteer">
-      <h2 id="group-volunteer" data-text="home.groupVolunteer"></h2>
-      <p class="note" data-text="home.groupVolunteerHint"></p>
-      <div class="cards">
-        <a class="card" href="join.html">
-          <strong data-text="more.join"></strong>
-          <span data-text="more.joinHint"></span>
-        </a>
-        <a class="card" href="volunteer.html">
-          <strong data-text="home.volunteer"></strong>
-          <span data-text="home.volunteerHint"></span>
-        </a>
-      </div>
-    </section>
-
-    <section class="group" aria-labelledby="group-services">
-      <h2 id="group-services" data-text="home.groupServices"></h2>
-      <p class="note" data-text="home.groupServicesHint"></p>
-      <div class="cards">
-        <a class="card" href="worker.html">
-          <strong data-text="more.worker"></strong>
-          <span data-text="more.workerHint"></span>
-        </a>
-        <a class="card" href="coordinator.html">
-          <strong data-text="home.coordinator"></strong>
-          <span data-text="home.coordinatorHint"></span>
-        </a>
-        <a class="card" href="rural.html">
-          <strong data-text="more.rural"></strong>
-          <span data-text="more.ruralHint"></span>
-        </a>
-      </div>
-    </section>
-
-    <section class="group" aria-labelledby="group-word">
-      <h2 id="group-word" data-text="home.groupWord"></h2>
-      <p class="note" data-text="home.groupWordHint"></p>
-      <div class="cards">
-        <a class="card" href="outreach.html">
-          <strong data-text="home.outreach"></strong>
-          <span data-text="home.outreachHint"></span>
-        </a>
-        <a class="card" href="marketing.html">
-          <strong data-text="home.marketing"></strong>
-          <span data-text="home.marketingHint"></span>
-        </a>
-      </div>
-    </section>
 
     <!-- Daniel's explainer -->
     <section class="explainer-embed" aria-labelledby="explainer-heading">
@@ -134,6 +34,7 @@
   <script src="content-more.js"></script>
   <script src="content-refer.js"></script>
   <script src="app.js"></script>
+  <script src="audiences.js"></script>
   <script src="home.js"></script>
 </body>
 </html>

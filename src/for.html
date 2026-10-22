@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <!-- One page for each kind of person: for.html?who=self, others, volunteer, services or word.
+       The options come from audiences.js. -->
+  <header class="top banner">
+    <a href="index.html" class="brand" data-text="service.name"></a>
+    <nav id="who-nav" aria-label="Who is this for?"></nav>
+  </header>
+
+  <main class="home">
+    <h1 id="for-title"></h1>
+    <p id="for-hint"></p>
+    <div class="cards" id="for-cards"></div>
+    <p><a href="index.html" id="for-home"></a></p>
+
+    <p class="emergency" data-text="safety.emergency"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="content-more.js"></script>
+  <script src="content-refer.js"></script>
+  <script src="app.js"></script>
+  <script src="audiences.js"></script>
+  <script src="for.js"></script>
+</body>
+</html>

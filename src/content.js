@@ -40,7 +40,7 @@ window.CONTENT = {
     pickVolunteer: "I volunteer, or would like to",
     pickServices: "I work in support or services",
     pickWord: "I help spread the word",
-    pickPrompt: "Choose one to see what's there for you.",
+    backHome: "Back to the home page",
     // The home page groups, by who's using it
     groupSelf: "If you'd like some company tonight",
     groupSelfHint: "Ask the way that suits you: an app, a text, or a help point with no phone needed.",
