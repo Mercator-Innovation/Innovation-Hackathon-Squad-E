@@ -325,7 +325,7 @@ window.CONTENT = {
     examplesTitle: "Example materials",
     poster: { label: "Poster for a pub or club toilet", head: "Somewhere to go tonight.", body: "Tea on, telly on, folk to talk to.", cta: "Text TALK and your town to 60000. Free. No names." },
     mat: { label: "Beer mat", front: "Fancy a brew and a chat?", back: "Text TALK and your town to 60000. Someone will text you back." },
-    post: { label: "Post in a local Facebook group", name: "Night Neighbours Inverclyde", body: "New in Greenock: the Harbour Room, open till late Thursday to Sunday. Football on, kettle on, no need to book. Just turn up, or text TALK GREENOCK to 60000 and someone will text you back. Pass it on to anyone who'd like the company." },
+    post: { label: "Post in a local Facebook group", name: "Night Neighbours Inverclyde", body: "New in Greenock: Quayside Night Hub, open till late Thursday to Sunday. Football on, kettle on, no need to book. Just turn up, or text TALK GREENOCK to 60000 and someone will text you back. Pass it on to anyone who'd like the company." },
     radio: { label: "Local radio, 20 seconds", script: "Long night ahead? Nothing on but the telly? Night Neighbours is a warm room, a cuppa and a few folk to talk to, open late near you. Text TALK and your town to 60000. It's free, and you don't need to give your name." },
     card: { label: "Card for people who visit at home", front: "Somewhere to go tonight.", back: "Text TALK and your town to 60000, or ask me for the nearest warm room." },
     whereTitle: "Where we put them",
