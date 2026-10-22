@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What we keep about you: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="more.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="privacy.title"></h1>
+    <p data-text="privacy.intro"></p>
+    <p class="note" data-text="privacy.proposal"></p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" data-text="privacy.colWhat"></th>
+            <th scope="col" data-text="privacy.colWho"></th>
+            <th scope="col" data-text="privacy.colLong"></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+
+    <h2 data-text="privacy.neverTitle"></h2>
+    <ul class="facts" id="never"></ul>
+
+    <h2 data-text="privacy.deleteTitle"></h2>
+    <p class="card" data-text="privacy.delete"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="content-more.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById("rows").innerHTML = t("privacy.rows")
+      .map((r) => `<tr><th scope="row">${r.what}</th><td>${r.who}</td><td>${r.long}</td></tr>`)
+      .join("");
+    document.getElementById("never").innerHTML = t("privacy.never")
+      .map((n) => `<li class="no">${n}</li>`)
+      .join("");
+  </script>
+</body>
+</html>

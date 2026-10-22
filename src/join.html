@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Become a volunteer: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="more.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="join.title"></h1>
+    <p data-text="join.intro"></p>
+    <p class="note" data-text="service.prototypeNote"></p>
+
+    <section class="step" id="step-form">
+      <div class="error-summary" id="errors" role="alert" tabindex="-1" hidden>
+        <h2 data-text="join.errorTitle"></h2>
+        <ul id="error-list"></ul>
+      </div>
+      <form id="join-form" novalidate class="group">
+        <h2 data-text="join.aboutTitle"></h2>
+        <div id="name-field">
+          <label for="name" data-text="join.name"></label>
+          <p class="field-error" id="name-error" hidden></p>
+          <input class="text" id="name" autocomplete="given-name">
+        </div>
+        <div id="town-field">
+          <label for="town" data-text="join.town"></label>
+          <p class="field-error" id="town-error" hidden></p>
+          <select id="town"></select>
+        </div>
+        <fieldset id="when-field">
+          <legend data-text="join.when"></legend>
+          <p class="field-error" id="when-error" hidden></p>
+          <div id="when"></div>
+        </fieldset>
+        <label class="check"><input type="checkbox" id="peer"> <span data-text="join.peer"></span></label>
+        <p class="hint" data-text="join.peerHint"></p>
+        <div class="actions"><button type="submit" data-text="join.send"></button></div>
+      </form>
+    </section>
+
+    <section class="step" id="step-next" hidden>
+      <h2 id="next-title"></h2>
+      <ol class="steps" id="next-steps"></ol>
+    </section>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="content-more.js"></script>
+  <script src="data/hubs.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="app.js"></script>
+  <script src="join.js"></script>
+</body>
+</html>

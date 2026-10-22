@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When there's no one nearby: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="more.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="rural.title"></h1>
+    <p data-text="rural.intro"></p>
+    <p class="note" data-text="rural.madeUp"></p>
+
+    <label for="town" data-text="rural.townLabel"></label>
+    <select id="town"></select>
+
+    <section class="group" aria-live="polite">
+      <h2 id="tonight-title"></h2>
+      <ul class="facts" id="tonight"></ul>
+      <p id="covered"></p>
+    </section>
+
+    <section id="instead-section">
+      <h2 data-text="rural.insteadTitle"></h2>
+      <ol class="steps" id="instead"></ol>
+    </section>
+
+    <p class="emergency" data-text="safety.emergency"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="content-more.js"></script>
+  <script src="data/hubs.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="data/help-points.js"></script>
+  <script src="app.js"></script>
+  <script src="rural.js"></script>
+</body>
+</html>

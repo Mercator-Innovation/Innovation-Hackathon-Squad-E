@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make my plan: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="more.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="plan.title"></h1>
+    <p data-text="plan.intro"></p>
+    <p class="note" data-text="plan.example"></p>
+
+    <section class="step" id="step-form">
+      <div class="error-summary" id="errors" role="alert" tabindex="-1" hidden>
+        <h2 data-text="plan.errorTitle"></h2>
+        <ul id="error-list"></ul>
+      </div>
+
+      <form id="plan-form" novalidate>
+        <fieldset class="group">
+          <legend><h2 data-text="plan.tellTitle"></h2></legend>
+          <p class="hint" data-text="plan.tellHint"></p>
+          <label class="check"><input type="checkbox" id="tell-contact" checked> <span data-text="plan.tellContact"></span></label>
+          <div id="contact-field">
+            <label for="contact-name" data-text="plan.contactName"></label>
+            <p class="field-error" id="contact-name-error" hidden></p>
+            <input class="text" id="contact-name" value="Karen" autocomplete="off">
+            <label for="contact-how" data-text="plan.contactHow"></label>
+            <input class="text" id="contact-how" value="My sister" autocomplete="off">
+          </div>
+          <label class="check"><input type="checkbox" id="tell-worker" checked> <span data-text="plan.tellWorker"></span></label>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend><h2 data-text="plan.checkTitle"></h2></legend>
+          <p class="hint" data-text="plan.checkHint"></p>
+          <p><strong data-text="plan.checkWhen"></strong></p>
+          <div id="check-when"></div>
+          <div id="check-details">
+            <label for="check-by" data-text="plan.checkBy"></label>
+            <select id="check-by">
+              <option>9pm</option><option>10pm</option><option selected>11pm</option><option>midnight</option><option>1am</option>
+            </select>
+            <p><strong data-text="plan.checkMissed"></strong></p>
+            <div id="check-missed"></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend><h2 data-text="plan.pinTitle"></h2></legend>
+          <p class="hint" data-text="plan.pinHint"></p>
+          <div id="pin-field">
+            <label for="pin" data-text="plan.pinLabel"></label>
+            <p class="field-error" id="pin-error" hidden></p>
+            <input class="text short" type="password" id="pin" inputmode="numeric" maxlength="4" autocomplete="off">
+            <label for="pin-again" data-text="plan.pinAgain"></label>
+            <input class="text short" type="password" id="pin-again" inputmode="numeric" maxlength="4" autocomplete="off">
+          </div>
+        </fieldset>
+
+        <div class="actions"><button type="submit" data-text="plan.save"></button></div>
+      </form>
+    </section>
+
+    <section class="step" id="step-done" hidden>
+      <h2 data-text="plan.doneTitle"></h2>
+      <ul class="checklist" id="summary"></ul>
+      <p class="card" data-text="plan.doneChange"></p>
+      <div class="actions"><button type="button" class="secondary" id="edit" data-text="plan.edit"></button></div>
+    </section>
+
+    <p class="emergency" data-text="safety.emergency"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="content-more.js"></script>
+  <script src="app.js"></script>
+  <script src="plan.js"></script>
+</body>
+</html>
