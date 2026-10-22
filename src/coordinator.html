@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where help is needed: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="coordinator.title"></h1>
+    <p data-text="coordinator.intro"></p>
+    <p class="note" data-text="coordinator.madeUp"></p>
+
+    <div class="table-wrap">
+      <table>
+        <caption data-text="coordinator.tableCaption"></caption>
+        <thead>
+          <tr>
+            <th scope="col" data-text="coordinator.colArea"></th>
+            <th scope="col" data-text="coordinator.colRequests"></th>
+            <th scope="col" data-text="coordinator.colVolunteers"></th>
+            <th scope="col" data-text="coordinator.colPer"></th>
+            <th scope="col" data-text="coordinator.colStatus"></th>
+          </tr>
+        </thead>
+        <tbody id="area-rows"></tbody>
+      </table>
+    </div>
+    <p class="note" id="why"></p>
+
+    <h2 data-text="coordinator.timesTitle"></h2>
+    <label for="area" data-text="coordinator.areaLabel"></label>
+    <select id="area"></select>
+    <div id="times" aria-live="polite"></div>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="data/requests.js"></script>
+  <script src="app.js"></script>
+  <script src="coordinator.js"></script>
+</body>
+</html>

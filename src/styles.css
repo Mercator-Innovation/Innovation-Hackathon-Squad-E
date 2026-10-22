@@ -1,0 +1,154 @@
+/* The look. Change colours and fonts here, at the top. */
+:root {
+  --ink: #1d2433;
+  --muted: #4a5568;
+  --bg: #f6f4ef;
+  --card: #ffffff;
+  --night: #24406b;        /* headings, buttons */
+  --night-dark: #172b4a;
+  --lamp: #f2b544;         /* warm highlight, always with dark text */
+  --line: #d6d1c4;
+  --alert-bg: #fdecea;
+  --alert-ink: #8a1f1b;
+  --focus: #ffbf47;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+main {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+h1, h2, h3 { color: var(--night); line-height: 1.25; }
+h1 { font-size: 1.75rem; margin: 0.5rem 0 1rem; }
+h2 { font-size: 1.35rem; margin: 1.5rem 0 0.75rem; }
+h3 { font-size: 1.1rem; margin: 0 0 0.25rem; }
+
+a { color: var(--night); }
+
+/* Header */
+.top {
+  background: var(--night);
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+.top a { color: #fff; font-weight: 700; text-decoration: none; }
+.top a:hover { text-decoration: underline; }
+
+/* Focus: always visible */
+a:focus-visible, button:focus-visible, select:focus-visible,
+input:focus-visible, [tabindex="-1"]:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* 999 message */
+.emergency {
+  background: var(--alert-bg);
+  color: var(--alert-ink);
+  border-left: 6px solid var(--alert-ink);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.note { color: var(--muted); font-size: 0.95rem; }
+
+/* Cards and links that look like cards */
+.card {
+  display: block;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 0.75rem 0;
+}
+a.card { text-decoration: none; color: var(--ink); }
+a.card:hover { border-color: var(--night); }
+a.card strong { color: var(--night); font-size: 1.1rem; display: block; }
+
+/* Buttons */
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--night);
+  background: var(--night);
+  color: #fff;
+  font-weight: 600;
+}
+button:hover { background: var(--night-dark); }
+button.secondary { background: var(--card); color: var(--night); }
+button.secondary:hover { background: #eef1f6; }
+
+.choices button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0.5rem 0;
+  background: var(--card);
+  color: var(--ink);
+  border-color: var(--line);
+}
+.choices button:hover { border-color: var(--night); background: #eef1f6; }
+
+/* Help point screen: bigger buttons, easy to hit */
+.choices.big button { font-size: 1.25rem; padding: 1.1rem 1rem; }
+.charging { border-color: var(--lamp); border-left-width: 8px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+
+/* Forms */
+label, legend { display: block; font-weight: 600; margin: 0.75rem 0 0.25rem; }
+select {
+  font: inherit;
+  padding: 0.6rem;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 20rem;
+  background: #fff;
+}
+fieldset { border: 0; padding: 0; margin: 0; }
+.check { display: flex; gap: 0.6rem; align-items: center; margin: 0.5rem 0; font-weight: 400; }
+.check input { width: 1.4rem; height: 1.4rem; }
+
+.status { min-height: 1.5rem; font-weight: 600; color: var(--night); }
+
+/* Lists */
+.checklist { padding-left: 1.25rem; }
+.checklist li { margin: 0.4rem 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; list-style: none; margin: 0.5rem 0 0; }
+.tags li { background: var(--lamp); color: var(--ink); border-radius: 999px; padding: 0.15rem 0.6rem; font-size: 0.9rem; }
+
+/* Coordinator table */
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 0.95rem; }
+caption { text-align: left; font-weight: 700; padding: 0.5rem 0; color: var(--night); }
+th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--line); }
+th { background: #eef1f6; }
+td.num { text-align: right; }
+.flag { font-weight: 700; color: var(--alert-ink); }
+.flag::before { content: "⚑ "; }
+
+/* Bars */
+.bar-row { display: flex; align-items: center; gap: 0.5rem; margin: 0.35rem 0; }
+.bar-label { flex: 0 0 8.5rem; font-size: 0.95rem; }
+.bar-track { flex: 1; background: #e8e4da; border-radius: 4px; }
+.bar { height: 1.2rem; background: var(--night); border-radius: 4px; }
+.bar.hidden-number { background: repeating-linear-gradient(45deg, #9aa5b8, #9aa5b8 4px, #c5ccd8 4px, #c5ccd8 8px); }
+.bar-value { flex: 0 0 6.5rem; text-align: right; font-size: 0.9rem; }

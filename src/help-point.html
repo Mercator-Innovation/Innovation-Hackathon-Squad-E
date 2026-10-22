@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community help point: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="kiosk">
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="helpPoint.title"></h1>
+    <p class="note" id="where"></p>
+    <p data-text="helpPoint.intro"></p>
+    <p class="card charging" data-text="helpPoint.charging"></p>
+
+    <section class="step" id="step-need">
+      <h2 data-text="helpPoint.needQuestion"></h2>
+      <div class="choices big">
+        <button type="button" data-need="talk" data-text="help.needTalk"></button>
+        <button type="button" data-need="come" data-text="help.needCome"></button>
+        <button type="button" data-need="place" data-text="help.needPlace"></button>
+      </div>
+    </section>
+
+    <section class="step" id="step-sent" hidden>
+      <h2 data-text="help.doneTitle"></h2>
+      <p id="sent-message"></p>
+      <button type="button" class="secondary" id="again" data-text="helpPoint.startAgain"></button>
+    </section>
+
+    <div class="card">
+      <h3 data-text="codes.title"></h3>
+      <p data-text="codes.intro"></p>
+      <ul class="checklist" id="code-list"></ul>
+    </div>
+
+    <p class="emergency" data-text="safety.emergency"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="data/help-points.js"></script>
+  <script src="data/hubs.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="app.js"></script>
+  <script src="help-point.js"></script>
+</body>
+</html>
