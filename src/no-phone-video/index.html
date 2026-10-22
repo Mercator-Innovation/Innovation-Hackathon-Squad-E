@@ -94,7 +94,13 @@ svg * { transform-box: fill-box; transform-origin: center; }
 @keyframes drop { from { opacity: 0; transform: translateY(-120px); } to { opacity: 1; transform: none; } }
 @keyframes grey { to { opacity: .25; } }
 @media (max-width: 40rem) { .spacer { margin-left: 0; } }
+/* Shown inside the home page (?embed=1): just the player, as the home page has its own heading and language switch */
+.embed main { padding: 0; max-width: none; }
+.embed .top, .embed h1, .embed .note, .embed details { display: none; }
+.embed .draft { margin: 0; }
+.embed .player { border: 0; border-radius: 0; }
 </style>
+<script>if (new URLSearchParams(location.search).has('embed')) document.documentElement.classList.add('embed');</script>
 </head>
 <body>
 <main>
