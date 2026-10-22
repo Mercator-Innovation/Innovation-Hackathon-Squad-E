@@ -25,3 +25,6 @@ document.getElementById("steps").innerHTML = t("journey.steps").map((step, i) =>
   </li>`).join("");
 
 document.getElementById("behind-links").innerHTML = seeLinks(t("journey.behindLinks"));
+
+// What we'd test next
+document.getElementById("test-list").innerHTML = t("journey.testList").map((item) => `<li>${esc(item)}</li>`).join("");
