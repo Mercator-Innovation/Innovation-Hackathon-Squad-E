@@ -35,6 +35,15 @@ ai_use_week_after:
 - Prompt that worked: "give me an idea what do we when there is no phone", then "give me ideads" for a second round. I picked two: volunteers walking a regular route past help points, and a missed check-in that alerts Karen. Saved in `sketches/no-phone-ideas.md`.
 - Outside my usual job: built my ideas into the prototype myself (help point check-in, family screen, volunteer walk, coordinator gaps). Prompt: "take mine and daniel and recent ideas and built".
 - Research in my own role, at speed: walked through the prototype as Jamie and found 7 confusing things, the biggest being that texting "help" didn't work. Saved in `sketches/test-as-jamie.md`.
+- Surprise: Claude made a mistake and owned it. The check-in it built showed Jamie's and Karen's names on a public help point screen. My test as Jamie caught it, and it was fixed in minutes.
+- Prompt that worked: "how do we make our service know for non digital users and all the people". It led to a wallet card for naloxone kits and pharmacy bags, and a poster with tear-off strips, all without the word "drugs" so the card is safe to carry.
+- Working as a squad: Roqiya and I built "spread the word" pages at the same moment and clashed on the same files. Claude explained the clash, suggested keeping both, and only resolved it after I said yes. Lesson: say what you're grabbing in the Teams chat first.
+- Prompt that worked: "from all our work what do you think is missing that we didn't cover", then "built for all of them". Claude listed 5 gaps (Jamie's own plan, the support worker, becoming a volunteer, privacy, places with no one nearby) and built a page for each.
+- Prompt that worked: "do all 3 for me". Bug fixes, accessibility and the words, each as its own change.
+- Dead end: the big screen showed 0 commits for every squad, so badges like Bug squasher never arrived, even after the work was shared.
+- Prompt that worked: "can you do the user testing for protoype we bulit so far". Claude walked every route as each persona, and was clear it isn't real user testing. It found 8 problems, and I fixed the top 4, including in Bose's and Kai's screens, in English, Welsh and Gaelic.
+- Prompt that worked: "what are the other teams in the hackathon doing". Ours was the only squad with physical help points and help for people with no phone at all.
+- Outside my usual job: presenting at show and tell with Kai, from a script built around Jamie's night.
 - 18:17 what worked: Bringing different minds and disciplines together, and pulling each other back to the root of the problem. With a quick, iterative mindset, fast research and access to data, we could do a lot. I built the personas, then asked Claude to check what we'd missed.
 
 ## At 19:00
