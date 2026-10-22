@@ -300,6 +300,7 @@ window.CONTENT = {
     colPer: "Requests per volunteer",
     colStatus: "Status",
     needsMore: "Needs more volunteers",
+    needsN: "Needs about {n} more volunteers",
     covered: "Covered",
     why: "An area is flagged when there are more than {limit} requests per volunteer. A person checks every flag before anything changes.",
     areaLabel: "Show the times for",

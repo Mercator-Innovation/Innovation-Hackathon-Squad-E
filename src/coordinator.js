@@ -30,7 +30,7 @@ document.getElementById("area-rows").innerHTML = areas.map((row) => `<tr>
     <td class="num" data-label="${col("colRequests")}">${shown(row.requests)}</td>
     <td class="num" data-label="${col("colVolunteers")}">${row.volunteers}</td>
     <td class="num" data-label="${col("colPer")}">${row.perVolunteer.toFixed(1)}</td>
-    <td data-label="${col("colStatus")}">${row.flagged ? `<span class="flag">${col("needsMore")}</span>` : col("covered")}</td>
+    <td data-label="${col("colStatus")}">${row.flagged ? `<span class="flag">${t("coordinator.needsN", { n: Math.ceil(row.requests / window.FLAG_LIMIT) - row.volunteers })}</span>` : col("covered")}</td>
   </tr>`).join("");
 
 document.getElementById("why").textContent = t("coordinator.why", { limit: window.FLAG_LIMIT });
