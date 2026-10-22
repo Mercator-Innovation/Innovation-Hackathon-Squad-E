@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refer someone: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="more.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="refer.title"></h1>
+    <p data-text="refer.intro"></p>
+    <p class="emergency" data-text="refer.notEmergency"></p>
+    <p class="note" data-text="refer.madeUp"></p>
+
+    <!-- Step 1: who you are -->
+    <section class="step" id="step-role">
+      <h2 data-text="refer.roleQuestion"></h2>
+      <div id="role-field">
+        <label for="role" class="visually-hidden" data-text="refer.roleQuestion"></label>
+        <p class="field-error" id="role-error" hidden></p>
+        <select id="role" aria-describedby="role-error"></select>
+      </div>
+      <div class="actions"><button type="button" id="role-next" data-text="refer.next"></button></div>
+    </section>
+
+    <!-- Step 2: give the code, or ask a volunteer -->
+    <section class="step" id="step-how" hidden>
+      <h2 data-text="refer.howQuestion"></h2>
+      <div class="choices">
+        <button type="button" data-go="step-code"><span data-text="refer.howCode"></span><br><span class="hint" data-text="refer.howCodeHint"></span></button>
+        <button type="button" data-go="step-ask"><span data-text="refer.howAsk"></span><br><span class="hint" data-text="refer.howAskHint"></span></button>
+      </div>
+      <div class="actions"><button type="button" class="secondary" data-go="step-role" data-text="refer.back"></button></div>
+    </section>
+
+    <!-- Step 3a: just the code -->
+    <section class="step" id="step-code" hidden>
+      <h2 data-text="refer.codeTitle"></h2>
+      <p class="card charging" data-text="refer.codeCard"></p>
+      <p data-text="refer.codeHowTo"></p>
+      <p class="note" data-text="refer.codeNothing"></p>
+      <div class="actions"><button type="button" class="secondary" data-go="step-how" data-text="refer.back"></button></div>
+    </section>
+
+    <!-- Step 3b: ask a volunteer, with their agreement -->
+    <section class="step" id="step-ask" hidden>
+      <h2 data-text="refer.askTitle"></h2>
+      <div class="error-summary" id="errors" role="alert" tabindex="-1" hidden>
+        <h3 data-text="refer.errorTitle"></h3>
+        <ul id="error-list"></ul>
+      </div>
+      <form id="ask-form" novalidate class="group">
+        <div id="consent-field">
+          <p class="field-error" id="consent-error" hidden></p>
+          <label class="check"><input type="checkbox" id="consent" aria-describedby="consent-error"> <span data-text="refer.consentLabel"></span></label>
+        </div>
+        <div id="name-field">
+          <label for="name" data-text="refer.nameLabel"></label>
+          <p class="hint" id="name-hint" data-text="refer.nameHint"></p>
+          <p class="field-error" id="name-error" hidden></p>
+          <input class="text" id="name" autocomplete="off" aria-describedby="name-hint name-error">
+        </div>
+        <div id="phone-field">
+          <label for="phone" data-text="refer.phoneLabel"></label>
+          <p class="hint" id="phone-hint" data-text="refer.phoneHint"></p>
+          <p class="field-error" id="phone-error" hidden></p>
+          <input class="text" id="phone" type="tel" autocomplete="off" aria-describedby="phone-hint phone-error">
+        </div>
+        <div id="town-field">
+          <label for="town" data-text="refer.townLabel"></label>
+          <p class="field-error" id="town-error" hidden></p>
+          <select id="town" aria-describedby="town-error"></select>
+        </div>
+        <fieldset>
+          <legend data-text="refer.whenQuestion"></legend>
+          <div id="when"></div>
+        </fieldset>
+        <label for="note" data-text="refer.noteLabel"></label>
+        <p class="hint" id="note-hint" data-text="refer.noteHint"></p>
+        <input class="text" id="note" maxlength="120" autocomplete="off" aria-describedby="note-hint">
+        <div class="actions">
+          <button type="submit" data-text="refer.send"></button>
+          <button type="button" class="secondary" data-go="step-how" data-text="refer.back"></button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Step 4: sent -->
+    <section class="step" id="step-done" hidden>
+      <h2 data-text="refer.doneTitle"></h2>
+      <div id="done-messages"></div>
+      <h3 data-text="refer.theirText"></h3>
+      <p class="sms" id="their-sms"></p>
+      <h3 data-text="refer.whatYouHear"></h3>
+      <p data-text="refer.hearText"></p>
+      <div class="actions"><button type="button" class="secondary" id="another" data-text="refer.another"></button></div>
+    </section>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="content-refer.js"></script>
+  <script src="data/hubs.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="app.js"></script>
+  <script src="refer.js"></script>
+</body>
+</html>

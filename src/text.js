@@ -51,18 +51,31 @@ function addText(who, words) {
 }
 
 function findTown(words) {
+  // A help point number, like TALK 214, tells us the town too
+  const point = (window.HELP_POINTS || []).find((p) => words.includes(p.id));
+  if (point) return point.town;
   return towns.find((town) => words.includes(town.toUpperCase())) || null;
 }
 
+// Words people naturally send that mean the same as a code
+const SAME_AS = { HELP: "TALK", CHAT: "TALK", HI: "TALK", HELLO: "TALK" };
+
 function reply(message) {
   const words = message.toUpperCase().trim().split(/\s+/);
-  const code = words[0];
-  const town = findTown(words) || state.town;
+  let code = SAME_AS[words[0]] || words[0];
+  const named = findTown(words);
+  // Just a town, after we asked "which town?": carry on with what they first asked for
+  if (named && state.waiting && !["TALK", "COME", "BED", "OK", "STOP", "TXT"].includes(code)) code = state.waiting;
+  const town = named || state.town;
   if (town) state.town = town;
   const volunteer = town ? window.VOLUNTEERS.find((v) => v.town === town) : null;
   const hub = town ? window.HUBS.find((h) => h.town === town) : null;
 
-  if (["TALK", "COME", "BED"].includes(code) && !town) return t("text.replies.whichTown");
+  if (["TALK", "COME", "BED"].includes(code) && !town) {
+    state.waiting = code;
+    return t("text.replies.whichTown");
+  }
+  state.waiting = null;
 
   switch (code) {
     case "TALK":
