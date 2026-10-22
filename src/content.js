@@ -68,7 +68,7 @@ window.CONTENT = {
   // Text codes work from any phone, with no data. Shown on the help page and the help point.
   codes: {
     title: "Or text a code to 60000",
-    intro: "Works on any phone, with no data. Add your town, like TALK ANNAN. (This is a made-up number.)",
+    intro: "Works on any phone, with no data. Add your town or help point number, like TALK ANNAN or TALK 214. (This is a made-up number.)",
     list: [
       { code: "TALK", means: "I'd like someone to talk to" },
       { code: "COME", means: "Please come to me" },
@@ -94,8 +94,8 @@ window.CONTENT = {
     theySent: "Night Neighbours sent:",
     size: "{n} of 160 characters: 1 text",
     replies: {
-      welcome: "Night Neighbours: text TALK, COME, BED or OK and your town, like TALK ANNAN. Free, day or night. In danger? Call 999.",
-      whichTown: "Thanks. Which town are you near? Text the word again with your town, like TALK ANNAN.",
+      welcome: "Night Neighbours: text HELP and your town, like HELP ANNAN. Or TALK, COME, BED or OK. Free, day or night. In danger? Call 999.",
+      whichTown: "Thanks. Which town are you near? Just reply with the town, like ANNAN, or a help point number, like 214.",
       talk: "Thanks for texting. {name}, a volunteer, will ring you in the next 10 mins. Can't talk? Reply TXT and {name} will text instead.",
       txt: "OK. {name} will text you instead. Reply OK when you're alright.",
       come: "Got it. {name} is on the way to you in {town}. Reply with where you are, like a street or shop. In danger? Call 999.",
@@ -103,9 +103,9 @@ window.CONTENT = {
       bed: "Open tonight: {hub}, {town}, till {closes}. Tea and a warm seat. Reply COME and a volunteer can walk there with you.",
       noHub: "Sorry, nothing's open near you tonight. Reply TALK and someone will ring you. In danger? Call 999.",
       noVolunteer: "Sorry, no volunteer is free near you right now. The out-of-hours support worker will text you soon. In danger? Call 999.",
-      ok: "Glad you're OK. We've let anyone you chose know. Text TALK, COME or BED any time, day or night.",
+      ok: "Glad you're OK. If you chose anyone to tell, we've let them know. Text HELP any time, day or night.",
       stop: "You won't get any more texts from us. Text TALK any time to start again.",
-      unknown: "Sorry, we didn't get that. Text TALK, COME, BED or OK and your town, like TALK ANNAN."
+      unknown: "Sorry, we didn't get that. Text HELP and your town, like HELP ANNAN, and we'll take it from there."
     }
   },
 
@@ -116,6 +116,7 @@ window.CONTENT = {
     charging: "Charge your phone here, free. Plug in below the screen.",
     needQuestion: "What would help?",
     sent: "Thanks. {who} will be here in about {minutes} minutes. You can wait here, it's lit and warm.",
+    sentTalk: "Thanks. {who} will talk to you through the speaker by this screen in a few minutes. If you'd like them to come, press 'Someone to come to me'.",
     sentWorker: "Thanks. The out-of-hours support worker will call this help point in a few minutes.",
     sentPlace: "Thanks. {hub} is open until {closes}. It's {walk} minutes' walk. {who} will meet you there.",
     sentNoHub: "Thanks. There's no hub open nearby tonight, so {who} will come to you here.",
