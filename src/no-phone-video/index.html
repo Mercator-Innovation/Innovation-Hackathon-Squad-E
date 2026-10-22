@@ -267,11 +267,13 @@ $('bar').setAttribute('aria-label', ui('scene'));
 $('bar').innerHTML = S.map((s, n) => `<button class="seg" type="button" aria-label="${esc(ui('scene'))} ${n + 1}"><span></span></button>`).join('');
 
 // ---------- The player ----------
-const GAP = 0.9; // seconds of quiet between scenes
+const SPEED = 1.5; // the voice and the animation play at 1.5 times normal speed
+const GAP = 0.6; // seconds of quiet between scenes
 let i = 0, playing = false, sound = true, started = 0, elapsed = 0, begun = false;
 const audio = new Audio();
-// Long enough for Jamie's English line, and for reading a longer translated caption
-const total = (n) => (Math.max(S[n].d, W.lines[n].length / 15) + GAP) * 1000;
+audio.preservesPitch = true; // faster, but Jamie's voice keeps its pitch
+// Long enough for Jamie's sped-up line, and for reading a longer translated caption
+const total = (n) => (Math.max(S[n].d / SPEED, W.lines[n].length / 20) + GAP) * 1000;
 const pad = (n) => String(n + 1).padStart(2, '0');
 
 function show() {
@@ -282,6 +284,7 @@ function show() {
     return `<span class="w${hl ? ' hl' : ''}" style="animation-delay:${(n * .12).toFixed(2)}s">${esc(hl ? w.slice(3, -4) : w)}</span> `;
   }).join('');
   $('subs').textContent = W.lines[i];
+  document.getAnimations().forEach((a) => { a.playbackRate = SPEED; });
   $('bar').querySelectorAll('.seg').forEach((b, n) => { b.querySelector('span').style.width = n < i ? '100%' : '0'; b.setAttribute('aria-current', n === i ? 'step' : 'false'); });
 }
 function speak() {
@@ -289,6 +292,7 @@ function speak() {
   if (!sound) return;
   audio.src = 'en/' + pad(i) + '.m4a';
   audio.currentTime = 0;
+  audio.playbackRate = SPEED;
   audio.play().catch(() => {});
 }
 function go(n) {
