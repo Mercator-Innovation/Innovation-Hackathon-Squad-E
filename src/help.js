@@ -15,9 +15,13 @@ document.getElementById("code-list").innerHTML = t("codes.list")
   .join("");
 
 // Step 1
-document.querySelectorAll("[data-need]").forEach((button) => {
+const needButtons = document.querySelectorAll("[data-need]");
+needButtons.forEach((button) => {
+  button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
     choice.need = button.dataset.need;
+    // Keep the chosen answer marked, so it's still yellow if they come back
+    needButtons.forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
     showStep("step-where");
   });
 });
@@ -52,7 +56,21 @@ townSelect.addEventListener("change", () => {
   if (townSelect.value) { clearTownError(); locationNote.textContent = ""; }
 });
 
-// Step 3
+// Step 3. If the person has made a plan, start from it (this prototype pretends you're Jamie)
+const plan = (window.CHECK_INS || [])[0];
+const familyName = plan ? plan.tell : t("help.whoFamily");
+if (plan) {
+  const who = [familyName];
+  document.querySelector('input[name="tell"][value="family"]').checked = true;
+  if (plan.tellWorkerMorning) {
+    document.querySelector('input[name="tell"][value="morning"]').checked = true;
+    who.push(t("help.whoWorker"));
+  }
+  const note = document.getElementById("from-plan");
+  note.textContent = t("help.fromPlan", { who: who.join(` ${t("help.and")} `) });
+  note.hidden = false;
+}
+
 document.getElementById("who-form").addEventListener("submit", (event) => {
   event.preventDefault();
   choice.contact = document.querySelector('input[name="contact"]:checked').value;
@@ -73,12 +91,15 @@ function showResult() {
   const hub = window.HUBS.find((h) => h.town === choice.town);
 
   const messages = [];
-  messages.push(volunteer
-    ? t("help.doneVolunteer", { name: volunteer.firstName, miles: volunteer.milesAway })
-    : t("help.doneNoVolunteer"));
+  // Say back what they asked for: someone coming is different from a text
+  messages.push(!volunteer
+    ? t("help.doneNoVolunteer")
+    : choice.need === "come"
+      ? t("help.doneVolunteerCome", { name: volunteer.firstName, minutes: Math.round(volunteer.milesAway * 8) })
+      : t("help.doneVolunteer", { name: volunteer.firstName, miles: volunteer.milesAway }));
 
   const told = [];
-  if (choice.tell.includes("family")) told.push(t("help.whoFamily"));
+  if (choice.tell.includes("family")) told.push(familyName);
   if (choice.tell.includes("worker")) told.push(t("help.whoWorker"));
   if (told.length) messages.push(t("help.doneTold", { who: told.join(` ${t("help.and")} `) }));
 

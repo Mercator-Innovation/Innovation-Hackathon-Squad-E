@@ -6,7 +6,20 @@ document.getElementById("request").innerHTML = `
   <p>${t("volunteer.distance", { miles: request.milesAway, time: request.time })}</p>
   ${request.source ? `<p>${t("volunteer.from", { source: request.source })}</p>` : ""}`;
 
-document.getElementById("accept").addEventListener("click", () => showStep("step-safety"));
+// Only after they say yes: a first name, where to meet, and a way to text
+document.getElementById("accept").addEventListener("click", () => {
+  const name = request.firstName;
+  document.getElementById("meet-title").textContent = t("volunteer.meetTitle", { name });
+  document.getElementById("meet-where").textContent = t("volunteer.meetWhere", { place: request.source || request.town });
+  document.getElementById("meet-need").textContent = t("volunteer.meetNeed", { need: t(`volunteer.needs.${request.need}`) });
+  document.getElementById("text-them").textContent = t("volunteer.textThem", { name });
+  showStep("step-safety");
+});
+document.getElementById("text-them").addEventListener("click", () => {
+  const me = window.WALK ? window.WALK.volunteer : t("helpPoint.aVolunteer");
+  document.getElementById("text-status").textContent =
+    t("volunteer.textSent", { name: request.firstName, me, minutes: Math.round(request.milesAway * 8) });
+});
 document.getElementById("decline").addEventListener("click", () => {
   document.getElementById("alert-status").textContent = t("volunteer.declined");
 });

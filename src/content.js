@@ -103,6 +103,7 @@ window.CONTENT = {
     title: "Or text a code to 60000",
     intro: "Works on any phone, with no data. Add your town or help point number, like TALK ANNAN or TALK 214. (This is a made-up number.)",
     list: [
+      { code: "HELP", means: "I'd like some help, any kind" },
       { code: "TALK", means: "I'd like someone to talk to" },
       { code: "COME", means: "Please come to me" },
       { code: "BED", means: "I need somewhere to stay tonight" },
@@ -212,6 +213,8 @@ window.CONTENT = {
     send: "Ask for help",
     doneTitle: "Help is on its way",
     doneVolunteer: "{name}, a volunteer about {miles} miles away, will text you in the next few minutes.",
+    doneVolunteerCome: "{name}, a volunteer, is on the way to you. About {minutes} minutes. Stay where it's lit if you can.",
+    fromPlan: "From your plan: we'll tell {who}. You can change this below, just for tonight.",
     doneNoVolunteer: "We've asked the out-of-hours support worker to text you in the next few minutes.",
     doneTold: "We've also let {who} know.",
     doneHub: "When you're ready, {name} can walk with you to the hub.",
@@ -252,6 +255,11 @@ window.CONTENT = {
     accept: "I can help",
     decline: "Not right now",
     declined: "That's fine. We'll ask someone else nearby.",
+    meetTitle: "You're meeting {name}",
+    meetWhere: "Where: {place}.",
+    meetNeed: "They'd like {need}.",
+    textThem: "Text {name}",
+    textSent: "Sent: \"Hi {name}, it's {me} from Night Neighbours. I'm on my way, about {minutes} mins.\"",
     safetyTitle: "Before you go",
     safetyChecks: [
       "Meet in a public place or at the hub, not in their home.",

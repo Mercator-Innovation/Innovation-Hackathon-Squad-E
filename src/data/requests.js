@@ -2,7 +2,8 @@
 
 // Tonight's open requests, as a volunteer would see them (no names).
 window.TONIGHT = [
-  { town: "Annan", need: "come", milesAway: 1.4, time: "11:12pm",
+  // firstName is only shown to the volunteer after they say yes
+  { town: "Annan", need: "come", milesAway: 1.2, time: "11:12pm", firstName: "Jamie",
     source: "help point 214, parcel lockers, Annan station car park" }
 ];
 
