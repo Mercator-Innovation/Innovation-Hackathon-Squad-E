@@ -4,11 +4,11 @@ window.CONTENT = {
   service: {
     name: "Night Neighbours",
     tagline: "Someone nearby when it's late and you're on your own.",
-    prototypeNote: "This is a prototype. All the people, places and numbers in it are made up."
+    prototypeNote: "This is a test version. All the people, places and numbers in it are made up."
   },
 
   safety: {
-    emergency: "If someone isn't breathing normally, can't be woken up, or their life is in danger, call 999 now."
+    emergency: "Call 999 now if someone isn't breathing normally, won't wake up, or their life is in danger."
   },
 
   // The reassurance at the bottom of the pages people use to ask for help.
@@ -16,7 +16,7 @@ window.CONTENT = {
   reassure: {
     title: "Private, and your choice",
     points: [
-      { icon: "lock", title: "It's private", text: "We never ask why you need help, or whether you use drugs or alcohol." },
+      { icon: "lock", title: "It's private", text: "We never ask why you need help, or if you use drugs or alcohol." },
       { icon: "mask", title: "No name needed", text: "Stay anonymous if you like. Text a code or use a help point. A nickname is fine." },
       { icon: "hand", title: "You choose who knows", text: "We only tell the people you pick. Nothing goes to the police, your landlord or the job centre, unless someone's life is in danger." }
     ],
@@ -25,7 +25,7 @@ window.CONTENT = {
   },
 
   home: {
-    intro: "Local people who've signed up to help, and warm places to go, in the evening and at night.",
+    intro: "Local people who want to help, and warm places to go, in the evening and at night.",
     choose: "Who are you?",
     help: "I'd like some company or someone to talk to",
     helpHint: "Ask by app or by text. No data needed.",
@@ -34,13 +34,13 @@ window.CONTENT = {
     text: "Ask by text, on any phone",
     textHint: "No app, no data, low battery? Try it here.",
     helpPoint: "See a help point",
-    helpPointHint: "The screen at a community help point, for anyone without a phone.",
+    helpPointHint: "The screen at a help point in your town, for anyone without a phone.",
     coordinator: "I plan local support",
     coordinatorHint: "See where and when help is needed. No names, only totals.",
     family: "Someone I care about uses Night Neighbours",
     familyHint: "What you see if they ask for help or miss a check-in.",
     outreach: "Get the word out",
-    outreachHint: "A wallet card and a poster, for people who aren't online.",
+    outreachHint: "A wallet card and a poster, for people who don't go online.",
     marketing: "I help spread the word",
     marketingHint: "Posters, beer mats and posts that tell people we're here.",
     explainer: "Watch how it works",
@@ -62,7 +62,7 @@ window.CONTENT = {
     groupVolunteer: "If you'd like to help",
     groupVolunteerHint: "Local people who are checked, trained and never sent out alone.",
     groupServices: "If you support people or plan services",
-    groupServicesHint: "Support workers, coordinators and planners. No names, only what you need.",
+    groupServicesHint: "Support workers and people who plan local help. You only see what you need, never names.",
     groupWord: "Spreading the word",
     groupWordHint: "How people find out about Night Neighbours before the night they need it."
   },
@@ -136,7 +136,7 @@ window.CONTENT = {
       where: "Thanks. {name} will meet you there soon. Stay where it's lit if you can. Reply OK if you're alright now.",
       bed: "Open tonight: {hub}, {town}, till {closes}. Tea and a warm seat. Reply COME and a volunteer can walk there with you.",
       noHub: "Sorry, nothing's open near you tonight. Reply TALK and someone will ring you. In danger? Call 999.",
-      noVolunteer: "Sorry, no volunteer is free near you right now. The out-of-hours support worker will text you soon. In danger? Call 999.",
+      noVolunteer: "Sorry, no volunteer is free near you right now. Our night support worker will text you soon. In danger? Call 999.",
       ok: "Glad you're OK. If you chose anyone to tell, we've let them know. Text HELP any time, day or night.",
       stop: "You won't get any more texts from us. Text TALK any time to start again.",
       unknown: "Sorry, we didn't get that. Text HELP and your town, like HELP ANNAN, and we'll take it from there."
@@ -151,7 +151,7 @@ window.CONTENT = {
     needQuestion: "What would help?",
     sent: "Thanks. {who} will be here in about {minutes} minutes. You can wait here, it's lit and warm.",
     sentTalk: "Thanks. {who} will talk to you through the speaker by this screen in a few minutes. If you'd like them to come, press 'Someone to come to me'.",
-    sentWorker: "Thanks. The out-of-hours support worker will call this help point in a few minutes.",
+    sentWorker: "Thanks. Our night support worker will call this help point in a few minutes.",
     sentPlace: "Thanks. {hub} is open until {closes}. It's {walk} minutes' walk. {who} will meet you there.",
     sentNoHub: "Thanks. There's no hub open nearby tonight, so {who} will come to you here.",
     aVolunteer: "A volunteer",
@@ -161,7 +161,7 @@ window.CONTENT = {
     checkInTitle: "Checking in tonight?",
     checkInIntro: "If you've agreed to check in, type your number. We'll let the people you chose know you're OK.",
     pinLabel: "Your 4-digit number",
-    pinHint: "Prototype: try 1234.",
+    pinHint: "This is a test. Try 1234.",
     checkIn: "Check in",
     // This shows on a public screen, so never show names here.
     checkedIn: "Thanks, you're checked in. We've let the people you chose know you're OK.",
@@ -181,7 +181,7 @@ window.CONTENT = {
     callMe: "Call me back",
     heardFrom: "I've heard from him, he's OK",
     lookInSent: "Thanks. {volunteer}, a volunteer near {town}, will look in on {name} and text you when they've seen him.",
-    callMeSent: "The out-of-hours support worker will ring you in the next few minutes.",
+    callMeSent: "Our night support worker will ring you in a few minutes.",
     heardSent: "Thanks for letting us know. We've closed tonight's check-in.",
     forYouTitle: "Support for you",
     forYou: "Worried, or just need to talk? Text TALK to 60000 any time, day or night. (This is a made-up number.)"
@@ -204,18 +204,18 @@ window.CONTENT = {
     whoQuestion: "Who should we tell?",
     contactQuestion: "Who should get in touch with you tonight?",
     contactVolunteer: "A volunteer near me",
-    contactWorker: "The out-of-hours support worker",
+    contactWorker: "Our night support worker",
     alsoQuestion: "Who else should know?",
     whoHint: "You choose. We only tell the people you tick. You can leave them all blank.",
     tellFamily: "Someone in my family",
     tellWorker: "My support worker",
-    tellMorning: "Tell my support worker what happened, tomorrow morning",
+    tellMorning: "Tell my support worker what happened, in the morning",
     send: "Ask for help",
     doneTitle: "Help is on its way",
-    doneVolunteer: "{name}, a volunteer about {miles} miles away, will text you in the next few minutes.",
+    doneVolunteer: "{name} is a volunteer about {miles} miles away. They'll text you in a few minutes.",
     doneVolunteerCome: "{name}, a volunteer, is on the way to you. About {minutes} minutes. Stay where it's lit if you can.",
     fromPlan: "From your plan: we'll tell {who}. You can change this below, just for tonight.",
-    doneNoVolunteer: "We've asked the out-of-hours support worker to text you in the next few minutes.",
+    doneNoVolunteer: "We've asked our night support worker to text you. It'll be a few minutes.",
     doneTold: "We've also let {who} know.",
     doneHub: "When you're ready, {name} can walk with you to the hub.",
     doneMorning: "Tomorrow morning, your support worker will hear what happened. You can change your mind before then.",
@@ -232,7 +232,7 @@ window.CONTENT = {
     imOk: "I'm OK now",
     noReply: "Nobody's been in touch yet",
     okSent: "Thanks for telling us. We've let the people helping you know you're OK. You can ask again any time.",
-    noReplySent: "Sorry for the wait. We've asked the out-of-hours support worker to text you as well.",
+    noReplySent: "Sorry you've had to wait. We've asked our night support worker to text you too.",
     hubTitle: "Open near you tonight",
     hubHours: "Open {opens} to {closes}",
     afterHub: "After {closes}, text TALK to 60000 and a volunteer will ring you.",
@@ -263,21 +263,21 @@ window.CONTENT = {
     safetyTitle: "Before you go",
     safetyChecks: [
       "Meet in a public place or at the hub, not in their home.",
-      "Tell the on-call coordinator you're going.",
+      "Tell tonight's team leader you're going.",
       "Check they're awake and breathing normally. If not, call 999.",
       "You don't have to fix anything. Being there is enough."
     ],
     backup: "Call for backup",
-    backupSent: "The on-call coordinator knows and will phone you now.",
+    backupSent: "Tonight's team leader knows, and will phone you now.",
     escalate: "They need more help",
-    escalateSent: "We've asked the out-of-hours support worker to phone them.",
+    escalateSent: "We've asked our night support worker to phone them.",
     finish: "I've finished",
     finishTitle: "How did it go?",
     outcomes: ["They're OK now", "We went to the hub", "They needed more help"],
     save: "Save",
     done: "Thank you. We only keep the totals, never who it was.",
     walkTitle: "Your walk tonight",
-    walkIntro: "You and {partner} walk past these help points, so people without a phone know someone's coming.",
+    walkIntro: "You and {partner} walk past these help points. Then people without a phone know someone is coming.",
     walkStop: "{time}: help point {id}, {place}",
     walkCheck: "Mark as checked",
     walkChecked: "Checked"
