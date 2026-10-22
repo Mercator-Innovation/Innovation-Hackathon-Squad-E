@@ -3,5 +3,5 @@
 // The PIN lets them check in at any help point without a phone.
 window.CHECK_INS = [
   { name: "Jamie", pin: "1234", town: "Annan", checkBy: "11pm",
-    tell: "Karen", relation: "his sister", tonight: "missed", now: "11:15pm" }
+    tell: "Karen", relation: "his sister", yourRelation: "your sister", tellWorkerMorning: true, tonight: "missed", now: "11:15pm" }
 ];

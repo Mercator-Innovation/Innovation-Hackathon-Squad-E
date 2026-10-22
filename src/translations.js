@@ -49,6 +49,7 @@ window.TRANSLATIONS = {
       title: "Neu anfonwch god at 60000",
       intro: "Yn gweithio ar unrhyw ffôn, heb ddata. Ychwanegwch eich tref neu rif y pwynt cymorth, fel TALK ANNAN neu TALK 214. (Rhif wedi'i greu yw hwn.)",
       list: [
+        { code: "HELP", means: "Mae angen help arnaf" },
         { code: "TALK", means: "Hoffwn siarad â rhywun" },
         { code: "COME", means: "Dewch ataf i, os gwelwch yn dda" },
         { code: "BED", means: "Mae angen rhywle i aros heno" },
@@ -81,6 +82,8 @@ window.TRANSLATIONS = {
       send: "Gofyn am help",
       doneTitle: "Mae help ar ei ffordd",
       doneVolunteer: "Bydd {name}, gwirfoddolwr tua {miles} milltir i ffwrdd, yn anfon neges destun atoch yn yr ychydig funudau nesaf.",
+      doneVolunteerCome: "Mae {name}, gwirfoddolwr, ar y ffordd atoch chi. Tua {minutes} munud. Arhoswch rywle golau os gallwch.",
+      fromPlan: "O'ch cynllun: byddwn yn rhoi gwybod i {who}. Gallwch newid hyn isod, ar gyfer heno yn unig.",
       doneNoVolunteer: "Rydyn ni wedi gofyn i'r gweithiwr cymorth y tu allan i oriau anfon neges destun atoch yn yr ychydig funudau nesaf.",
       doneTold: "Rydyn ni hefyd wedi rhoi gwybod i {who}.",
       doneHub: "Pan fyddwch chi'n barod, gall {name} gerdded gyda chi i'r hyb.",
@@ -150,6 +153,7 @@ window.TRANSLATIONS = {
       title: "No cuir còd gu 60000",
       intro: "Obraichidh e air fòn sam bith, gun dàta. Cuir ris am baile agad no àireamh an ionaid-chobhrach, mar TALK ANNAN no TALK 214. (Seo àireamh a chaidh a dhèanamh suas.)",
       list: [
+        { code: "HELP", means: "Tha cuideachadh a dhìth orm" },
         { code: "TALK", means: "Bu toigh leam bruidhinn ri cuideigin" },
         { code: "COME", means: "Thig thugam, mas e do thoil e" },
         { code: "BED", means: "Tha feum agam air àite airson fuireach a-nochd" },
@@ -182,6 +186,8 @@ window.TRANSLATIONS = {
       send: "Iarr cobhair",
       doneTitle: "Tha cobhair air an t-slighe",
       doneVolunteer: "Cuiridh {name}, saor-thoileach mu {miles} mìle air falbh, teacsa thugad anns na beagan mhionaidean a tha romhainn.",
+      doneVolunteerCome: "Tha {name}, saor-thoileach, air an t-slighe thugad. Mu {minutes} mionaidean. Fuirich far a bheil solas ma ghabhas e.",
+      fromPlan: "Bhon phlana agad: innsidh sinn do {who}. Faodaidh tu seo atharrachadh gu h-ìosal, airson a-nochd a-mhàin.",
       doneNoVolunteer: "Dh'iarr sinn air an neach-taice a-mach à uairean obrach teacsa a chur thugad anns na beagan mhionaidean a tha romhainn.",
       doneTold: "Leig sinn fios cuideachd gu {who}.",
       doneHub: "Nuair a bhios tu deiseil, faodaidh {name} coiseachd còmhla riut chun an ionaid.",
