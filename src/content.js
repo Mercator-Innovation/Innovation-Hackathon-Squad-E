@@ -196,6 +196,7 @@ window.CONTENT = {
     noReplySent: "Sorry for the wait. We've asked the out-of-hours support worker to text you as well.",
     hubTitle: "Open near you tonight",
     hubHours: "Open {opens} to {closes}",
+    afterHub: "After {closes}, text TALK to 60000 and a volunteer will ring you.",
     noHub: "There's no hub open near you tonight.",
     startAgain: "Start again"
   },
