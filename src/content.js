@@ -25,7 +25,9 @@ window.CONTENT = {
     coordinator: "I plan local support",
     coordinatorHint: "See where and when help is needed. No names, only totals.",
     family: "Someone I care about uses Night Neighbours",
-    familyHint: "What you see if they ask for help or miss a check-in."
+    familyHint: "What you see if they ask for help or miss a check-in.",
+    marketing: "I help spread the word",
+    marketingHint: "Posters, beer mats and posts that tell people we're here."
   },
 
   // Text codes work from any phone, with no data. Shown on the help page and the help point.
@@ -223,5 +225,53 @@ window.CONTENT = {
     gapsIntro: "People without a phone rely on a volunteer walking past. These help points have no walk tonight.",
     noGaps: "Every help point has a volunteer walk tonight.",
     bands: ["6pm to 8pm", "8pm to 10pm", "10pm to midnight", "Midnight to 2am", "2am to 4am", "4am to 6am"]
+  },
+
+  // Spreading the word: the campaign, for partners and coordinators. Never mentions drugs or alcohol.
+  marketing: {
+    title: "Spreading the word",
+    intro: "How people find out about Night Neighbours. We offer company, not treatment, so nothing we put up mentions drugs or alcohol.",
+    madeUp: "These are example materials. The number 60000 is made up.",
+    messageTitle: "Our message",
+    message: "Somewhere to go tonight.",
+    messageWhy: "The first step is small: text TALK and your town. Someone texts back. No names needed.",
+    examplesTitle: "Example materials",
+    poster: { label: "Poster for a pub or club toilet", head: "Somewhere to go tonight.", body: "Tea on, telly on, folk to talk to.", cta: "Text TALK and your town to 60000. Free. No names." },
+    mat: { label: "Beer mat", front: "Fancy a brew and a chat?", back: "Text TALK and your town to 60000. Someone will text you back." },
+    post: { label: "Post in a local Facebook group", name: "Night Neighbours Inverclyde", body: "New in Greenock: the Harbour Room, open till late Thursday to Sunday. Football on, kettle on, no need to book. Just turn up, or text TALK GREENOCK to 60000 and someone will text you back. Pass it on to anyone who'd like the company." },
+    radio: { label: "Local radio, 20 seconds", script: "Long night ahead? Nothing on but the telly? Night Neighbours is a warm room, a cuppa and a few folk to talk to, open late near you. Text TALK and your town to 60000. It's free, and you don't need to give your name." },
+    card: { label: "Card for people who visit at home", front: "Somewhere to go tonight.", back: "Text TALK and your town to 60000, or ask me for the nearest warm room." },
+    whereTitle: "Where we put them",
+    whereIntro: "We start where the evidence is strongest, then add the places people already go.",
+    colPlace: "Where",
+    colWhy: "Why",
+    colFirst: "When",
+    places: [
+      { place: "Local Facebook groups", why: "Facebook reaches most adults online and leans over 35.", when: "First" },
+      { place: "People who visit at home: pharmacy drivers, housing officers, nurses", why: "Reaches people who don't go out, from someone they know.", when: "First" },
+      { place: "Through the door: housing letters, food bank bags", why: "Reaches people at home, no screen needed.", when: "Next" },
+      { place: "Pub and club toilets, beer mats", why: "Private to read. Landlords look after their regulars.", when: "Next" },
+      { place: "Pharmacies and GP surgeries", why: "Places people visit often.", when: "Next" },
+      { place: "Football clubs, barbers, Men's Sheds", why: "Places men already talk.", when: "Later" },
+      { place: "Local radio and YouTube", why: "Wide reach, less targeted.", when: "Later" }
+    ],
+    partnerTitle: "Asking a partner to help",
+    partnerQuestion: "Who are you asking?",
+    partners: {
+      pub: { button: "A pub or club", ask: "Put a poster in the toilets and beer mats on the tables.", gain: "You look after your regulars, and people see you care about the community." },
+      pharmacy: { button: "A pharmacy or GP surgery", ask: "Keep cards at the counter. Drivers hand one over on deliveries.", gain: "Somewhere to point lonely patients when you're closed." },
+      housing: { button: "A housing association or council", ask: "Put a card in tenant letters. Housing officers carry a few.", gain: "Support for tenants earlier, before things reach a crisis." },
+      football: { button: "A football club", ask: "An ad in the programme and a mention at home games.", gain: "Community work your fans see." }
+    },
+    askLabel: "What we ask",
+    gainLabel: "What's in it for them",
+    rulesTitle: "Our rules",
+    rules: [
+      "Never mention drugs or alcohol. Posters are seen by others, and texts stay on the phone.",
+      "Supportive, not an emergency. No \"SOS\" or \"crisis\" in public.",
+      "No names needed. We only ask for a town.",
+      "Say \"a person who uses drugs\", never \"addict\".",
+      "We count totals only, never people."
+    ]
   }
 };
