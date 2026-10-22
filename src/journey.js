@@ -24,3 +24,19 @@ document.getElementById("steps").innerHTML = t("journey.steps").map((step, i) =>
   </li>`).join("");
 
 document.getElementById("behind-links").innerHTML = seeLinks(t("journey.behindLinks"));
+
+// Make Daniel's video exactly as tall as its content, so there's no inner scrollbar
+const video = document.getElementById("journey-video");
+function fitVideo() {
+  try {
+    const doc = video.contentDocument;
+    if (doc) video.style.height = `${doc.documentElement.scrollHeight + 4}px`;
+  } catch (e) {
+    // Opened straight from the file, the browser may not let us measure it. The CSS height still works.
+  }
+}
+video.addEventListener("load", () => {
+  fitVideo();
+  setInterval(fitVideo, 1000);
+});
+window.addEventListener("resize", fitVideo);

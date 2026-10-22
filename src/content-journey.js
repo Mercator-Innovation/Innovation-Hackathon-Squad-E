@@ -4,6 +4,8 @@ Object.assign(window.CONTENT, {
   journey: {
     homeLink: "How it works, in 5 steps",
     title: "How it works",
+    videoTitle: "Watch Jamie's night",
+    videoFull: "Open the video full screen",
     intro: "Night Neighbours is simple at heart: you text or tap, a local volunteer gets back to you, and there's a warm place to go if you want one.",
     noDetails: "You don't have to give your name or sign up to get help. Everything else is optional.",
     seeIt: "See it",
