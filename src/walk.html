@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walk me home: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="more.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="walk.title"></h1>
+    <p class="emergency" data-text="safety.emergency"></p>
+
+    <!-- Set up the walk -->
+    <section class="step" id="step-setup">
+      <p data-text="walk.intro"></p>
+      <p class="card charging" data-text="walk.noTracking"></p>
+      <p class="note" data-text="walk.demoNote"></p>
+      <form id="walk-form" class="group">
+        <label for="place" data-text="walk.whereLabel"></label>
+        <select id="place"></select>
+        <label for="minutes" data-text="walk.howLongLabel"></label>
+        <select id="minutes"></select>
+        <fieldset>
+          <legend data-text="walk.whoLabel"></legend>
+          <div id="who"></div>
+        </fieldset>
+        <fieldset>
+          <legend data-text="walk.companyLabel"></legend>
+          <label class="check"><input type="checkbox" id="company"> <span data-text="walk.companyYes"></span></label>
+        </fieldset>
+        <div class="actions"><button type="submit" data-text="walk.start"></button></div>
+      </form>
+      <div class="card">
+        <h2 data-text="walk.textTitle"></h2>
+        <p data-text="walk.textHow"></p>
+      </div>
+    </section>
+
+    <!-- On the way -->
+    <section class="step" id="step-walking" hidden>
+      <h2 id="walking-title"></h2>
+      <p class="walk-time"><strong id="time-left"></strong><br><span id="next-check"></span></p>
+      <p id="company-note"></p>
+
+      <div class="card walk-check" id="check" hidden>
+        <h3 data-text="walk.checkTitle"></h3>
+        <p data-text="walk.checkText"></p>
+        <div class="actions">
+          <button type="button" id="ok" data-text="walk.ok"></button>
+          <button type="button" class="secondary" id="someone" data-text="walk.wantSomeone"></button>
+        </div>
+      </div>
+      <p class="status" id="walk-status" role="status"></p>
+
+      <div class="actions">
+        <button type="button" id="arrived" data-text="walk.home"></button>
+        <button type="button" class="secondary" id="stop" data-text="walk.stop"></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="content-walk.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="app.js"></script>
+  <script src="walk.js"></script>
+</body>
+</html>
