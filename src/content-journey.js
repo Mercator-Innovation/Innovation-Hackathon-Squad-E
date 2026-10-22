@@ -9,6 +9,7 @@ Object.assign(window.CONTENT, {
 
   journey: {
     homeLink: "How it works, in 5 steps",
+    mapsLink: "Journey maps for each part",
     title: "How it works",
     videoTitle: "Watch Jamie's night",
     videoFull: "Open the video full screen",

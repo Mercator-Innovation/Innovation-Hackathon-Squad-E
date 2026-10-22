@@ -29,6 +29,7 @@ ai_use_week_after:
 
 ## During
 <!-- Claude adds one line per moment: prompts that worked (word for word), dead ends, surprises, things done outside my usual job, what made working as a squad easier or harder -->
+18:25 critique of our prototype: (1) it's built around one man's night (Jamie), so it may not fit women, younger people, people in hostels or people who mainly drink; (2) too much, 16+ pages, so the core (text or tap, a local volunteer responds, a hub if you want one) gets lost; (3) the shakiest idea (help points at parcel lockers) got the most building, while volunteers being there at 2am is assumed, not shown; (4) missed check-ins alert family, which sits uneasily with help "without feeling watched"; (5) is it a loneliness service or substance-use support? The marketing never mentions drugs or alcohol, so the support worker handover is the only bridge to treatment. Kai's 18:2x changes eased (2) and (3); (1), (4) and (5) were still open at the hard stop.
 
 ## At 19:00
 - What I worked on: <answers>
