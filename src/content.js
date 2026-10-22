@@ -294,6 +294,7 @@ window.CONTENT = {
     tableCaption: "Requests and volunteers by area, last 4 weeks",
     sortNote: "Areas with the most requests per volunteer are at the top.",
     pipelineLink: "How these numbers are made, without anyone's details",
+    pipelineHint: "From one week of requests to the areas that need more volunteers, step by step.",
     colArea: "Area",
     colRequests: "Requests",
     colVolunteers: "Volunteers",

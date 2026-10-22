@@ -32,6 +32,7 @@ window.AUDIENCES = [
     cards: [
       { href: "worker.html",      title: "more.worker",      hint: "more.workerHint" },
       { href: "coordinator.html", title: "home.coordinator", hint: "home.coordinatorHint" },
+      { href: "pipeline.html",    title: "coordinator.pipelineLink", hint: "coordinator.pipelineHint" },
       { href: "rural.html",       title: "more.rural",       hint: "more.ruralHint" }
     ]
   },
