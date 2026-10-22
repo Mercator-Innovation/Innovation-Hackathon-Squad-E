@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get the word out: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="outreach.title"></h1>
+    <p data-text="outreach.intro"></p>
+    <p class="note" data-text="service.prototypeNote"></p>
+
+    <!-- Wallet card: front and back -->
+    <h2 data-text="outreach.cardTitle"></h2>
+    <p class="note" data-text="outreach.cardNote"></p>
+    <div class="wallet-cards">
+      <figure class="wallet front">
+        <figcaption class="visually-hidden" data-text="outreach.cardFront"></figcaption>
+        <p class="wallet-name" data-text="service.name"></p>
+        <p class="wallet-tagline" data-text="outreach.cardTagline"></p>
+        <p class="wallet-text"><span data-text="outreach.cardTextLine"></span> <strong class="wallet-number">60000</strong></p>
+        <p class="wallet-small" data-text="outreach.cardFree"></p>
+      </figure>
+      <figure class="wallet back">
+        <figcaption class="visually-hidden" data-text="outreach.cardBack"></figcaption>
+        <ul class="wallet-codes" id="card-codes"></ul>
+        <p class="wallet-small" data-text="outreach.cardNoPhone"></p>
+        <p class="wallet-line"><span data-text="outreach.cardPin"></span> <span class="blank"></span></p>
+        <p class="wallet-line"><span data-text="outreach.cardWho"></span> <span class="blank"></span></p>
+        <p class="wallet-999">In danger? Call 999.</p>
+      </figure>
+    </div>
+
+    <!-- Poster with tear-off strips -->
+    <h2 data-text="outreach.posterTitle"></h2>
+    <p class="note" data-text="outreach.posterNote"></p>
+    <figure class="poster">
+      <p class="poster-name" data-text="service.name"></p>
+      <p class="poster-headline" data-text="outreach.posterHeadline"></p>
+      <p data-text="outreach.posterBody"></p>
+      <p class="poster-text"><span data-text="outreach.posterText"></span> <strong>60000</strong></p>
+      <p class="poster-small" data-text="outreach.cardFree"></p>
+      <p class="poster-small" data-text="outreach.cardNoPhone"></p>
+      <p class="poster-family" data-text="outreach.posterFamily"></p>
+      <p class="poster-999" data-text="safety.emergency"></p>
+      <ul class="tear-offs" id="tear-offs" aria-label="Tear-off strips"></ul>
+    </figure>
+
+    <h2 data-text="outreach.whereTitle"></h2>
+    <dl class="where" id="where"></dl>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Codes on the back of the card
+    document.getElementById("card-codes").innerHTML = t("codes.list")
+      .map((c) => `<li><strong>${c.code}</strong> ${c.means}</li>`)
+      .join("");
+
+    // Tear-off strips along the bottom of the poster
+    document.getElementById("tear-offs").innerHTML = Array.from({ length: 8 },
+      () => `<li>${t("outreach.tearOff")}</li>`).join("");
+
+    // Where the cards and posters go
+    document.getElementById("where").innerHTML = t("outreach.where")
+      .map((w) => `<dt>${w.who}</dt><dd>${w.places}</dd>`)
+      .join("");
+  </script>
+</body>
+</html>
