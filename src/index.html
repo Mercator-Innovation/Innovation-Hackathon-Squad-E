@@ -8,82 +8,24 @@
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <header class="top"><a href="index.html" data-text="service.name"></a></header>
-  <main>
+  <!-- The banner: "Who is this for?" buttons, built from audiences.js. Each opens that person's page. -->
+  <header class="top banner">
+    <a href="index.html" class="brand" data-text="service.name"></a>
+    <nav id="who-nav" aria-label="Who is this for?"></nav>
+  </header>
+
+  <main class="home">
     <h1 data-text="service.name"></h1>
     <p data-text="service.tagline"></p>
     <p data-text="home.intro"></p>
     <p class="note" data-text="service.prototypeNote"></p>
 
-    <!-- Daniel's explainer, playing right here on the home page -->
+    <!-- Daniel's explainer -->
     <section class="explainer-embed" aria-labelledby="explainer-heading">
       <h2 id="explainer-heading" data-text="home.explainer"></h2>
       <iframe id="explainer" src="explainer.html" title="Night Neighbours: three journeys, a self-playing explainer"></iframe>
+      <p><a href="explainer.html" data-text="home.explainerFull"></a></p>
     </section>
-
-    <h2 data-text="home.choose"></h2>
-    <a class="card" href="help.html">
-      <strong data-text="home.help"></strong>
-      <span data-text="home.helpHint"></span>
-    </a>
-    <a class="card" href="text.html">
-      <strong data-text="home.text"></strong>
-      <span data-text="home.textHint"></span>
-    </a>
-    <a class="card" href="help-point.html">
-      <strong data-text="home.helpPoint"></strong>
-      <span data-text="home.helpPointHint"></span>
-    </a>
-    <a class="card" href="family.html">
-      <strong data-text="home.family"></strong>
-      <span data-text="home.familyHint"></span>
-    </a>
-    <a class="card" href="volunteer.html">
-      <strong data-text="home.volunteer"></strong>
-      <span data-text="home.volunteerHint"></span>
-    </a>
-    <a class="card" href="coordinator.html">
-      <strong data-text="home.coordinator"></strong>
-      <span data-text="home.coordinatorHint"></span>
-    </a>
-    <a class="card" href="outreach.html">
-      <strong data-text="home.outreach"></strong>
-      <span data-text="home.outreachHint"></span>
-    </a>
-    <a class="card" href="marketing.html">
-      <strong data-text="home.marketing"></strong>
-      <span data-text="home.marketingHint"></span>
-    </a>
-    <a class="card" href="explainer.html">
-      <strong data-text="home.explainer"></strong>
-      <span data-text="home.explainerHint"></span>
-    </a>
-
-    <h2 data-text="more.title"></h2>
-    <a class="card" href="plan.html">
-      <strong data-text="more.plan"></strong>
-      <span data-text="more.planHint"></span>
-    </a>
-    <a class="card" href="refer.html">
-      <strong data-text="refer.homeTitle"></strong>
-      <span data-text="refer.homeHint"></span>
-    </a>
-    <a class="card" href="worker.html">
-      <strong data-text="more.worker"></strong>
-      <span data-text="more.workerHint"></span>
-    </a>
-    <a class="card" href="join.html">
-      <strong data-text="more.join"></strong>
-      <span data-text="more.joinHint"></span>
-    </a>
-    <a class="card" href="privacy.html">
-      <strong data-text="more.privacy"></strong>
-      <span data-text="more.privacyHint"></span>
-    </a>
-    <a class="card" href="rural.html">
-      <strong data-text="more.rural"></strong>
-      <span data-text="more.ruralHint"></span>
-    </a>
 
     <p class="emergency" data-text="safety.emergency"></p>
   </main>
@@ -93,6 +35,7 @@
   <script src="content-refer.js"></script>
   <script src="translations.js"></script>
   <script src="app.js"></script>
+  <script src="audiences.js"></script>
   <script src="home.js"></script>
 </body>
 </html>
