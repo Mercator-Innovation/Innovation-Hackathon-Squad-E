@@ -1,0 +1,10 @@
+/* Styles for index.html only. */
+
+.explainer-embed iframe {
+  display: block;
+  width: 100%;
+  height: 46rem;            /* home.js resizes it to fit once it has loaded */
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
