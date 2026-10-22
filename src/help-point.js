@@ -20,6 +20,8 @@ document.querySelectorAll("[data-need]").forEach((button) => {
       message = hub
         ? t("helpPoint.sentPlace", { hub: hub.name, closes: hub.closes, walk: point.walkToHub, who })
         : t("helpPoint.sentNoHub", { who });
+    } else if (button.dataset.need === "talk") {
+      message = t("helpPoint.sentTalk", { who });   // talking doesn't mean sending someone
     } else {
       message = t("helpPoint.sent", { who, minutes: Math.round(volunteer.milesAway * 8) });
     }

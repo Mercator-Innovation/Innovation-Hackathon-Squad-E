@@ -95,7 +95,7 @@ window.CONTENT = {
     size: "{n} of 160 characters: 1 text",
     replies: {
       welcome: "Night Neighbours: text TALK, COME, BED or OK and your town, like TALK ANNAN. Free, day or night. In danger? Call 999.",
-      whichTown: "Thanks. Which town are you near? Text the word again with your town, like TALK ANNAN.",
+      whichTown: "Thanks. Which town are you near? Just reply with the town, like ANNAN, or a help point number, like 214.",
       talk: "Thanks for texting. {name}, a volunteer, will ring you in the next 10 mins. Can't talk? Reply TXT and {name} will text instead.",
       txt: "OK. {name} will text you instead. Reply OK when you're alright.",
       come: "Got it. {name} is on the way to you in {town}. Reply with where you are, like a street or shop. In danger? Call 999.",
@@ -116,6 +116,7 @@ window.CONTENT = {
     charging: "Charge your phone here, free. Plug in below the screen.",
     needQuestion: "What would help?",
     sent: "Thanks. {who} will be here in about {minutes} minutes. You can wait here, it's lit and warm.",
+    sentTalk: "Thanks. {who} will talk to you through the speaker by this screen in a few minutes. If you'd like them to come, press 'Someone to come to me'.",
     sentWorker: "Thanks. The out-of-hours support worker will call this help point in a few minutes.",
     sentPlace: "Thanks. {hub} is open until {closes}. It's {walk} minutes' walk. {who} will meet you there.",
     sentNoHub: "Thanks. There's no hub open nearby tonight, so {who} will come to you here.",
