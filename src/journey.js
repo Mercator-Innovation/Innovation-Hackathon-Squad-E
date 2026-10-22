@@ -27,6 +27,11 @@ document.getElementById("behind-links").innerHTML = seeLinks(t("journey.behindLi
 
 // Make Daniel's video exactly as tall as its content, so there's no inner scrollbar
 const video = document.getElementById("journey-video");
+
+// Tell the video which language to use, so it always matches the page
+const videoUrl = `${video.dataset.src}?lang=${LANG}`;
+video.src = videoUrl;
+document.getElementById("journey-video-full").href = videoUrl;
 function fitVideo() {
   try {
     const doc = video.contentDocument;
