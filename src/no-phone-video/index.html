@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Night Neighbours: no phone, no problem (video)</title>
+<!-- Daniel Lambert-Maddocks, Ctrl-Alt-Elite, 22 October. A self-playing video with a voiceover and on-screen script,
+     about people with no phone, a dead battery or no smartphone, ending in a call to volunteer or donate.
+     Words are in words.js (English, Welsh, Gaelic) and follow the prototype's language switch.
+     The voiceover is the Mac's "Jamie (Premium)" voice reading script.txt (files in en/). Everything here is made up. -->
+<style>
+:root {
+  --ink: #1d2433; --muted: #4a5568; --bg: #f6f4ef; --card: #ffffff;
+  --night: #24406b; --night-dark: #172b4a; --lamp: #f2b544; --line: #d6d1c4; --focus: #ffbf47;
+  --radius: 10px; --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); font-size: 1.0625rem; line-height: 1.5; color: var(--ink); background: var(--bg); }
+main { max-width: 64rem; margin: 0 auto; padding: 1rem 1rem 3rem; }
+.top { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; justify-content: space-between; }
+.top a { color: var(--night); }
+.langs { display: flex; gap: .4rem; list-style: none; margin: 0; padding: 0; align-items: center; }
+.langs a, .langs span { display: inline-block; padding: .2rem .6rem; border-radius: 999px; border: 1px solid var(--line); color: var(--ink); text-decoration: none; background: var(--card); }
+.langs span[aria-current] { background: var(--lamp); border-color: var(--lamp); font-weight: 700; }
+h1 { color: var(--night); font-size: 1.5rem; margin: .75rem 0; }
+.draft { background: #fff7e0; border-left: 4px solid var(--lamp); padding: .5rem .75rem; margin: 0 0 1rem; font-size: .95rem; }
+.player { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.stage { position: relative; aspect-ratio: 16 / 9; background: var(--night-dark); overflow: hidden; container-type: inline-size; }
+.stage svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.headline { position: absolute; left: 4%; top: 6%; right: 38%; margin: 0; color: #fff; font-size: clamp(1rem, 4.4cqw, 2.5rem); line-height: 1.12; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,.45); }
+.headline .w { display: inline-block; }
+.headline .hl { color: var(--lamp); }
+.subs { margin: 0; min-height: 4.2em; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; background: #0e1a2e; padding: .6rem 1rem; font-size: clamp(.95rem, 2.2vw, 1.25rem); line-height: 1.35; }
+.subs[hidden] { display: none; }
+.start { position: absolute; inset: 0; display: grid; place-content: center; gap: .8rem; text-align: center; background: rgba(15, 27, 48, .92); color: #fff; padding: 1rem; }
+.start p { margin: 0; font-size: clamp(1.05rem, 3.4cqw, 1.8rem); font-weight: 800; }
+.start .small { font-size: clamp(.85rem, 2cqw, 1rem); font-weight: 400; }
+.start .row { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
+.bar { display: flex; gap: 3px; padding: .6rem 1rem 0; }
+.seg { flex: 1; height: 8px; border: 0; padding: 0; background: var(--line); border-radius: 4px; cursor: pointer; position: relative; overflow: hidden; }
+.seg span { position: absolute; inset: 0; width: 0; background: var(--night); }
+.controls { display: flex; flex-wrap: wrap; gap: .5rem; padding: .8rem 1rem 1rem; align-items: center; }
+button.btn { font: inherit; font-weight: 600; border: 2px solid var(--night); background: var(--card); color: var(--night); padding: .45rem .9rem; border-radius: var(--radius); cursor: pointer; }
+button.btn.primary { background: var(--night); color: #fff; }
+.start button.btn { border-color: var(--lamp); }
+.start button.btn.primary { background: var(--lamp); color: var(--ink); }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.spacer { margin-left: auto; }
+.note { color: var(--muted); font-size: .95rem; }
+details { margin-top: 1.25rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .75rem 1rem; }
+summary { cursor: pointer; font-weight: 700; color: var(--night); }
+ol.script li { margin: .35rem 0; }
+
+/* Motion. Everything below switches off for people who ask for less motion. */
+svg * { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .scene { animation: kenburns 14s ease-out forwards; transform-origin: 50% 60%; transform-box: view-box; }
+  .headline .w { opacity: 0; animation: rise .6s cubic-bezier(.2,.8,.2,1) forwards; }
+  .in { opacity: 0; animation: rise .8s cubic-bezier(.2,.8,.2,1) forwards; }
+  .fade { opacity: 0; animation: fadein 1s ease forwards; }
+  .drain { transform-origin: left center; animation: drain 3.5s ease-in forwards; }
+  .fill { transform-origin: left center; transform: scaleX(.05); animation: fill 4s ease-out forwards; }
+  .blink { animation: blink .8s steps(2) infinite; }
+  .off { opacity: 0; animation: fadein 1.2s ease forwards; }
+  .glow { animation: glow 1.8s ease-in-out infinite; }
+  .pulse { animation: pulse 1.4s ease-in-out infinite; }
+  .press { animation: press 2.4s ease-in-out infinite; }
+  .ripple { opacity: 0; animation: ripple 2.4s ease-out infinite; }
+  .float { opacity: 0; animation: floatup 1.4s ease-out forwards; }
+  .walkR { animation: walkR 3.2s ease-out forwards; }
+  .draw { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 4s ease-in-out forwards; }
+  .swing { transform-origin: top center; animation: swing 2.2s ease-in-out infinite alternate; }
+  .rise { animation: moonrise 5s ease-out forwards; }
+  .drop { opacity: 0; animation: drop 1.2s cubic-bezier(.5,0,.6,1.4) forwards; }
+  .grey { animation: grey 2.5s ease forwards; }
+  .twinkle { animation: glow 2.6s ease-in-out infinite; }
+  .wave { opacity: 0; animation: ripple 1.6s ease-out infinite; }
+}
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.07); } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes fadein { to { opacity: 1; } }
+@keyframes drain { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@keyframes fill { to { transform: scaleX(1); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes glow { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes press { 0%,40%,100% { transform: scale(1); } 50% { transform: scale(.88); } 60% { transform: scale(1); } }
+@keyframes ripple { 0% { opacity: .8; transform: scale(.6); } 100% { opacity: 0; transform: scale(2.2); } }
+@keyframes floatup { from { opacity: 0; transform: translateY(30px) scale(.8); } to { opacity: 1; transform: none; } }
+@keyframes walkR { from { transform: translateX(260px); } to { transform: none; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes swing { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+@keyframes moonrise { from { transform: translateY(120px); } to { transform: none; } }
+@keyframes drop { from { opacity: 0; transform: translateY(-120px); } to { opacity: 1; transform: none; } }
+@keyframes grey { to { opacity: .25; } }
+@media (max-width: 40rem) { .spacer { margin-left: 0; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <a href="../index.html" id="home"></a>
+    <nav id="langNav"></nav>
+  </div>
+  <h1 id="title"></h1>
+  <p class="draft" id="draft" hidden></p>
+  <div class="player" role="region" id="player">
+    <div class="stage" id="stage">
+      <div aria-hidden="true" id="art"></div>
+      <p class="headline" id="headline" aria-hidden="true"></p>
+      <div class="start" id="start">
+        <p id="startText"></p>
+        <p class="small" id="voiceNote" hidden></p>
+        <div class="row">
+          <button class="btn primary" id="startSound" type="button"></button>
+          <button class="btn" id="startQuiet" type="button"></button>
+        </div>
+      </div>
+    </div>
+    <p class="subs" id="subs" aria-live="polite"></p>
+    <div class="bar" id="bar" role="group"></div>
+    <div class="controls">
+      <button class="btn" id="prev" type="button"></button>
+      <button class="btn primary" id="play" type="button"></button>
+      <button class="btn" id="next" type="button"></button>
+      <span class="spacer"></span>
+      <button class="btn" id="sound" type="button" aria-pressed="true"></button>
+      <button class="btn" id="cc" type="button" aria-pressed="true"></button>
+    </div>
+  </div>
+  <p class="note" id="note"></p>
+  <details>
+    <summary id="scriptTitle"></summary>
+    <ol class="script" id="script"></ol>
+  </details>
+</main>
+
+<script src="words.js"></script>
+<script>
+// ---------- Language: the same as the rest of the prototype (?lang=cy, or the one chosen last time) ----------
+const LANGS = [{ code: 'en', name: 'English' }, { code: 'cy', name: 'Cymraeg' }, { code: 'gd', name: 'Gàidhlig' }];
+const LANG = (() => {
+  const asked = new URLSearchParams(location.search).get('lang');
+  if (asked && window.VIDEO_WORDS[asked]) { try { localStorage.setItem('lang', asked); } catch (e) {} return asked; }
+  try { const l = localStorage.getItem('lang'); if (l && window.VIDEO_WORDS[l]) return l; } catch (e) {}
+  return 'en';
+})();
+const W = window.VIDEO_WORDS[LANG], EN = window.VIDEO_WORDS.en;
+const ui = (k) => W.ui[k] || EN.ui[k];
+const A = (k) => W.art[k] || EN.art[k];
+document.documentElement.lang = LANG;
+
+// ---------- Colours and drawing helpers (640 x 360) ----------
+const C = { sky: '#172b4a', sky2: '#24406b', mid: '#2d4a75', blue: '#3b5a8a', lamp: '#f2b544', paper: '#f6f4ef', ink: '#1d2433', soft: '#8fa3c7', green: '#6fcf97', red: '#e5534b' };
+const at = (s) => `animation-delay:${s}s`;
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+// Text, shrunk to fit `maxW` when a translation is longer than the English
+const T = (x, y, s, size = 18, fill = C.paper, w = 700, maxW = 0) => {
+  if (maxW) size = Math.min(size, maxW / (String(s).length * .56));
+  return `<text x="${x}" y="${y}" font-size="${size.toFixed(1)}" font-weight="${w}" fill="${fill}" text-anchor="middle" font-family="system-ui, sans-serif">${esc(s)}</text>`;
+};
+const stars = () => [[40,40],[110,90],[200,30],[300,60],[390,25],[470,80],[90,150],[610,130],[520,40],[250,120]].map(([x,y],n) => `<circle class="twinkle" style="${at(n * .3)}" cx="${x}" cy="${y}" r="1.8" fill="${C.paper}"/>`).join('');
+const sky = (moon = true) => `<rect width="640" height="360" fill="${C.sky}"/>${stars()}${moon ? `<g><circle cx="575" cy="58" r="24" fill="${C.paper}"/><circle cx="586" cy="50" r="22" fill="${C.sky}"/></g>` : ''}<rect y="305" width="640" height="55" fill="#10203a"/>`;
+const person = (x, y, body = C.lamp, s = 1, cls = '', style = '') => `<g class="${cls}" style="${style}"><g transform="translate(${x} ${y}) scale(${s})"><circle cx="0" cy="-62" r="16" fill="${C.paper}"/><rect x="-20" y="-44" width="40" height="52" rx="16" fill="${body}"/></g></g>`;
+const phoneBody = (x, y, w = 110, h = 190) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="16" fill="${C.ink}" stroke="${C.soft}" stroke-width="2"/>`;
+const battery = (x, y, w, pct, color, cls = '', style = '') => `<g><rect x="${x}" y="${y}" width="${w}" height="${w * .45}" rx="4" fill="none" stroke="${C.paper}" stroke-width="3"/><rect x="${x + w}" y="${y + w * .13}" width="5" height="${w * .19}" rx="1" fill="${C.paper}"/><rect class="${cls}" style="${style}" x="${x + 5}" y="${y + 5}" width="${(w - 10) * pct}" height="${w * .45 - 10}" rx="2" fill="${color}"/></g>`;
+const bubble = (x, y, s, w = 120, fill = C.paper, ink = C.ink, cls = 'float', style = '') => `<g class="${cls}" style="${style}"><g transform="translate(${x} ${y})"><rect x="${-w/2}" y="-20" width="${w}" height="38" rx="19" fill="${fill}"/>${T(0, 5, s, 16, ink, 800, w - 20)}</g></g>`;
+const locker = (x, y) => `<g transform="translate(${x} ${y})"><rect width="220" height="200" rx="6" fill="${C.blue}"/>
+  ${[0,1,2].map(r => [0,1,2,3].map(c => (r === 1 && c > 0 && c < 3) ? '' : `<rect x="${10 + c * 51}" y="${10 + r * 62}" width="45" height="54" rx="3" fill="${C.mid}" stroke="${C.soft}"/>`).join('')).join('')}
+  <rect x="61" y="72" width="96" height="54" rx="4" fill="${C.paper}" class="fade" style="${at(.6)}"/><g class="fade" style="${at(.9)}">${T(109, 96, A('helpPoint'), 13, C.ink, 800, 88)}${T(109, 113, A('openAllNight'), 10, C.ink, 600, 88)}</g></g>`;
+const shop = (x, y) => `<g transform="translate(${x} ${y})"><rect width="250" height="130" fill="${C.mid}"/><rect y="-24" width="250" height="24" fill="${C.sky2}"/>${T(125, -7, A('shop'), 13, C.paper, 800, 240)}
+  <rect class="glow" x="18" y="22" width="64" height="64" fill="${C.lamp}"/><rect class="glow" style="${at(.5)}" x="168" y="22" width="64" height="64" fill="${C.lamp}"/><rect x="103" y="44" width="44" height="86" fill="${C.ink}"/></g>`;
+const hub = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})"><polygon points="0,44 80,0 160,44" fill="${C.blue}"/><rect x="12" y="44" width="136" height="90" fill="${C.mid}"/>
+  <rect class="glow" x="28" y="62" width="38" height="32" fill="${C.lamp}"/><rect class="glow" style="${at(.7)}" x="94" y="62" width="38" height="32" fill="${C.lamp}"/><rect x="66" y="92" width="28" height="42" fill="${C.ink}"/>${T(80, 156, A('hub'), 14, C.paper, 700, 200)}</g>`;
+const card = (x, y, w, h, title, icon, n) => `<g class="in" style="${at(.4 + n * .45)}"><g transform="translate(${x} ${y})"><rect width="${w}" height="${h}" rx="12" fill="${C.paper}"/>${icon}${T(w / 2, h - 16, title, 15, C.ink, 800, w - 12)}</g></g>`;
+
+// ---------- The scenes. `d` is how long Jamie takes to say each line, in seconds. ----------
+const S = [
+  { d: 6.44, art: () => sky() +
+      person(130, 300, C.lamp, 1.1) + `<g transform="translate(270 70)">${phoneBody(0, 0, 130, 220)}<rect x="10" y="14" width="110" height="190" rx="6" fill="${C.sky2}"/><rect class="off" style="${at(3.2)}" x="10" y="14" width="110" height="190" rx="6" fill="#05080f"/>
+      ${T(65, 70, '02:00', 30, C.paper, 800)}${battery(30, 110, 70, 1, C.red, 'drain', '')}<g class="blink">${T(65, 175, A('lowBattery'), 13, C.red, 800, 104)}</g></g>` },
+  { d: 5.39, art: () => sky(false) +
+      `<g class="rise"><circle cx="560" cy="70" r="26" fill="${C.paper}"/><circle cx="572" cy="61" r="24" fill="${C.sky}"/></g>
+      <rect x="140" y="110" width="250" height="195" fill="${C.mid}"/><rect x="225" y="190" width="80" height="115" fill="${C.ink}"/>${T(265, 145, A('supportCentre'), 16, C.paper, 700, 230)}${T(265, 170, A('open95'), 14, C.soft, 600, 230)}
+      <g class="swing"><line x1="265" y1="190" x2="265" y2="208" stroke="${C.paper}" stroke-width="2"/><rect x="215" y="208" width="100" height="30" rx="4" fill="${C.red}"/>${T(265, 229, A('closed'), 15, '#fff', 800, 92)}</g>` },
+  { d: 8.75, art: () => sky() +
+      `<g transform="translate(0 -28)"><g class="in" style="${at(.3)}"><rect x="70" y="112" width="110" height="168" rx="16" fill="none" stroke="${C.soft}" stroke-width="3" stroke-dasharray="8 8"/>${T(125, 200, A('noPhone'), 17, C.paper, 700, 100)}</g>
+      <g class="in" style="${at(1.6)}"><rect x="265" y="120" width="90" height="160" rx="14" fill="${C.ink}" stroke="${C.soft}" stroke-width="2"/><rect x="277" y="134" width="66" height="44" rx="4" fill="${C.sky2}"/>${[0,1,2].map(r => [0,1,2].map(c => `<rect x="${280 + c * 22}" y="${190 + r * 22}" width="16" height="14" rx="3" fill="${C.soft}"/>`).join('')).join('')}${T(310, 165, A('noData'), 12, C.paper, 700, 60)}${T(310, 305, A('oldPhone'), 17, C.paper, 700, 150)}</g>
+      <g class="in" style="${at(3.4)}">${phoneBody(440, 100, 110, 180)}<rect x="450" y="114" width="90" height="150" rx="6" fill="#05080f"/>${battery(463, 170, 64, .06, C.red)}${T(495, 305, A('nowhere'), 17, C.paper, 700, 190)}</g></g>` },
+  { d: 4.48, art: () => sky() +
+      `<g>${phoneBody(265, 80, 110, 190)}<rect x="275" y="94" width="90" height="160" rx="6" fill="${C.paper}"/><rect x="292" y="130" width="56" height="56" rx="14" fill="${C.lamp}"/>${T(320, 225, A('appOnly'), 13, C.ink, 800, 84)}</g>
+      ${[90, 160, 470, 540].map((x, n) => person(x, 300, C.soft, .9, 'grey', at(.8 + n * .2))).join('')}` },
+  { d: 5.78, art: () => sky() +
+      `<g class="fade" style="${at(.2)}">${shop(330, 175)}</g>
+      <g class="drop" style="${at(1.2)}"><g transform="translate(0 40)"><rect x="161" y="210" width="10" height="60" fill="${C.soft}"/><rect x="61" y="80" width="210" height="135" rx="6" fill="${C.paper}" stroke="${C.lamp}" stroke-width="4"/>
+      ${T(166, 120, A('notOk'), 19, C.ink, 800, 196)}${T(166, 150, A('bb1'), 14, C.ink, 600, 196)}${T(166, 170, A('bb2'), 14, C.ink, 600, 196)}${T(166, 196, A('free'), 13, C.sky2, 800, 196)}</g></g>` },
+  { d: 5.61, art: () => sky() +
+      `<g class="fade" style="${at(.1)}">${locker(210, 100)}</g><circle class="ripple" style="${at(1.2)}" cx="319" cy="199" r="60" fill="none" stroke="${C.lamp}" stroke-width="3"/>
+      ${person(520, 300, C.lamp, 1, 'walkR')}` },
+  { d: 9.0, art: () => sky() +
+      `<g transform="translate(90 80)">${phoneBody(0, 0, 110, 190)}<rect x="10" y="14" width="90" height="160" rx="6" fill="${C.sky2}"/>${battery(20, 70, 70, 1, C.green, 'fill')}<path class="pulse" d="M60 120 L48 145 L58 145 L50 168 L72 138 L61 138 L68 120 Z" fill="${C.lamp}"/>
+      <path class="draw" d="M55 190 C55 230, 0 230, -40 230" stroke="${C.soft}" stroke-width="5" fill="none"/></g>
+      <g class="in" style="${at(3.4)}"><g transform="translate(0 -25)"><rect x="350" y="170" width="210" height="120" rx="8" fill="${C.lamp}"/><rect x="350" y="170" width="210" height="28" fill="#d99a2b"/>${T(455, 245, A('donated'), 17, C.ink, 800, 196)}${T(455, 270, A('chargedFree'), 13, C.ink, 600, 196)}
+      <g class="drop" style="${at(4.2)}"><rect x="430" y="95" width="50" height="86" rx="9" fill="${C.ink}" stroke="${C.paper}" stroke-width="2"/></g></g></g>` },
+  { d: 12.96, art: () => sky() +
+      `<g transform="translate(110 70)"><rect width="100" height="190" rx="14" fill="${C.ink}" stroke="${C.soft}" stroke-width="2"/><rect x="12" y="14" width="76" height="56" rx="4" fill="${C.sky2}"/>${T(50, 48, '60000', 14)}
+      ${[0,1,2,3].map(r => [0,1,2].map(c => `<rect x="${16 + c * 24}" y="${84 + r * 24}" width="18" height="16" rx="3" fill="${C.soft}"/>`).join('')).join('')}</g>
+      ${bubble(380, 100, 'TALK', 130, C.lamp, C.ink, 'float', at(2.6))}<g class="fade" style="${at(2.8)}">${T(380, 136, A('talk'), 14, C.paper, 600, 200)}</g>
+      ${bubble(380, 170, 'COME', 130, C.lamp, C.ink, 'float', at(4.6))}<g class="fade" style="${at(4.8)}">${T(380, 206, A('come'), 14, C.paper, 600, 200)}</g>
+      ${bubble(380, 240, 'BED', 130, C.lamp, C.ink, 'float', at(6.6))}<g class="fade" style="${at(6.8)}">${T(380, 276, A('bed'), 14, C.paper, 600, 200)}</g>
+      <g class="in" style="${at(9)}">${T(560, 200, A('nd1'), 18, C.paper, 800, 120)}${T(560, 222, A('nd2'), 18, C.paper, 800, 120)}</g>` },
+  { d: 6.48, art: () => sky() +
+      `<circle class="ripple" cx="320" cy="190" r="70" fill="none" stroke="${C.lamp}" stroke-width="4"/><circle class="ripple" style="${at(1.2)}" cx="320" cy="190" r="70" fill="none" stroke="${C.lamp}" stroke-width="4"/>
+      <g class="press"><circle cx="320" cy="190" r="70" fill="${C.lamp}"/>${T(320, 200, A('helpButton'), 34, C.ink, 900, 120)}</g>
+      <g class="in" style="${at(1.5)}">${T(130, 140, A('noAccount'), 18, C.paper, 700, 180)}</g><g class="in" style="${at(2.3)}">${T(130, 190, A('noPassword'), 18, C.paper, 700, 180)}</g><g class="in" style="${at(3.1)}">${T(130, 240, A('noForms'), 18, C.paper, 700, 180)}</g>` },
+  { d: 10.06, art: () => sky() +
+      card(30, 120, 110, 120, A('bigButtons'), `<rect x="25" y="20" width="60" height="44" rx="10" fill="${C.sky2}"/>`, 0) +
+      card(150, 120, 110, 120, A('plainWords'), `${T(55, 55, 'Aa', 36, C.sky2, 900)}`, 1) +
+      card(270, 120, 110, 120, A('pictures'), `<circle cx="40" cy="38" r="12" fill="${C.lamp}"/><polygon points="20,72 50,42 90,72" fill="${C.sky2}"/>`, 2) +
+      card(390, 120, 110, 120, A('readsAloud'), `<polygon points="30,30 44,30 60,18 60,66 44,54 30,54" fill="${C.sky2}"/><path class="wave" d="M70 30 Q80 42 70 54" stroke="${C.sky2}" stroke-width="4" fill="none"/>`, 3) +
+      card(510, 120, 110, 120, A('private'), `<rect x="35" y="36" width="40" height="32" rx="5" fill="${C.sky2}"/><path d="M42 36 V26 a13 13 0 0 1 26 0 V36" stroke="${C.sky2}" stroke-width="5" fill="none"/>`, 4) },
+  { d: 7.78, art: () => sky() +
+      `<path class="draw" d="M560 290 C470 230, 330 300, 220 280 S 120 200, 150 170" stroke="${C.lamp}" stroke-width="4" fill="none" stroke-dasharray="10 10"/>
+      ${hub(60, 120, .8)}${person(220, 300, C.lamp, 1)}${person(560, 300, C.green, 1, 'walkR')}
+      ${bubble(540, 170, A('onMyWay'), 150, C.paper, C.ink, 'float', at(2))}` },
+  { d: 9.38, art: () => sky() +
+      `<g class="in" style="${at(.3)}"><rect x="100" y="110" width="440" height="160" rx="16" fill="${C.paper}"/>${T(320, 165, A('support1'), 20, C.ink, 800, 410)}${T(320, 195, A('support2'), 20, C.ink, 800, 410)}
+      <rect x="185" y="215" width="270" height="38" rx="19" fill="${C.red}"/>${T(320, 240, A('call999'), 16, '#fff', 800, 250)}</g>` },
+  { d: 6.02, art: () => sky() +
+      `<rect x="150" y="90" width="340" height="215" fill="${C.mid}"/><rect class="glow" x="175" y="115" width="290" height="120" fill="${C.lamp}" opacity=".5"/>
+      ${person(270, 275, C.lamp, 1.1, 'in', at(.3))}${person(370, 275, C.green, 1.1, 'in', at(.8))}
+      <path class="pulse" d="M320 120 C300 95, 270 115, 320 150 C370 115, 340 95, 320 120 Z" fill="${C.red}"/>` },
+  { d: 7.25, art: () => sky() +
+      [80, 170, 260, 350, 440, 530].map((x, n) => person(x, 300, n % 2 ? C.green : C.lamp, .9, 'in', at(.3 + n * .45))).join('') +
+      `<g class="in" style="${at(3.4)}"><rect x="190" y="110" width="260" height="52" rx="26" fill="${C.lamp}"/>${T(320, 144, A('volunteer'), 22, C.ink, 900, 240)}</g>` },
+  { d: 4.3, art: () => sky() +
+      `<rect x="120" y="190" width="160" height="110" rx="8" fill="${C.lamp}"/><rect x="160" y="190" width="80" height="10" fill="${C.ink}"/>${T(200, 260, A('oldPhones'), 16, C.ink, 800, 150)}
+      <g class="drop" style="${at(.3)}"><rect x="178" y="90" width="44" height="78" rx="8" fill="${C.ink}" stroke="${C.paper}" stroke-width="2"/></g>
+      <g transform="translate(360 120)"><rect width="190" height="180" rx="6" fill="${C.blue}"/>${T(95, 40, A('hp'), 16, C.paper, 700, 176)}${battery(45, 70, 100, 1, C.green, 'fill', at(.8))}${T(95, 150, A('keptRunning'), 14, C.paper, 600, 176)}</g>` },
+  { d: 5.95, art: () => sky() +
+      `<g class="in" style="${at(.2)}">${T(320, 135, A('end1'), 30, C.paper, 900, 560)}${T(320, 175, A('end2'), 40, C.lamp, 900, 580)}</g>
+      ${[A('pill1'), A('pill2'), A('pill3')].map((s, n) => `<g class="in" style="${at(.9 + n * .5)}"><rect x="${70 + n * 170}" y="210" width="160" height="44" rx="22" fill="${C.paper}"/>${T(150 + n * 170, 238, s, 17, C.ink, 800, 146)}</g>`).join('')}
+      ${T(320, 290, A('footer'), 12, C.soft, 600, 600)}` }
+];
+
+// ---------- Page words ----------
+const $ = (id) => document.getElementById(id);
+document.title = ui('title');
+$('title').textContent = ui('title');
+$('home').textContent = '← ' + ui('home');
+$('home').href = '../index.html' + (LANG === 'en' ? '' : '?lang=' + LANG);
+$('langNav').setAttribute('aria-label', ui('language'));
+$('langNav').innerHTML = `<ul class="langs">${LANGS.map(l => l.code === LANG ? `<li><span aria-current="true" lang="${l.code}">${l.name}</span></li>` : `<li><a href="?lang=${l.code}" hreflang="${l.code}" lang="${l.code}">${l.name}</a></li>`).join('')}</ul>`;
+if (ui('draft')) { $('draft').hidden = false; $('draft').textContent = ui('draft'); }
+if (ui('voiceNote')) { $('voiceNote').hidden = false; $('voiceNote').textContent = ui('voiceNote'); }
+$('player').setAttribute('aria-label', ui('title'));
+$('startText').textContent = ui('start');
+$('startSound').textContent = ui('playSound');
+$('startQuiet').textContent = ui('playQuiet');
+$('prev').textContent = ui('back');
+$('next').textContent = ui('next');
+$('play').textContent = ui('play');
+$('note').textContent = ui('note');
+$('scriptTitle').textContent = ui('script');
+$('script').innerHTML = W.lines.map(l => `<li>${esc(l)}</li>`).join('');
+$('bar').setAttribute('aria-label', ui('scene'));
+$('bar').innerHTML = S.map((s, n) => `<button class="seg" type="button" aria-label="${esc(ui('scene'))} ${n + 1}"><span></span></button>`).join('');
+
+// ---------- The player ----------
+const GAP = 0.9; // seconds of quiet between scenes
+let i = 0, playing = false, sound = true, started = 0, elapsed = 0, begun = false;
+const audio = new Audio();
+// Long enough for Jamie's English line, and for reading a longer translated caption
+const total = (n) => (Math.max(S[n].d, W.lines[n].length / 15) + GAP) * 1000;
+const pad = (n) => String(n + 1).padStart(2, '0');
+
+function show() {
+  $('art').innerHTML = `<svg viewBox="0 0 640 360"><g class="scene">${S[i].art()}</g></svg>`;
+  const head = W.heads[i] || '';
+  $('headline').innerHTML = head.split(/(<b>.*?<\/b>|\s+)/).filter(w => w && w.trim()).map((w, n) => {
+    const hl = w.startsWith('<b>');
+    return `<span class="w${hl ? ' hl' : ''}" style="animation-delay:${(n * .12).toFixed(2)}s">${esc(hl ? w.slice(3, -4) : w)}</span> `;
+  }).join('');
+  $('subs').textContent = W.lines[i];
+  $('bar').querySelectorAll('.seg').forEach((b, n) => { b.querySelector('span').style.width = n < i ? '100%' : '0'; b.setAttribute('aria-current', n === i ? 'step' : 'false'); });
+}
+function speak() {
+  audio.pause();
+  if (!sound) return;
+  audio.src = 'en/' + pad(i) + '.m4a';
+  audio.currentTime = 0;
+  audio.play().catch(() => {});
+}
+function go(n) {
+  i = Math.max(0, Math.min(S.length - 1, n));
+  elapsed = 0; started = performance.now();
+  show();
+  if (playing) speak(); else audio.pause();
+}
+function ended() { return i === S.length - 1 && elapsed >= total(i) - 50; }
+function tick() {
+  if (!playing) return;
+  const t = elapsed + performance.now() - started;
+  $('bar').children[i].querySelector('span').style.width = Math.min(100, t / total(i) * 100) + '%';
+  if (t >= total(i)) { if (i < S.length - 1) go(i + 1); else setPlaying(false); }
+}
+setInterval(tick, 100);
+function setPlaying(p) {
+  if (p === playing) return;
+  if (p) {
+    if (ended()) { playing = true; go(0); $('play').textContent = ui('pause'); return; }
+    started = performance.now(); playing = true;
+    if (sound && audio.src && !audio.ended && audio.currentTime > 0) audio.play().catch(() => {}); else if (elapsed === 0) speak();
+  } else {
+    elapsed += performance.now() - started; playing = false; audio.pause();
+  }
+  $('play').textContent = playing ? ui('pause') : (ended() ? ui('again') : ui('play'));
+}
+function begin(withSound) {
+  if (begun) return;
+  begun = true;
+  setSound(withSound !== false);
+  $('start').remove();
+}
+function setSound(on) {
+  sound = on;
+  $('sound').textContent = on ? ui('soundOn') : ui('soundOff');
+  $('sound').setAttribute('aria-pressed', String(on));
+  if (!on) audio.pause(); else if (playing) speak();
+}
+function setCaptions(on) {
+  $('subs').hidden = !on;
+  $('cc').textContent = on ? ui('ccOn') : ui('ccOff');
+  $('cc').setAttribute('aria-pressed', String(on));
+}
+const startPlaying = () => { playing = true; $('play').textContent = ui('pause'); go(0); };
+$('startSound').addEventListener('click', () => { begin(true); startPlaying(); });
+$('startQuiet').addEventListener('click', () => { begin(false); startPlaying(); });
+$('play').addEventListener('click', () => { begin(); setPlaying(!playing); });
+$('prev').addEventListener('click', () => { begin(); go(i - 1); });
+$('next').addEventListener('click', () => { begin(); go(i + 1); });
+$('sound').addEventListener('click', () => setSound(!sound));
+$('cc').addEventListener('click', () => setCaptions($('subs').hidden));
+$('bar').querySelectorAll('.seg').forEach((b, n) => b.addEventListener('click', () => { begin(); go(n); }));
+document.addEventListener('keydown', (e) => {
+  if (e.target.closest?.('button, summary, a') && (e.key === ' ' || e.key === 'Enter')) return;
+  if (e.key === ' ') { e.preventDefault(); begin(); setPlaying(!playing); }
+  if (e.key === 'ArrowRight') { begin(); go(i + 1); }
+  if (e.key === 'ArrowLeft') { begin(); go(i - 1); }
+});
+setSound(true); setCaptions(true);
+show();
+</script>
+</body>
+</html>
