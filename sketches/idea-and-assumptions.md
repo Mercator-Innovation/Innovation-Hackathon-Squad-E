@@ -1,6 +1,6 @@
 # Ctrl-Alt-Elite: the idea and its assumptions
 
-Challenge 2: Help when it's needed. Agreed at the talk-through on 22 October. Live copy on the [Discovery Wall](https://claude.ai/artifact/EdSrtayVW9kkCYGkYuRZxn).
+Challenge 2: Help when it's needed. Agreed at the talk-through on 22 October. Live copy on the [Discovery Wall](https://claude.ai/artifact/5FGTjyre9Q3kxepJYxt5Kw).
 
 ## The idea
 
