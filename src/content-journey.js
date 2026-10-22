@@ -78,6 +78,15 @@ Object.assign(window.CONTENT, {
     ],
     behindTitle: "Behind it all",
     behindText: "Local charities share the night between them, on one rota, so someone is always on call. Anonymised totals show where more volunteers are needed. Nothing is ever about one person.",
+    runsTitle: "Who runs it (our assumption)",
+    runsText: "Local charities run the hubs and share one night rota. Local Alcohol and Drug Partnerships could fund it, as part of out-of-hours cover. Volunteers are checked, trained and supported. We haven't worked out the costs yet.",
+    testTitle: "What we'd test next",
+    testList: [
+      "With people who've used drugs or alcohol, through a partner charity: would they trust it, and use it at 2am?",
+      "Whether enough volunteers would sign up for nights, especially in rural areas",
+      "The text route on a basic phone with no data",
+      "The anonymising with a data protection expert, as health and substance use are special category data"
+    ],
     behindLinks: [
       { href: "worker.html#rota", label: "Tonight's rota" },
       { href: "coordinator.html", label: "Where help is needed" },
