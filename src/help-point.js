@@ -45,6 +45,6 @@ document.getElementById("check-in-form").addEventListener("submit", (event) => {
 
   if (!pin.value.trim()) status.textContent = t("helpPoint.pinEmpty");
   else if (!plan) status.textContent = t("helpPoint.pinWrong");
-  else status.textContent = t("helpPoint.checkedIn", { name: plan.name, tell: plan.tell });
+  else status.textContent = t("helpPoint.checkedIn");
   pin.value = "";
 });

@@ -91,7 +91,8 @@ window.CONTENT = {
     pinLabel: "Your 4-digit number",
     pinHint: "Prototype: try 1234.",
     checkIn: "Check in",
-    checkedIn: "Thanks, {name}. You're checked in. We've let {tell} know you're OK.",
+    // This shows on a public screen, so never show names here.
+    checkedIn: "Thanks, you're checked in. We've let the people you chose know you're OK.",
     pinWrong: "We don't recognise that number. Check it and try again, or press a button above.",
     pinEmpty: "Type your 4-digit number first."
   },
