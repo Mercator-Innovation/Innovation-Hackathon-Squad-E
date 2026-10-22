@@ -6,6 +6,7 @@
   <title>Night Neighbours (prototype)</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="journey.css">
 </head>
 <body>
   <!-- The banner ("Who is this for?" and languages) is added by app.js, the same on every page -->
@@ -17,14 +18,29 @@
     <p data-text="home.intro"></p>
     <p class="note" data-text="service.prototypeNote"></p>
 
-    <!-- The core journey -->
-    <p><a class="card journey-link" href="journey.html"><strong data-text="journey.homeLink"></strong></a></p>
-
-    <!-- Daniel's video: no phone, no problem (follows the language switch) -->
+    <!-- Daniel's video: no phone, no problem. home.js passes the page's language to it. -->
     <section class="explainer-embed" aria-labelledby="explainer-heading">
       <h2 id="explainer-heading" data-text="home.explainer"></h2>
-      <iframe id="explainer" src="no-phone-video/?embed=1" title="Night Neighbours: no phone, no problem. A video with a voiceover and captions"></iframe>
-      <p><a href="no-phone-video/" data-text="home.explainerFull"></a></p>
+      <iframe id="explainer" data-src="no-phone-video/?embed=1" title="Night Neighbours: no phone, no problem. A video with a voiceover and captions"></iframe>
+      <p><a id="explainer-full" href="no-phone-video/" data-text="home.explainerFull"></a></p>
+    </section>
+
+    <!-- How it works: the core journey in 5 steps, hidden until the button opens it.
+         Words are in content-journey.js; journey.js draws the steps. -->
+    <section class="how-it-works" aria-labelledby="how-button">
+      <h2 class="how-heading">
+        <button type="button" id="how-button" class="how-button" aria-expanded="false" aria-controls="how-panel" data-text="journey.homeLink"></button>
+      </h2>
+      <div id="how-panel" class="how-panel" hidden>
+        <p data-text="journey.intro"></p>
+        <p class="no-details" data-text="journey.noDetails"></p>
+        <ol class="steps" id="steps"></ol>
+        <section class="behind" aria-labelledby="behind-title">
+          <h3 id="behind-title" data-text="journey.behindTitle"></h3>
+          <p data-text="journey.behindText"></p>
+          <p class="see-links" id="behind-links"></p>
+        </section>
+      </div>
     </section>
 
     <p class="emergency" data-text="safety.emergency"></p>
@@ -37,6 +53,7 @@
   <script src="translations.js"></script>
   <script src="app.js"></script>
   <script src="audiences.js"></script>
+  <script src="journey.js"></script>
   <script src="home.js"></script>
 </body>
 </html>

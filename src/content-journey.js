@@ -1,4 +1,4 @@
-// Words for "How it works" (journey.html): the core journey in five steps.
+// Words for "How it works" on the home page: the core journey in five steps.
 // Kept in their own file so they don't clash with content.js. Load it after content.js.
 Object.assign(window.CONTENT, {
   journey: {
