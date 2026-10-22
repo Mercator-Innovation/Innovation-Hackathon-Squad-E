@@ -1,0 +1,287 @@
+<title>Night Support Persona Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Patrick+Hand&display=swap">
+<style>
+/* Layout: a research wall. Header, then four lanes of sticky notes, then the persona card the notes feed into. */
+:root {
+  --wall: #e9edf1;
+  --ink: #1d2733;
+  --muted: #4f5d6c;
+  --line: #c6cfd8;
+  --panel: #f7f9fb;
+  --accent: #1f5f8b;
+  --focus: #c2410c;
+  --note-know: #fdeb8f;
+  --note-assume: #bfdcf5;
+  --note-ask: #f8c8d6;
+  --note-persona: #c9ecc4;
+  --note-ink: #1d2733;
+  --danger: #a3202f;
+  --ui: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand: "Patrick Hand", "Comic Sans MS", "Chalkboard SE", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --wall: #151b22; --ink: #e5ebf1; --muted: #a8b5c2; --line: #2e3a47; --panel: #1c242d;
+    --accent: #7cb8e4; --focus: #fb923c;
+    --note-know: #e9d46e; --note-assume: #a5c9e8; --note-ask: #eab3c4; --note-persona: #b1dcab;
+    --danger: #ff8a96; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --wall: #151b22; --ink: #e5ebf1; --muted: #a8b5c2; --line: #2e3a47; --panel: #1c242d;
+  --accent: #7cb8e4; --focus: #fb923c;
+  --note-know: #e9d46e; --note-assume: #a5c9e8; --note-ask: #eab3c4; --note-persona: #b1dcab;
+  --danger: #ff8a96; color-scheme: dark;
+}
+body { background: var(--wall); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-block: 28px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+header { display: grid; gap: 6px; }
+.eyebrow { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+h1 { font-size: clamp(26px, 4vw, 36px); line-height: 1.15; margin: 0; text-wrap: balance; }
+h2 { font-size: 20px; margin: 0; text-wrap: balance; }
+.lede { margin: 0; max-width: 65ch; color: var(--muted); }
+.rule { margin: 0; font-size: 14px; color: var(--muted); }
+.rule strong { color: var(--ink); }
+.status { font-size: 14px; color: var(--muted); min-height: 1.5em; margin: 0; }
+
+.lanes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: start; }
+@media (max-width: 1000px) { .lanes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .lanes { grid-template-columns: minmax(0, 1fr); } }
+.lane { display: grid; gap: 12px; min-width: 0; padding: 14px; border: 1px dashed var(--line); border-radius: 6px; }
+.lane-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.lane-head p { margin: 2px 0 0; font-size: 14px; color: var(--muted); }
+.count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; border: 1px solid rgba(0,0,0,.2); }
+.notes { display: grid; gap: 10px; }
+.empty { font-size: 14px; color: var(--muted); margin: 0; }
+
+.note { position: relative; padding: 12px 12px 10px; color: var(--note-ink); border-radius: 2px; box-shadow: 0 1px 0 rgba(0,0,0,.08), 0 4px 10px -4px rgba(0,0,0,.25); display: grid; gap: 6px; min-width: 0; }
+.note:nth-child(odd) { transform: rotate(-.6deg); }
+.note:nth-child(even) { transform: rotate(.5deg); }
+@media (prefers-reduced-motion: reduce) { .note { transform: none !important; } }
+.note[data-lane="know"] { background: var(--note-know); }
+.note[data-lane="assume"] { background: var(--note-assume); }
+.note[data-lane="ask"] { background: var(--note-ask); }
+.note[data-lane="persona"] { background: var(--note-persona); }
+.note-text { font-family: var(--hand); font-size: 20px; line-height: 1.25; margin: 0; overflow-wrap: anywhere; padding-right: 22px; }
+.note-meta { font-size: 12px; display: flex; flex-wrap: wrap; gap: 4px 10px; color: #3a4654; }
+.note-meta a { color: #123f63; }
+.del { position: absolute; top: 4px; right: 4px; width: 28px; height: 28px; border: 0; background: transparent; color: #3a4654; font-size: 18px; line-height: 1; cursor: pointer; border-radius: 4px; }
+.del:hover { background: rgba(0,0,0,.08); }
+.confirm { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+.confirm button { font: inherit; font-size: 13px; padding: 2px 8px; border-radius: 4px; border: 1px solid #3a4654; background: transparent; color: var(--note-ink); cursor: pointer; }
+.confirm .yes { background: #a3202f; color: #fff; border-color: #a3202f; }
+
+form.add { display: grid; gap: 6px; }
+label { font-size: 13px; font-weight: 700; }
+textarea, input[type="text"], input[type="url"] { font: inherit; font-size: 15px; width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--ink); }
+textarea { resize: vertical; min-height: 64px; }
+.btn { font: inherit; font-weight: 700; font-size: 15px; padding: 8px 14px; border-radius: 4px; border: 1px solid var(--accent); background: var(--accent); color: var(--wall); cursor: pointer; justify-self: start; }
+.btn:disabled { opacity: .5; cursor: default; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.persona { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; gap: 16px; }
+.persona-head { display: grid; gap: 4px; }
+.persona-head p { margin: 0; color: var(--muted); font-size: 14px; max-width: 65ch; }
+.fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.fields .wide { grid-column: 1 / -1; }
+.fields .half { grid-column: span 3; }
+@media (min-width: 761px) { .fields .half { grid-column: span 1; } .fields .two { grid-column: span 2; } }
+@media (max-width: 760px) { .fields { grid-template-columns: minmax(0, 1fr); } .fields .two { grid-column: 1 / -1; } }
+.field { display: grid; gap: 4px; min-width: 0; }
+.hint { font-size: 13px; color: var(--muted); font-weight: 400; }
+.persona-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+footer { font-size: 13px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Ctrl-Alt-Elite · Challenge 2: Help when it's needed</span>
+    <h1>Night Support Persona Board</h1>
+    <p class="lede">Put what we know on the wall, mark what we're only assuming, and list what we still need to find out. Then pull it together into one person we're designing for.</p>
+    <p class="rule"><strong>Ground rules:</strong> no real personal data. The persona is a made-up person. Use person-first language, for example "a person who uses drugs".</p>
+    <p class="status" id="status" role="status">Connecting to the board…</p>
+  </header>
+
+  <section class="lanes" aria-label="Sticky notes">
+    <!-- lanes rendered by script -->
+  </section>
+
+  <section class="persona" aria-labelledby="persona-title">
+    <div class="persona-head">
+      <h2 id="persona-title">Our persona</h2>
+      <p>A made-up person, built from the notes above. Anyone in the squad can edit it. Save when you're done.</p>
+    </div>
+    <form id="persona-form" class="fields">
+      <div class="field half"><label for="p-name">Name</label><input type="text" id="p-name" name="name" autocomplete="off"></div>
+      <div class="field half"><label for="p-age">Age</label><input type="text" id="p-age" name="age" autocomplete="off"></div>
+      <div class="field half"><label for="p-place">Where they live</label><input type="text" id="p-place" name="place" autocomplete="off"></div>
+      <div class="field wide"><label for="p-situation">Their situation <span class="hint">Who they are, who's around them</span></label><textarea id="p-situation" name="situation"></textarea></div>
+      <div class="field wide"><label for="p-moment">The moment they need help <span class="hint">When, where, what's happening</span></label><textarea id="p-moment" name="moment"></textarea></div>
+      <div class="field half"><label for="p-needs">What they need</label><textarea id="p-needs" name="needs"></textarea></div>
+      <div class="field two"><label for="p-barriers">What gets in the way</label><textarea id="p-barriers" name="barriers"></textarea></div>
+      <div class="field wide"><label for="p-quote">In their words <span class="hint">An imagined quote, not a real person's</span></label><input type="text" id="p-quote" name="quote" autocomplete="off"></div>
+      <div class="persona-actions wide">
+        <button class="btn" type="submit" id="p-save">Save persona</button>
+        <span class="status" id="p-status" role="status"></span>
+      </div>
+    </form>
+  </section>
+
+  <footer>Figures on the yellow notes come from National Records of Scotland reports. Check the source link before quoting them.</footer>
+</div>
+
+<script>
+const LANES = [
+  { id: "know",    title: "What we know",            help: "Facts with a source", placeholder: "A fact we found" },
+  { id: "assume",  title: "What we're assuming",     help: "Our guesses, to test", placeholder: "Something we think is true" },
+  { id: "ask",     title: "What we need to find out", help: "Questions to research", placeholder: "A question to look into" },
+  { id: "persona", title: "Persona ideas",           help: "Details for our person", placeholder: "A detail about our person" },
+];
+const $ = (s, el = document) => el.querySelector(s);
+const statusEl = $("#status");
+const lanesEl = $(".lanes");
+let db = null, user = null, notes = [];
+
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v);
+  }
+  for (const k of kids) if (k != null) n.append(k);
+  return n;
+}
+
+function buildLanes() {
+  for (const lane of LANES) {
+    const form = el("form", { class: "add", "data-lane": lane.id });
+    const tid = "t-" + lane.id, sid = "s-" + lane.id;
+    form.append(
+      el("label", { for: tid }, "Add a note"),
+      el("textarea", { id: tid, name: "text", placeholder: lane.placeholder, required: "" }),
+      lane.id === "know" ? el("label", { for: sid }, "Source link (optional)") : null,
+      lane.id === "know" ? el("input", { type: "url", id: sid, name: "source", placeholder: "https://" }) : null,
+      el("button", { class: "btn", type: "submit" }, "Add note"),
+    );
+    form.addEventListener("submit", onAdd);
+    const section = el("section", { class: "lane", "aria-labelledby": "h-" + lane.id },
+      el("div", { class: "lane-head" },
+        el("div", {},
+          el("h2", { id: "h-" + lane.id }, el("span", { class: "chip", style: `background: var(--note-${lane.id})` }), lane.title),
+          el("p", {}, lane.help)),
+        el("span", { class: "count", id: "c-" + lane.id }, "")),
+      el("div", { class: "notes", id: "n-" + lane.id },
+        el("p", { class: "empty" }, "Notes appear here once the board connects.")),
+      form);
+    lanesEl.append(section);
+  }
+}
+
+async function render() {
+  const ids = [...new Set(notes.map(n => n.data().by).filter(Boolean))];
+  let profiles = {};
+  if (user && ids.length) { try { profiles = await user.profiles(ids); } catch {} }
+  for (const lane of LANES) {
+    const box = $("#n-" + lane.id);
+    const mine = notes.filter(n => n.data().lane === lane.id);
+    $("#c-" + lane.id).textContent = mine.length === 1 ? "1 note" : mine.length + " notes";
+    box.replaceChildren();
+    if (!mine.length) { box.append(el("p", { class: "empty" }, "No notes yet. Add the first one below.")); continue; }
+    for (const snap of mine) {
+      const d = snap.data();
+      const meta = el("div", { class: "note-meta" });
+      if (d.source) {
+        let host = d.source; try { host = new URL(d.source).hostname.replace(/^www\./, ""); } catch {}
+        meta.append(el("a", { href: d.source, target: "_blank", rel: "noopener" }, "Source: " + host));
+      }
+      const who = d.by ? (profiles[d.by]?.name || "Someone") : (d.byLabel || "");
+      if (who) meta.append(el("span", {}, "Added by " + who));
+      const note = el("article", { class: "note", "data-lane": lane.id });
+      const text = el("p", { class: "note-text" }); text.textContent = d.text || "";
+      const del = el("button", { class: "del", type: "button", "aria-label": "Remove this note" }, "×");
+      del.addEventListener("click", () => askDelete(note, snap.id));
+      note.append(text, meta, del);
+      box.append(note);
+    }
+  }
+}
+
+function askDelete(note, id) {
+  if ($(".confirm", note)) return;
+  const bar = el("div", { class: "confirm" }, "Remove this note?");
+  const yes = el("button", { class: "yes", type: "button" }, "Remove");
+  const no = el("button", { type: "button" }, "Keep");
+  yes.addEventListener("click", async () => {
+    yes.disabled = true;
+    try { await db.collection("notes").doc(id).delete(); }
+    catch (e) { bar.textContent = "Couldn't remove it: " + (e?.message || "try again"); }
+  });
+  no.addEventListener("click", () => bar.remove());
+  bar.append(yes, no);
+  note.append(bar);
+  yes.focus();
+}
+
+async function onAdd(ev) {
+  ev.preventDefault();
+  const form = ev.currentTarget;
+  if (!db) { statusEl.textContent = "The board isn't connected, so notes can't be saved right now."; return; }
+  const text = form.text.value.trim();
+  if (!text) return;
+  const btn = $("button[type=submit]", form);
+  btn.disabled = true;
+  try {
+    const by = user ? await user.id() : null;
+    await db.collection("notes").add({
+      lane: form.dataset.lane, text,
+      source: form.source ? form.source.value.trim() : "",
+      by: by || "", createdAt: Date.now(),
+    });
+    form.reset();
+  } catch (e) {
+    statusEl.textContent = "Couldn't add the note: " + (e?.message || "you may only have view access");
+  } finally { btn.disabled = false; }
+}
+
+const pForm = $("#persona-form");
+const pStatus = $("#p-status");
+const P_FIELDS = ["name", "age", "place", "situation", "moment", "needs", "barriers", "quote"];
+let personaDirty = false;
+pForm.addEventListener("input", () => { personaDirty = true; pStatus.textContent = "Unsaved changes"; });
+pForm.addEventListener("submit", async ev => {
+  ev.preventDefault();
+  if (!db) { pStatus.textContent = "The board isn't connected, so the persona can't be saved right now."; return; }
+  const body = {};
+  for (const f of P_FIELDS) body[f] = pForm.elements[f].value.trim();
+  body.updatedAt = Date.now();
+  $("#p-save").disabled = true;
+  try { await db.doc("persona/draft").set(body); personaDirty = false; pStatus.textContent = "Saved"; }
+  catch (e) { pStatus.textContent = "Couldn't save: " + (e?.message || "try again"); }
+  finally { $("#p-save").disabled = false; }
+});
+
+buildLanes();
+(async () => {
+  try {
+    [db, user] = await Promise.all([window.claude?.use("db"), window.claude?.use("user")]);
+  } catch {}
+  if (!db) {
+    statusEl.textContent = "Sign in to claude.ai to see and add notes.";
+    for (const lane of LANES) $("#n-" + lane.id).replaceChildren(el("p", { class: "empty" }, "Notes appear here when you're signed in."));
+    return;
+  }
+  statusEl.textContent = "";
+  db.collection("notes").orderBy("createdAt").onSnapshot(
+    snap => { notes = snap.docs; render(); },
+    e => { statusEl.textContent = "Lost connection to the board. Reload the page to reconnect."; });
+  db.doc("persona/draft").onSnapshot(snap => {
+    if (personaDirty) return;
+    const d = snap.exists ? snap.data() : {};
+    for (const f of P_FIELDS) pForm.elements[f].value = d[f] || "";
+  }, () => {});
+})();
+</script>
