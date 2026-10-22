@@ -293,6 +293,7 @@ window.CONTENT = {
     summary: "Across these areas: {total} requests in 4 weeks, and {flagged} areas need more volunteers. {textShare}% of people asked by text, so the text service matters most.",
     tableCaption: "Requests and volunteers by area, last 4 weeks",
     sortNote: "Areas with the most requests per volunteer are at the top.",
+    pipelineLink: "How these numbers are made, without anyone's details",
     colArea: "Area",
     colRequests: "Requests",
     colVolunteers: "Volunteers",
