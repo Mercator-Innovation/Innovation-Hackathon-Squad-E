@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ask by text: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="text.title"></h1>
+    <p data-text="text.intro"></p>
+    <p class="note" data-text="text.demoNote"></p>
+
+    <!-- A basic phone: no app, no data, low battery -->
+    <section class="phone" aria-labelledby="phone-title">
+      <div class="phone-bar" aria-hidden="true">
+        <span>▂▃ <span data-text="text.signal"></span></span>
+        <span data-text="text.noData"></span>
+        <span>▭ 8%</span>
+      </div>
+      <h2 class="phone-title" id="phone-title" data-text="text.thread"></h2>
+      <ol class="thread" id="thread" aria-live="polite"></ol>
+
+      <form id="send-form" class="phone-send" autocomplete="off">
+        <label for="message" data-text="text.messageLabel"></label>
+        <div class="phone-row">
+          <input id="message" maxlength="160" spellcheck="false">
+          <button type="submit" data-text="text.send"></button>
+        </div>
+      </form>
+    </section>
+
+    <h2 data-text="text.tryTitle"></h2>
+    <label for="town" data-text="text.townLabel"></label>
+    <select id="town"></select>
+    <div class="actions" id="quick"></div>
+
+    <div class="card">
+      <h3 data-text="codes.title"></h3>
+      <p data-text="codes.intro"></p>
+      <ul class="checklist" id="code-list"></ul>
+    </div>
+
+    <p class="emergency" data-text="safety.emergency"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="data/hubs.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="app.js"></script>
+  <script src="text.js"></script>
+</body>
+</html>

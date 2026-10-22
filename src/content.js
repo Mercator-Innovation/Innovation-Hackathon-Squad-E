@@ -18,6 +18,8 @@ window.CONTENT = {
     helpHint: "Ask by app or by text. No data needed.",
     volunteer: "I'm a volunteer",
     volunteerHint: "See requests near you tonight.",
+    text: "Ask by text, on any phone",
+    textHint: "No app, no data, low battery? Try it here.",
     helpPoint: "See a help point",
     helpPointHint: "The screen at a community help point, for anyone without a phone.",
     coordinator: "I plan local support",
@@ -34,6 +36,38 @@ window.CONTENT = {
       { code: "BED", means: "I need somewhere to stay tonight" },
       { code: "OK", means: "I'm alright now, thanks" }
     ]
+  },
+
+  // Ask by text: for people with a basic phone, no data or low battery.
+  // Replies never say "drugs" or "overdose", in case someone else sees the phone, and each fits in one text.
+  text: {
+    title: "Ask by text, on any phone",
+    intro: "No app and no data. It works on an old phone with a low battery. Text a word and your town.",
+    demoNote: "Try it below. Nothing is really sent, and the number, names and places are made up.",
+    signal: "Weak signal",
+    noData: "No data",
+    thread: "Messages with 60000",
+    messageLabel: "Type a text",
+    send: "Send",
+    tryTitle: "Try a code",
+    townLabel: "Pretend you're near",
+    youSent: "You sent:",
+    theySent: "Night Neighbours sent:",
+    size: "{n} of 160 characters: 1 text",
+    replies: {
+      welcome: "Night Neighbours: text TALK, COME, BED or OK and your town, like TALK ANNAN. Free, day or night. In danger? Call 999.",
+      whichTown: "Thanks. Which town are you near? Text the word again with your town, like TALK ANNAN.",
+      talk: "Thanks for texting. {name}, a volunteer, will ring you in the next 10 mins. Can't talk? Reply TXT and {name} will text instead.",
+      txt: "OK. {name} will text you instead. Reply OK when you're alright.",
+      come: "Got it. {name} is on the way to you in {town}. Reply with where you are, like a street or shop. In danger? Call 999.",
+      where: "Thanks. {name} will meet you there soon. Stay where it's lit if you can. Reply OK if you're alright now.",
+      bed: "Open tonight: {hub}, {town}, till {closes}. Tea and a warm seat. Reply COME and a volunteer can walk there with you.",
+      noHub: "Sorry, nothing's open near you tonight. Reply TALK and someone will ring you. In danger? Call 999.",
+      noVolunteer: "Sorry, no volunteer is free near you right now. The out-of-hours support worker will text you soon. In danger? Call 999.",
+      ok: "Glad you're OK. We've let anyone you chose know. Text TALK, COME or BED any time, day or night.",
+      stop: "You won't get any more texts from us. Text TALK any time to start again.",
+      unknown: "Sorry, we didn't get that. Text TALK, COME, BED or OK and your town, like TALK ANNAN."
+    }
   },
 
   helpPoint: {
