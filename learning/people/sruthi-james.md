@@ -35,6 +35,7 @@ ai_use_week_after:
 - Prompt that worked: "give me an idea what do we when there is no phone", then "give me ideads" for a second round. I picked two: volunteers walking a regular route past help points, and a missed check-in that alerts Karen. Saved in `sketches/no-phone-ideas.md`.
 - Outside my usual job: built my ideas into the prototype myself (help point check-in, family screen, volunteer walk, coordinator gaps). Prompt: "take mine and daniel and recent ideas and built".
 - Research in my own role, at speed: walked through the prototype as Jamie and found 7 confusing things, the biggest being that texting "help" didn't work. Saved in `sketches/test-as-jamie.md`.
+- 18:17 in my words: "bring all the minds and displaces together. bringing each other back to the route of the problem. and what we can do with quick itartive mindset and access to quick research but also access to the data. able to built the personas but also asked claude to check if we missed anything"
 
 ## At 19:00
 - What I worked on: <answers>
