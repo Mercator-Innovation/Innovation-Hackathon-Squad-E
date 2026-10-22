@@ -23,7 +23,7 @@
 ## 1:30 to 2:00 · One surprise from the tooling (Sruthi)
 
 - "None of us are developers. I'm a user researcher. This afternoon my research became personas, sample data and working screens, just by describing them to Claude."
-- "Five of us built 17 pages in three and a half hours, and our ideas merged into one. We could all do far more than our job titles."
+- "Five of us built 19 pages in three and a half hours, and our ideas merged into one. We could all do far more than our job titles."
 
 ---
 
