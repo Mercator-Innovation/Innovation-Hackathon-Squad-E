@@ -203,3 +203,82 @@ input.pin {
 }
 .walk li span { flex: 1 1 14rem; min-width: 0; }
 .walk button[aria-pressed="true"] { background: var(--lamp); border-color: var(--lamp); color: var(--ink); }
+
+/* Get the word out: wallet card */
+.wallet-cards { display: flex; flex-wrap: wrap; gap: 1rem; }
+.wallet {
+  margin: 0;
+  width: 100%;
+  max-width: 21rem;
+  aspect-ratio: 85.6 / 54;      /* a real bank card */
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  display: flex; flex-direction: column; justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+.wallet p { margin: 0; }
+.wallet.front { background: var(--night); color: #fff; }
+.wallet.back { background: var(--card); color: var(--ink); border: 2px solid var(--line); font-size: 0.85rem; }
+.wallet-name { font-weight: 800; font-size: 1.25rem; }
+.wallet-tagline { font-size: 0.9rem; }
+.wallet-text { font-size: 0.95rem; }
+.wallet-number { display: inline-block; background: var(--lamp); color: var(--ink); border-radius: 6px; padding: 0 0.4rem; font-size: 1.2rem; }
+.wallet-small { font-size: 0.78rem; }
+.wallet-codes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 0.5rem; font-size: 0.78rem; }
+.wallet-line { display: flex; gap: 0.4rem; font-size: 0.78rem; }
+.blank { flex: 1; border-bottom: 1px solid var(--muted); }
+.wallet-999 { font-weight: 700; color: var(--alert-ink); font-size: 0.8rem; }
+
+/* Get the word out: poster */
+.tear-poster {
+  margin: 0;
+  background: var(--night);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem 0;
+  overflow: hidden;
+}
+.tear-poster p { margin: 0 0 0.75rem; }
+.poster-name { font-weight: 700; color: var(--lamp); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem; }
+.poster-headline { font-size: 2rem; font-weight: 800; line-height: 1.1; }
+.poster-text { font-size: 1.25rem; }
+.poster-text strong { background: var(--lamp); color: var(--ink); border-radius: 6px; padding: 0 0.5rem; font-size: 1.6rem; }
+.poster-small { font-size: 0.95rem; }
+.poster-family { border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 0.75rem; }
+.poster-999 { background: var(--alert-bg); color: var(--alert-ink); border-radius: 4px; padding: 0.5rem 0.75rem; font-weight: 600; font-size: 0.9rem; }
+.tear-offs {
+  list-style: none; margin: 0 -1.25rem; padding: 0;
+  display: flex; overflow-x: auto;
+  background: var(--card); border-top: 2px dashed var(--muted);
+}
+.tear-offs li {
+  flex: 0 0 2.6rem; height: 9rem;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  color: var(--ink); font-size: 0.75rem; font-weight: 600;
+  padding: 0.5rem 0.4rem; border-left: 2px dashed var(--muted);
+}
+
+/* Get the word out: where they go */
+.where dt { font-weight: 700; color: var(--night); margin-top: 0.75rem; }
+.where dd { margin: 0.2rem 0 0; }
+
+/* Spreading the word: example posters, beer mats and posts */
+.big-line { font-size: 1.6rem; font-weight: 700; color: var(--night); margin: 0.25rem 0; }
+.materials { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.material { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+.material figcaption { font-size: 0.9rem; color: var(--muted); }
+.poster { background: var(--night); color: #fff; border-radius: var(--radius); padding: 1.25rem; aspect-ratio: 3 / 4; max-width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+.poster p { margin: 0; }
+.poster-head { font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+.poster-cta { background: var(--lamp); color: var(--ink); font-weight: 700; padding: 0.6rem 0.75rem; border-radius: 6px; }
+.mats { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.mat { width: 9rem; height: 9rem; border-radius: 50%; background: var(--lamp); color: var(--ink); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; font-weight: 700; font-size: 0.95rem; }
+.mat-back { background: var(--card); border: 2px solid var(--night); font-weight: 600; font-size: 0.85rem; }
+.mat p, .handout p { margin: 0; }
+.fb-post { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; }
+.fb-post p { margin: 0.25rem 0; }
+.fb-name { font-weight: 700; color: var(--night); }
+.script { margin: 0; background: var(--card); border-left: 6px solid var(--lamp); padding: 1rem; font-style: italic; border-radius: 4px; }
+.handout { flex: 1 1 8rem; min-height: 6rem; border-radius: 6px; background: var(--night); color: #fff; padding: 0.75rem; font-weight: 700; display: flex; align-items: center; }
+.handout-back { background: var(--card); color: var(--ink); border: 2px solid var(--line); font-weight: 400; }
+#partners button[aria-pressed="true"] { border-color: var(--night); background: #eef1f6; font-weight: 700; }

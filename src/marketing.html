@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spreading the word: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="marketing.title"></h1>
+    <p data-text="marketing.intro"></p>
+    <p class="note" data-text="marketing.madeUp"></p>
+
+    <h2 data-text="marketing.messageTitle"></h2>
+    <p class="big-line" data-text="marketing.message"></p>
+    <p data-text="marketing.messageWhy"></p>
+
+    <h2 data-text="marketing.examplesTitle"></h2>
+    <div class="materials">
+      <figure class="material">
+        <div class="poster">
+          <p class="poster-head" data-text="marketing.poster.head"></p>
+          <p data-text="marketing.poster.body"></p>
+          <p class="poster-cta" data-text="marketing.poster.cta"></p>
+        </div>
+        <figcaption data-text="marketing.poster.label"></figcaption>
+      </figure>
+
+      <figure class="material">
+        <div class="mats">
+          <div class="mat"><p data-text="marketing.mat.front"></p></div>
+          <div class="mat mat-back"><p data-text="marketing.mat.back"></p></div>
+        </div>
+        <figcaption data-text="marketing.mat.label"></figcaption>
+      </figure>
+
+      <figure class="material">
+        <div class="fb-post">
+          <p class="fb-name" data-text="marketing.post.name"></p>
+          <p data-text="marketing.post.body"></p>
+        </div>
+        <figcaption data-text="marketing.post.label"></figcaption>
+      </figure>
+
+      <figure class="material">
+        <blockquote class="script" data-text="marketing.radio.script"></blockquote>
+        <figcaption data-text="marketing.radio.label"></figcaption>
+      </figure>
+
+      <figure class="material">
+        <div class="mats">
+          <div class="handout"><p data-text="marketing.card.front"></p></div>
+          <div class="handout handout-back"><p data-text="marketing.card.back"></p></div>
+        </div>
+        <figcaption data-text="marketing.card.label"></figcaption>
+      </figure>
+    </div>
+
+    <h2 data-text="marketing.whereTitle"></h2>
+    <p data-text="marketing.whereIntro"></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th scope="col" data-text="marketing.colPlace"></th>
+          <th scope="col" data-text="marketing.colWhy"></th>
+          <th scope="col" data-text="marketing.colFirst"></th>
+        </tr></thead>
+        <tbody id="places"></tbody>
+      </table>
+    </div>
+
+    <h2 data-text="marketing.partnerTitle"></h2>
+    <p data-text="marketing.partnerQuestion"></p>
+    <div class="choices" id="partners"></div>
+    <div class="card" id="partner-pitch" hidden aria-live="polite">
+      <h3 data-text="marketing.askLabel"></h3>
+      <p id="partner-ask"></p>
+      <h3 data-text="marketing.gainLabel"></h3>
+      <p id="partner-gain"></p>
+    </div>
+
+    <h2 data-text="marketing.rulesTitle"></h2>
+    <ul class="checklist" id="rules"></ul>
+
+    <p class="emergency" data-text="safety.emergency"></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+  <script src="marketing.js"></script>
+</body>
+</html>
