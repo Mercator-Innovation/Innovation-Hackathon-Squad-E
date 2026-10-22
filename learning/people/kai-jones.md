@@ -29,7 +29,7 @@ ai_use_week_after:
 
 ## During
 <!-- Claude adds one line per moment: prompts that worked (word for word), dead ends, surprises, things done outside my usual job, what made working as a squad easier or harder -->
-- 18:29, what made it harder: the time pressure was a major stress, as was not knowing enough about what Claude can do.
+- 18:30: this is a fun challenge, combining disciplines.
 
 ## At 19:00
 - What I worked on: <answers>
