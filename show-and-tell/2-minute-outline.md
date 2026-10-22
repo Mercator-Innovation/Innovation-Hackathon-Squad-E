@@ -1,7 +1,7 @@
 # Ctrl-Alt-Elite: 2-minute show and tell
 
 **Challenge 2: Help when it's needed.** Our prototype is **Night Neighbours**.
-Presenters: Sruthi, plus _(add names)_. Suggested split: one person per section.
+Presenters: Sruthi and Kai. Suggested split: one person per section.
 
 Before you start, tell Claude `get the latest and make it run for me`, and have these open in tabs: **Ask by text**, **See a help point**, **Someone I care about**.
 

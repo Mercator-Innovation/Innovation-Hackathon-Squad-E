@@ -35,11 +35,11 @@ The **squad lead** runs the squad's setup before the day: agreeing the two roles
 
 <!-- At the look together, the squad uses the prototype as the person it's helping. The product owner's session writes one short line for each, then what the squad will do next, and shares it. -->
 
-**What's working:** _(at 17:15)_
-**What's confusing:** _(at 17:15)_
-**What's missing:** _(at 17:15)_
-**What we'll do next:** _(the product owner's call)_
-**Presenting at show and tell:** _(chosen at 17:15)_
+**What's working:** Choosing by who you are leads everyone to the right pages; 999 is there on every screen but calm; the help point works by keyboard; the hub says what to do after it closes; the privacy reassurance sits right where people ask for help.
+**What's confusing:** On a phone the home page is all choices, and "Me" is vague when you're low at 11pm. (Asking for "someone to come" used to get "Sam will text you": Sruthi fixed it.)
+**What's missing:** Karen can't ask for a check if Jamie has no plan; we offer Welsh, but Scots, Polish, Ukrainian, Arabic or easy read may reach more people in Scotland; none of our assumptions has been checked with real evidence or real people yet. (Jamie's plan, the volunteer's details and HELP in the code lists were missing: Sruthi fixed them.)
+**What we'll do next:** HELP at the top of the code lists, now done by Sruthi along with three other fixes from the test pilot. Then: share everything by 18:40, and test with real people after today.
+**Presenting at show and tell:** Sruthi James and Kai Jones.
 
 ## Links
 
