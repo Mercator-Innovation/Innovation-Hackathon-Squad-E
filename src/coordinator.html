@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Where help is needed: Night Neighbours (prototype)</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="coordinator.css">
 </head>
 <body>
   <header class="top"><a href="index.html" data-text="service.name"></a></header>
@@ -12,7 +13,9 @@
     <h1 data-text="coordinator.title"></h1>
     <p data-text="coordinator.intro"></p>
     <p class="note" data-text="coordinator.madeUp"></p>
+    <p class="summary" id="summary"></p>
 
+    <p class="note" data-text="coordinator.sortNote"></p>
     <div class="table-wrap">
       <table>
         <caption data-text="coordinator.tableCaption"></caption>
@@ -34,6 +37,9 @@
     <label for="area" data-text="coordinator.areaLabel"></label>
     <select id="area"></select>
     <div id="times" aria-live="polite"></div>
+
+    <h3 data-text="coordinator.routesTitle"></h3>
+    <div id="routes" aria-live="polite"></div>
 
     <h2 data-text="coordinator.gapsTitle"></h2>
     <p data-text="coordinator.gapsIntro"></p>
