@@ -1,5 +1,5 @@
 // The person asking for help: what they need, where they are, who to tell.
-const choice = { need: null, town: null, tell: [] };
+const choice = { need: null, town: null, contact: "volunteer", tell: [] };
 
 const townSelect = document.getElementById("town");
 const locationNote = document.getElementById("location-note");
@@ -41,7 +41,8 @@ document.getElementById("where-next").addEventListener("click", () => {
 // Step 3
 document.getElementById("who-form").addEventListener("submit", (event) => {
   event.preventDefault();
-  choice.tell = [...document.querySelectorAll('input[name="tell"]:checked')].map((box) => box.value);
+  choice.contact = document.querySelector('input[name="contact"]:checked').value;
+  choice.tell =[...document.querySelectorAll('input[name="tell"]:checked')].map((box) => box.value);
   showResult();
 });
 
@@ -52,7 +53,7 @@ document.querySelectorAll("[data-go]").forEach((button) => {
 
 // Step 4
 function showResult() {
-  const volunteer = choice.tell.includes("volunteer")
+  const volunteer = choice.contact === "volunteer"
     ? window.VOLUNTEERS.find((v) => v.town === choice.town)
     : null;
   const hub = window.HUBS.find((h) => h.town === choice.town);
@@ -82,5 +83,16 @@ function showResult() {
        </div>`
     : `<p>${t("help.noHub")}</p>`;
 
+  document.getElementById("wait-list").innerHTML = t("help.waitTips").map((tip) => `<li>${tip}</li>`).join("");
+  document.getElementById("update-note").textContent = "";
+
   showStep("step-done");
 }
+
+// After asking: "I'm OK now" or "Nobody's been in touch yet" (pretend: nothing is sent)
+document.getElementById("im-ok").addEventListener("click", () => {
+  document.getElementById("update-note").textContent = t("help.okSent");
+});
+document.getElementById("no-reply").addEventListener("click", () => {
+  document.getElementById("update-note").textContent = t("help.noReplySent");
+});
