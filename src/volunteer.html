@@ -53,19 +53,45 @@
       <p class="status" id="finish-status" aria-live="polite"></p>
     </section>
 
+    <!-- Looking after you, after you've said how it went -->
+    <section class="card" id="you" hidden>
+      <h2 data-text="care.youTitle"></h2>
+      <p data-text="care.youIntro"></p>
+      <form id="you-form">
+        <fieldset>
+          <legend class="visually-hidden" data-text="care.youTitle"></legend>
+          <div id="you-options"></div>
+        </fieldset>
+        <div class="actions"><button type="submit" data-text="care.youSend"></button></div>
+      </form>
+      <p class="status" id="you-status" aria-live="polite"></p>
+      <h3 data-text="care.supportTitle"></h3>
+      <ul class="checklist" id="support-list"></ul>
+    </section>
+
     <!-- Tonight's walk past the help points -->
     <section class="card">
       <h2 data-text="volunteer.walkTitle"></h2>
       <p id="walk-intro"></p>
       <ul class="walk" id="walk-stops"></ul>
     </section>
+
+    <!-- A break, any time -->
+    <section class="card">
+      <h2 data-text="care.breakTitle"></h2>
+      <p data-text="care.breakText"></p>
+      <button type="button" class="secondary" id="break" aria-pressed="false" data-text="care.breakButton"></button>
+      <p class="status" id="break-status" aria-live="polite"></p>
+    </section>
   </main>
 
   <script src="content.js"></script>
+  <script src="content-care.js"></script>
   <script src="data/requests.js"></script>
   <script src="data/help-points.js"></script>
   <script src="data/walks.js"></script>
   <script src="app.js"></script>
   <script src="volunteer.js"></script>
+  <script src="care.js"></script>
 </body>
 </html>

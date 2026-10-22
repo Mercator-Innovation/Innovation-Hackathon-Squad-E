@@ -60,7 +60,28 @@ function findTown(words) {
 // Words people naturally send that mean the same as a code
 const SAME_AS = { HELP: "TALK", CHAT: "TALK", HI: "TALK", HELLO: "TALK" };
 
+// "Did tonight help?": asked once after OK. Anonymous, and only totals are kept.
+function feedbackReply(message) {
+  const answer = message.toUpperCase().trim().replace(/\s+/g, " ");
+  if (state.feedback === "why") {
+    state.feedback = null;
+    // A code means they need help again, not feedback
+    if (["TALK", "COME", "BED", "OK", "STOP", "HELP"].includes(answer.split(" ")[0])) return null;
+    return t("textCare.noThanks");
+  }
+  if (["YES", "A BIT", "BIT", "NO"].includes(answer)) {
+    state.feedback = answer === "NO" ? "why" : null;
+    return answer === "NO" ? t("textCare.no") : t("textCare.thanks");
+  }
+  state.feedback = null; // They've moved on: carry on as normal
+  return null;
+}
+
 function reply(message) {
+  if (state.feedback && window.CONTENT.textCare) {
+    const answer = feedbackReply(message);
+    if (answer) return answer;
+  }
   const words = message.toUpperCase().trim().split(/\s+/);
   let code = SAME_AS[words[0]] || words[0];
   const named = findTown(words);
@@ -111,7 +132,16 @@ document.getElementById("send-form").addEventListener("submit", (event) => {
   addText("me", message);
   input.value = "";
   // A short pause, like a real reply
-  setTimeout(() => addText("service", reply(message)), 600);
+  setTimeout(() => {
+    const wasOpen = state.open;
+    const answer = reply(message);
+    addText("service", answer);
+    // After OK closes a request, ask once whether it helped
+    if (answer === t("text.replies.ok") && wasOpen && window.CONTENT.textCare) {
+      state.feedback = "ask";
+      setTimeout(() => addText("service", t("textCare.ask")), 1200);
+    }
+  }, 600);
 });
 
 addText("service", t("text.replies.welcome"));
