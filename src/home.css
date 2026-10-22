@@ -2,14 +2,25 @@
 
 main.home { max-width: 52rem; }
 
-/* Daniel's explainer on the home page */
+/* Daniel's video on the home page: a full-width night band, like the footer, with the player centred */
+body:has(.explainer-embed) { overflow-x: clip; }   /* the band reaches the screen edges without a sideways scroll */
+.explainer-embed {
+  margin: 2rem calc(50% - 50vw);
+  padding: 2rem max(1rem, calc(50vw - 32rem)) 2.25rem;
+  background: linear-gradient(160deg, var(--night) 0%, var(--night-dark) 100%);
+  color: #fff;
+}
+.explainer-embed h2 { color: #fff; margin: 0 0 1rem; }
+.explainer-embed a { color: #fff; font-weight: 600; }
+.explainer-embed p { margin: 0.75rem 0 0; }
 .explainer-embed iframe {
   display: block;
   width: 100%;
   height: 46rem;            /* home.js resizes it to fit once it has loaded */
-  border: 2px solid var(--line);
+  border: 0;
   border-radius: var(--radius);
-  background: var(--bg);
+  background: var(--night-dark);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 /* The options on each person's page */
