@@ -3,9 +3,9 @@
 <!-- The organisers fill in Members before the day, and mark the squad lead. The squad lead adds Roles by Wed 21 Oct. On the day, the product owner adds the squad name first (at 15:05, through /start-here), then the challenge and the idea. Only the product owner's Claude writes the decisions here; everyone else says "get the latest". -->
 
 **Repo:** Innovation-Hackathon-Squad-E
-**Squad name:** _chosen on the day_
-**Challenge:** _chosen on the day_
-**Why we chose it:** _(one or two sentences)_
+**Squad name:** Ctrl-Alt-Elite
+**Challenge:** 2. Help when it's needed: connecting people affected by substance use with support, out of hours
+**Why we chose it:** It has the most human impact. It's about people at their most vulnerable, and getting it right could save lives.
 **The idea:** _(one or two sentences, agreed on the day: who it's for, when they need it, and what it does)_
 
 ## Members
