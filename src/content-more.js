@@ -103,7 +103,7 @@ Object.assign(window.CONTENT, {
   privacy: {
     title: "What we keep about you",
     intro: "In plain words: what we keep, who sees it, for how long, and how to get rid of it.",
-    proposal: "This is what our prototype proposes. A real service would check it with a data protection expert.",
+    proposal: "This is our idea for a test version. A real service would check it with an expert in keeping data safe.",
     rows: [
       { what: "Your phone number", who: "Only the volunteer helping you, and only while they're helping", long: "Until you text STOP or ask us to delete it" },
       { what: "What you asked for and where (like COME at help point 214)", who: "Tonight's volunteer and the on-call coordinator", long: "30 days, then only the total is kept" },
@@ -118,7 +118,7 @@ Object.assign(window.CONTENT, {
     never: [
       "Ask why you need help, or whether you use drugs or alcohol",
       "Track your phone. A help point's number tells us where you are",
-      "Share anything with the police, your landlord or the job centre, unless someone's life is in danger",
+      "Tell the police, your landlord or the job centre anything, unless someone's life is in danger",
       "Sell or share your details with anyone else"
     ],
     deleteTitle: "Deleting what we keep",
@@ -133,7 +133,7 @@ Object.assign(window.CONTENT, {
     no: "No: ",
     townLabel: "Choose a town",
     tonightTitle: "Tonight in {town}",
-    volunteerYes: "A volunteer is on call: {name}, about {miles} miles away.",
+    volunteerYes: "{name}, a volunteer, is on call tonight. They're about {miles} miles away.",
     volunteerNo: "No volunteer is on call.",
     hubYes: "{hub} is open {opens} to {closes}.",
     hubNo: "No hub here.",
@@ -144,11 +144,11 @@ Object.assign(window.CONTENT, {
     allCovered: "{town} is covered tonight. Requests go to the volunteer on call first.",
     insteadTitle: "What we do instead",
     instead: [
-      { title: "The out-of-hours support worker rings you", text: "Charities share one on-call worker for the whole area, who rings or texts back within 15 minutes." },
+      { title: "Our night support worker rings you", text: "Local charities share one night worker for the whole area. They'll ring or text you back within 15 minutes." },
       { title: "A peer listens by phone", text: "If you'd like to talk, a peer volunteer from another town rings you. They don't need to be nearby." },
-      { title: "Help points where people already go late", text: "Petrol stations, pubs, rural shops and post offices. The button uses the shop's landline or wifi, so it works with no mobile signal." },
+      { title: "Help points where people already go late", text: "Petrol stations, pubs, village shops and post offices. The button uses the shop's phone line or wifi, so it works with no signal." },
       { title: "A hub on wheels", text: "A van with tea, charging and someone to talk to, parked in small towns on set nights." },
-      { title: "The gap is counted", text: "Every request we can't cover locally shows up for the council as a gap, so the next volunteers and hubs go where they're needed." }
+      { title: "The gap is counted", text: "If we can't help you nearby, the council sees it. Then new volunteers and hubs go where they're needed most." }
     ]
   }
 });
