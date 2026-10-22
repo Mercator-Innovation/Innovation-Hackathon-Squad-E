@@ -29,7 +29,9 @@ window.CONTENT = {
     outreach: "Get the word out",
     outreachHint: "A wallet card and a poster, for people who aren't online.",
     marketing: "I help spread the word",
-    marketingHint: "Posters, beer mats and posts that tell people we're here."
+    marketingHint: "Posters, beer mats and posts that tell people we're here.",
+    explainer: "Watch how it works",
+    explainerHint: "A short, self-playing walk through three people's nights."
   },
 
   // Cards and posters. They never say "drugs", so a card is safe to keep in a wallet.
