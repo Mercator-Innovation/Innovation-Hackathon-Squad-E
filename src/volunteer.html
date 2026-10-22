@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tonight's requests: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="volunteer.title"></h1>
+
+    <!-- A new request -->
+    <section class="step" id="step-alert">
+      <h2 data-text="volunteer.newRequest"></h2>
+      <div class="card" id="request"></div>
+      <p class="note" data-text="volunteer.privacy"></p>
+      <div class="actions">
+        <button type="button" id="accept" data-text="volunteer.accept"></button>
+        <button type="button" class="secondary" id="decline" data-text="volunteer.decline"></button>
+      </div>
+      <p class="status" id="alert-status" aria-live="polite"></p>
+    </section>
+
+    <!-- Keeping safe -->
+    <section class="step" id="step-safety" hidden>
+      <h2 data-text="volunteer.safetyTitle"></h2>
+      <ul class="checklist" id="safety-list"></ul>
+      <p class="emergency" data-text="safety.emergency"></p>
+      <div class="actions">
+        <button type="button" class="secondary" id="backup" data-text="volunteer.backup"></button>
+        <button type="button" class="secondary" id="escalate" data-text="volunteer.escalate"></button>
+      </div>
+      <p class="status" id="safety-status" aria-live="polite"></p>
+      <div class="actions">
+        <button type="button" id="finish" data-text="volunteer.finish"></button>
+      </div>
+    </section>
+
+    <!-- Afterwards -->
+    <section class="step" id="step-finish" hidden>
+      <h2 data-text="volunteer.finishTitle"></h2>
+      <form id="outcome-form">
+        <fieldset>
+          <legend class="note" data-text="volunteer.finishTitle"></legend>
+          <div id="outcomes"></div>
+        </fieldset>
+        <div class="actions">
+          <button type="submit" data-text="volunteer.save"></button>
+        </div>
+      </form>
+      <p class="status" id="finish-status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="data/requests.js"></script>
+  <script src="app.js"></script>
+  <script src="volunteer.js"></script>
+</body>
+</html>

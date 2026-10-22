@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get some company tonight: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main>
+    <h1 data-text="help.title"></h1>
+    <p class="emergency" data-text="safety.emergency"></p>
+
+    <!-- Step 1: what would help -->
+    <section class="step" id="step-need">
+      <h2 data-text="help.needQuestion"></h2>
+      <div class="choices">
+        <button type="button" data-need="talk" data-text="help.needTalk"></button>
+        <button type="button" data-need="come" data-text="help.needCome"></button>
+        <button type="button" data-need="place" data-text="help.needPlace"></button>
+      </div>
+
+      <div class="card" id="codes">
+        <h3 data-text="codes.title"></h3>
+        <p data-text="codes.intro"></p>
+        <ul class="checklist" id="code-list"></ul>
+      </div>
+    </section>
+
+    <!-- Step 2: where -->
+    <section class="step" id="step-where" hidden>
+      <h2 data-text="help.whereQuestion"></h2>
+      <button type="button" class="secondary" id="share-location" data-text="help.shareLocation"></button>
+      <label for="town" data-text="help.townLabel"></label>
+      <select id="town">
+        <option value="" data-text="help.chooseTown"></option>
+      </select>
+      <p class="status" id="location-note" aria-live="polite"></p>
+      <div class="actions">
+        <button type="button" id="where-next" data-text="help.next"></button>
+        <button type="button" class="secondary" data-go="step-need" data-text="help.back"></button>
+      </div>
+    </section>
+
+    <!-- Step 3: who to tell -->
+    <section class="step" id="step-who" hidden>
+      <h2 data-text="help.whoQuestion"></h2>
+      <form id="who-form">
+        <fieldset>
+          <legend class="note" data-text="help.whoHint"></legend>
+          <label class="check"><input type="checkbox" name="tell" value="volunteer" checked> <span data-text="help.tellVolunteer"></span></label>
+          <label class="check"><input type="checkbox" name="tell" value="family"> <span data-text="help.tellFamily"></span></label>
+          <label class="check"><input type="checkbox" name="tell" value="worker"> <span data-text="help.tellWorker"></span></label>
+          <label class="check"><input type="checkbox" name="tell" value="morning"> <span data-text="help.tellMorning"></span></label>
+        </fieldset>
+        <div class="actions">
+          <button type="submit" data-text="help.send"></button>
+          <button type="button" class="secondary" data-go="step-where" data-text="help.back"></button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Step 4: what happens next -->
+    <section class="step" id="step-done" hidden>
+      <h2 data-text="help.doneTitle"></h2>
+      <div id="done-messages"></div>
+      <h3 data-text="help.hubTitle"></h3>
+      <div id="hub"></div>
+      <div class="actions">
+        <button type="button" class="secondary" data-go="step-need" data-text="help.startAgain"></button>
+      </div>
+    </section>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="data/hubs.js"></script>
+  <script src="data/volunteers.js"></script>
+  <script src="app.js"></script>
+  <script src="help.js"></script>
+</body>
+</html>
