@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How the numbers are made: Night Neighbours (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="coordinator.css">
+  <link rel="stylesheet" href="pipeline.css">
+</head>
+<body>
+  <!-- The data pipeline: raw requests -> anonymised -> combined -> areas most in need. Owned by Kai. -->
+  <header class="top"><a href="index.html" data-text="service.name"></a></header>
+  <main class="pipeline">
+    <h1>How the numbers are made</h1>
+    <p>Planners never see anyone's details. Here's how one week of requests becomes "which areas need more volunteers", step by step.</p>
+    <p class="note">Everything here is made up, including the names and phone numbers.</p>
+
+    <section class="stage">
+      <h2><span class="stage-number">1</span> What arrives</h2>
+      <p>When someone asks for help, the local service needs a way to reply. This stays with them, and is deleted after 30 days, or straight away if the person texts DELETE.</p>
+      <p id="raw-count" class="note"></p>
+      <div class="table-scroll"><table id="raw-table"></table></div>
+    </section>
+
+    <section class="stage">
+      <h2><span class="stage-number">2</span> Anonymise it</h2>
+      <p>Before anything leaves the local service, we remove the name, phone number and reference, turn the exact time into a time band, and turn the town into a council area. These are the same 5 requests:</p>
+      <div class="table-scroll"><table id="anon-table"></table></div>
+      <p class="note">Removed: <span id="removed"></span></p>
+    </section>
+
+    <section class="stage">
+      <h2><span class="stage-number">3</span> Combine, and hide small numbers</h2>
+      <p>We only ever share totals per area. Any count under 10 is hidden, so nobody in a small place can be recognised.</p>
+      <div class="table-scroll"><table id="area-table"></table></div>
+    </section>
+
+    <section class="stage">
+      <h2><span class="stage-number">4</span> Find the areas most in need</h2>
+      <p>Each area gets a score from three things, with the reasons shown. It points a person to where to look first. It never decides on its own.</p>
+      <ul class="checklist" id="weights"></ul>
+      <ol class="ranked" id="ranked"></ol>
+      <p class="summary">A planner checks every flagged area before anything changes, for example by talking to local services. The score is a starting point, not a decision.</p>
+    </section>
+
+    <p><a href="coordinator.html">Back to where help is needed</a></p>
+  </main>
+
+  <script src="content.js"></script>
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+  <script src="data/requests.js"></script>
+  <script src="data/raw-requests.js"></script>
+  <script src="pipeline.js"></script>
+</body>
+</html>
