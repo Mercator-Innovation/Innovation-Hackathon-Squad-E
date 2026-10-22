@@ -1,4 +1,5 @@
-// "How it works": draws the five steps from content-journey.js, each with links to the page that shows it.
+// "How it works" on the home page: draws the five steps from content-journey.js,
+// each with links to the page that shows it. home.js opens and closes it.
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 function seeLinks(links) {
@@ -10,11 +11,11 @@ document.getElementById("steps").innerHTML = t("journey.steps").map((step, i) =>
   <li class="step-card">
     <span class="step-number" aria-hidden="true">${i + 1}</span>
     <div>
-      <h2>${esc(step.title)}</h2>
+      <h3>${esc(step.title)}</h3>
       <p>${esc(step.text)}</p>
       ${step.ways ? `<div class="ways">${step.ways.map((way) => `
         <div class="way">
-          <h3>${esc(way.title)}</h3>
+          <h4>${esc(way.title)}</h4>
           <p>${esc(way.text)}</p>
           <p class="asks">${esc(way.asks)}</p>
           <p class="see-links">${seeLinks(way.links)}</p>
@@ -24,24 +25,3 @@ document.getElementById("steps").innerHTML = t("journey.steps").map((step, i) =>
   </li>`).join("");
 
 document.getElementById("behind-links").innerHTML = seeLinks(t("journey.behindLinks"));
-
-// Make Daniel's video exactly as tall as its content, so there's no inner scrollbar
-const video = document.getElementById("journey-video");
-
-// Tell the video which language to use, so it always matches the page
-const videoUrl = `${video.dataset.src}?lang=${LANG}`;
-video.src = videoUrl;
-document.getElementById("journey-video-full").href = videoUrl;
-function fitVideo() {
-  try {
-    const doc = video.contentDocument;
-    if (doc) video.style.height = `${doc.documentElement.scrollHeight + 4}px`;
-  } catch (e) {
-    // Opened straight from the file, the browser may not let us measure it. The CSS height still works.
-  }
-}
-video.addEventListener("load", () => {
-  fitVideo();
-  setInterval(fitVideo, 1000);
-});
-window.addEventListener("resize", fitVideo);

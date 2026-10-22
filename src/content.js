@@ -46,7 +46,6 @@ window.CONTENT = {
     explainer: "Watch how it works",
     explainerHint: "A short, self-playing walk through three people's nights.",
     explainerFull: "Open it full screen",
-    explainerOld: "Or watch the three journeys, without sound",
     // "Who is this for?" buttons at the top of the home page
     pickTitle: "Who is this for?",
     pickSelf: "Me",

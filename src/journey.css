@@ -1,16 +1,19 @@
-/* Styles for journey.html only. */
+/* "How it works" on the home page: the button, and the five steps it opens. */
 
-main.journey { max-width: 48rem; }
-
-/* Daniel's video at the top. journey.js sizes it to fit once it has loaded. */
-.journey-video iframe {
-  display: block;
+.how-heading { margin: 1.5rem 0 0; }
+.how-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 40rem;
-  border: 2px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--bg);
+  font-size: 1.25rem;
+  text-align: left;
+  padding: 1rem 1.25rem;
 }
+.how-button::after { content: "+"; font-size: 1.6rem; line-height: 1; }
+.how-button[aria-expanded="true"]::after { content: "–"; }
+
+.how-panel { margin-top: 1rem; }
 
 .no-details {
   background: var(--card);
@@ -42,7 +45,7 @@ main.journey { max-width: 48rem; }
   height: 1rem;
   background: var(--night);
 }
-.step-card h2 { margin-top: 0.2rem; }
+.step-card h3 { margin-top: 0.2rem; }
 
 .step-number {
   flex: 0 0 2.5rem;
@@ -63,7 +66,7 @@ main.journey { max-width: 48rem; }
   border-radius: var(--radius);
   padding: 0.75rem 1rem;
 }
-.way h3 { margin-top: 0.25rem; }
+.way h4 { margin-top: 0.25rem; }
 .asks { font-size: 0.95rem; color: var(--muted); }
 
 .see-links { margin: 0.5rem 0 0; }
