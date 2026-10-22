@@ -69,7 +69,7 @@ Object.assign(window.CONTENT, {
       },
       {
         title: "The next day",
-        text: "Only if you agreed, your support worker hears what happened and can follow up, so you're connected to ongoing support, not just one night. Family hear only if you chose them.",
+        text: "Only if you agreed, your support worker hears what happened and can follow up, so you're connected to ongoing support, not just one night. No support worker? The volunteer can offer to put you in touch with local drug and alcohol services or a peer recovery group, when you're ready. Family hear only if you chose them.",
         links: [
           { href: "worker.html", label: "What the support worker sees" },
           { href: "family.html", label: "What family see" }
