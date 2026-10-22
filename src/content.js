@@ -26,8 +26,41 @@ window.CONTENT = {
     coordinatorHint: "See where and when help is needed. No names, only totals.",
     family: "Someone I care about uses Night Neighbours",
     familyHint: "What you see if they ask for help or miss a check-in.",
+    outreach: "Get the word out",
+    outreachHint: "A wallet card and a poster, for people who aren't online.",
     marketing: "I help spread the word",
     marketingHint: "Posters, beer mats and posts that tell people we're here."
+  },
+
+  // Cards and posters. They never say "drugs", so a card is safe to keep in a wallet.
+  outreach: {
+    title: "Get the word out",
+    intro: "Most people who need Night Neighbours won't find it online. These go where they already are.",
+    cardTitle: "Wallet card",
+    cardNote: "Credit-card size. In naloxone kits, pharmacy bags and hostel welcome packs.",
+    cardFront: "Front",
+    cardBack: "Back",
+    cardTagline: "Someone nearby when it's late and you're on your own.",
+    cardTextLine: "Text TALK and your town to",
+    cardFree: "Free. No data needed. Day or night.",
+    cardNoPhone: "No phone? Go to a help point at the parcel lockers. Charge up, press a button.",
+    cardPin: "My check-in number:",
+    cardWho: "Who to tell:",
+    posterTitle: "Poster",
+    posterNote: "For pharmacies, bus stops, GP surgeries, hostels and the shops by the help points. Tear off a strip and keep it.",
+    posterHeadline: "Late, and on your own?",
+    posterBody: "Local people who've signed up to help. Someone to talk to, someone to come to you, or a warm place to go tonight.",
+    posterText: "Text TALK and your town to",
+    posterFamily: "Worried about someone? Text TALK too. Families get support as well.",
+    tearOff: "Night Neighbours: text TALK to 60000",
+    whereTitle: "Where they go",
+    where: [
+      { who: "People who might need help", places: "Wallet cards in naloxone kits and pharmacy bags. Posters at needle exchanges, food banks, hostels and the job centre. Cards handed out when leaving hospital or prison." },
+      { who: "Through people they trust", places: "Peer workers and volunteers hand out cards and tell people face to face. That builds the trust posters can't." },
+      { who: "At the help points", places: "The locker screen shows Night Neighbours when no one is using it, with a poster in the shop next door." },
+      { who: "Families and friends", places: "GP surgeries, schools, churches, community councils, local radio and local Facebook groups." },
+      { who: "Everyone else", places: "Bus stops, beer mats, the back of shop receipts. The number, everywhere." }
+    ]
   },
 
   // Text codes work from any phone, with no data. Shown on the help page and the help point.
