@@ -37,6 +37,14 @@ ai_use_week_after:
 - "Rewrite the words on each page so they are plain and kind. Reading age 9": Claude measured every sentence first and rewrote only the 32 hardest, rather than everything. Most were already plain. "Out-of-hours support worker" became "our night support worker".
 - "Who else is solving this problem, and where's the gap? Short answers with sources": in a few minutes, found that after 11pm almost everything in Scotland is a phone line, and that our main assumption mostly holds (63% of drug deaths are people aged 35 to 54). Research, outside my usual job.
 - Dead end: as product owner I missed recording the 17:15 look together until about 17:45. Building was so absorbing that the squad steps slipped. Next time, set a timer.
+- "Look through the 'On the day playbook' again and tell us what we have missed and how to fix it": found we'd skipped recording the 17:15 look together and hadn't named presenters. Checking against the plan caught what building had pushed aside.
+- "make it work well on a small screen, with a thumb. Make this work properly at phone width": Claude measured all 16 pages first, found only the tap targets were too small, and fixed them all in one small change.
+- "can we introduce a virtual companion? A feature that keeps someone compay while walking home with check in reminders?": built "Walk me home" in about 10 minutes, with check-ins, a person as back-up and no tracking, to keep our privacy promise.
+- Five of us shared to the same files all afternoon, and there were only two small clashes. Both were sorted by keeping both changes. Small, frequent shares made working as a squad easy.
+- "fix the hub closing time for Jamie": the Lamp Room now stays open till 4am to cover his hardest hours, and every hub says what to do after it closes, so nobody is left at a closed door.
+- "should the care workers, social workers, ambulance service and NHS workers also have access to the service?", then "build the Refer someone screen": professionals can pass people in, but the person decides by replying YES, and nothing about them comes back.
+- "let's fix points 3 and 4": volunteers now get asked "And how are you?" after a hard night and can take a break; people get one anonymous "did tonight help?" text; the planner shows whether it helped, not just where people asked.
+- Fixed two clashes with squad mates along the way: Daniel and I had both made a Discovery Wall (we kept his), and Sruthi and I had both added styles to the same file (we kept both). Neither took more than a couple of minutes.
 
 ## At 19:00
 - What I worked on: <answers>
