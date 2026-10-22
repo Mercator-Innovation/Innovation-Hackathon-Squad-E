@@ -1,0 +1,32 @@
+// The screen at a community help point. It knows where it is, so no phone or GPS is needed.
+const point = window.HELP_POINTS[0];   // this prototype shows the Annan help point
+const hub = window.HUBS.find((h) => h.town === point.town);
+const volunteer = window.VOLUNTEERS.find((v) => v.town === point.town);
+
+document.getElementById("where").textContent = t("helpPoint.where", { id: point.id, place: point.place });
+
+document.getElementById("code-list").innerHTML = t("codes.list")
+  .map((c) => `<li><strong>${c.code}</strong>: ${c.means}</li>`)
+  .join("");
+
+document.querySelectorAll("[data-need]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const who = volunteer ? volunteer.firstName : t("helpPoint.aVolunteer");
+    let message;
+
+    if (!volunteer) {
+      message = t("helpPoint.sentWorker");
+    } else if (button.dataset.need === "place") {
+      message = hub
+        ? t("helpPoint.sentPlace", { hub: hub.name, closes: hub.closes, walk: point.walkToHub, who })
+        : t("helpPoint.sentNoHub", { who });
+    } else {
+      message = t("helpPoint.sent", { who, minutes: Math.round(volunteer.milesAway * 8) });
+    }
+
+    document.getElementById("sent-message").textContent = message;
+    showStep("step-sent");
+  });
+});
+
+document.getElementById("again").addEventListener("click", () => showStep("step-need"));
