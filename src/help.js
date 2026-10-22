@@ -30,12 +30,26 @@ document.getElementById("share-location").addEventListener("click", () => {
 
 document.getElementById("where-next").addEventListener("click", () => {
   if (!townSelect.value) {
+    // Tie the error to the field, so a screen reader reads it when focus lands there
     locationNote.textContent = t("help.pickTown");
+    locationNote.classList.add("field-error");
+    townSelect.setAttribute("aria-invalid", "true");
+    townSelect.setAttribute("aria-describedby", "location-note");
     townSelect.focus();
     return;
   }
+  clearTownError();
   choice.town = townSelect.value;
   showStep("step-who");
+});
+
+function clearTownError() {
+  locationNote.classList.remove("field-error");
+  townSelect.removeAttribute("aria-invalid");
+  townSelect.removeAttribute("aria-describedby");
+}
+townSelect.addEventListener("change", () => {
+  if (townSelect.value) { clearTownError(); locationNote.textContent = ""; }
 });
 
 // Step 3
@@ -77,7 +91,7 @@ function showResult() {
 
   document.getElementById("hub").innerHTML = hub
     ? `<div class="card">
-         <h3>${hub.name}, ${hub.town}</h3>
+         <h4>${hub.name}, ${hub.town}</h4>
          <p>${t("help.hubHours", { opens: hub.opens, closes: hub.closes })}</p>
          <p class="note">${t("help.afterHub", { closes: hub.closes })}</p>
          <ul class="tags">${hub.offers.map((o) => `<li>${o}</li>`).join("")}</ul>
