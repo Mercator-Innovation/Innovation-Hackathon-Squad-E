@@ -29,6 +29,7 @@ ai_use_week_after:
 
 ## During
 <!-- Claude adds one line per moment: prompts that worked (word for word), dead ends, surprises, things done outside my usual job, what made working as a squad easier or harder -->
+- 16:38 surprise: it is very impressive how ideas merge seamlessly between each others commits
 
 ## At 19:00
 - What I worked on: <answers>
