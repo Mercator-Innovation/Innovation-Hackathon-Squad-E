@@ -1,0 +1,366 @@
+<title>Out-of-Hours Personas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a night-sky header, then three persona posters side by side (stacked on phones), each built around a 24-hour clock */
+:root {
+  --bg: #eef0f6;
+  --paper: #ffffff;
+  --ink: #1b2236;
+  --muted: #555e75;
+  --line: #d6dae6;
+  --night: #263264;
+  --lamp: #a85c00;
+  --lamp-soft: #fbecd6;
+  --open: #2f7d69;
+  --open-soft: #dcefe9;
+  --band: #1d2547;
+  --band-ink: #eef0fa;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Atkinson Hyperlegible", "Verdana", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1329; --paper: #171c37; --ink: #e9ecf7; --muted: #a6adc6; --line: #2d3558;
+    --night: #a9b8f0; --lamp: #f2a947; --lamp-soft: #3a2c19; --open: #6cc6ac; --open-soft: #173430;
+    --band: #0a0d1f; --band-ink: #e9ecf7; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1329; --paper: #171c37; --ink: #e9ecf7; --muted: #a6adc6; --line: #2d3558;
+  --night: #a9b8f0; --lamp: #f2a947; --lamp-soft: #3a2c19; --open: #6cc6ac; --open-soft: #173430;
+  --band: #0a0d1f; --band-ink: #e9ecf7; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+header.band { background: var(--band); color: var(--band-ink); }
+header.band .wrap { padding-block: 40px 32px; display: grid; gap: 14px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 5vw, 48px); line-height: 1.05; margin: 0; text-wrap: balance; }
+.lede { max-width: 62ch; margin: 0; font-size: 17px; }
+.notice { display: inline-flex; gap: 10px; align-items: flex-start; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); border-radius: 8px; padding: 10px 14px; font-size: 14px; max-width: 70ch; }
+.notice b { color: inherit; }
+
+.connect { padding-block: 22px 6px; display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--muted); font-size: 15px; }
+.connect strong { color: var(--ink); }
+
+main .wrap { padding-block: 16px 48px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
+@media (max-width: 1080px) { .grid { grid-template-columns: minmax(0, 1fr); max-width: 680px; margin: 0 auto; } }
+
+article.persona { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: grid; }
+.p-head { padding: 22px 22px 18px; display: grid; gap: 6px; border-bottom: 1px solid var(--line); }
+.tag { justify-self: start; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--night); border: 1px solid currentColor; border-radius: 999px; padding: 3px 10px; }
+.p-head h2 { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1.1; margin: 4px 0 0; }
+.meta { color: var(--muted); font-size: 14px; margin: 0; }
+blockquote { margin: 10px 0 0; font-style: italic; font-size: 17px; padding-left: 14px; border-left: 3px solid var(--lamp); }
+
+section.blk { padding: 18px 22px; border-bottom: 1px solid var(--line); display: grid; gap: 10px; }
+section.blk:last-child { border-bottom: 0; }
+h3 { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+
+.clockrow { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: center; }
+@media (max-width: 420px) { .clockrow { grid-template-columns: minmax(0, 1fr); justify-items: center; } }
+.clock { width: 150px; height: 150px; max-width: 100%; }
+.legend { display: grid; gap: 8px; font-size: 14px; }
+.legend div { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 8px; align-items: start; }
+.sw { width: 14px; height: 14px; border-radius: 3px; margin-top: 3px; }
+.sw.open { background: var(--open); }
+.sw.hard { background: var(--lamp); }
+.legend .t { font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; }
+
+.phone { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 13px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 5px 9px; }
+.chip svg { width: 18px; height: 12px; }
+.low { color: var(--lamp); border-color: var(--lamp); background: var(--lamp-soft); }
+
+ol.night { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+ol.night li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 10px; font-size: 15px; }
+ol.night time { font-family: var(--mono); font-size: 13px; color: var(--night); font-variant-numeric: tabular-nums; padding-top: 2px; }
+
+ul.bars { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+ul.bars li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: 15px; }
+.dots { display: inline-flex; gap: 4px; }
+.dots i { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--lamp); }
+.dots i.on { background: var(--lamp); }
+.src { font-family: var(--mono); font-size: 11px; color: var(--muted); vertical-align: super; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+
+ul.needs { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; }
+.also { font-size: 14px; color: var(--muted); margin: 0; }
+
+footer .wrap { padding-block: 8px 48px; display: grid; gap: 14px; max-width: 900px; }
+footer h2 { font-family: var(--display); font-size: 22px; margin: 0; }
+footer ol { margin: 0; padding-left: 22px; display: grid; gap: 6px; font-size: 14px; }
+footer p { margin: 0; font-size: 14px; color: var(--muted); }
+a { color: var(--night); }
+a:focus-visible { outline: 3px solid var(--lamp); outline-offset: 2px; border-radius: 2px; }
+</style>
+
+<header class="band">
+  <div class="wrap">
+    <div class="eyebrow">Squad E · Challenge 2 · Help when it's needed</div>
+    <h1>Three people, one long night</h1>
+    <p class="lede">A person who uses drugs, someone in their family, and a support worker. Each poster shows when help is open, when they need it most, and what gets in the way.</p>
+    <div class="notice"><span aria-hidden="true">⚠</span><span><b>These are made-up people.</b> They come from desk research done on 22 October 2026, not from talking to anyone. Treat every detail as an assumption to test.</span></div>
+  </div>
+</header>
+
+<div class="wrap connect">
+  <span><strong>How they connect:</strong></span>
+  <span>Karen is Jamie's sister.</span>
+  <span>Priya was Jamie's key worker until he stopped coming in.</span>
+  <span>All three are part of Jamie's "circle of support".</span>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- Persona 1 -->
+      <article class="persona" aria-labelledby="p1">
+        <div class="p-head">
+          <span class="tag">Person who uses drugs</span>
+          <h2 id="p1">Jamie, 41</h2>
+          <p class="meta">Lives alone in a small town in Ayrshire · Uses opioids and street benzos · Left a treatment programme two years ago</p>
+          <blockquote>"By the time I'm ready to talk, everybody's gone home."</blockquote>
+        </div>
+
+        <section class="blk">
+          <h3>Help vs need, over 24 hours</h3>
+          <div class="clockrow">
+            <svg class="clock" viewBox="0 0 160 160" role="img" aria-label="24-hour clock. Services open 9:00 to 17:00. Jamie's hardest hours are 22:00 to 03:00." data-open="9-17" data-hard="22-3"></svg>
+            <div class="legend">
+              <div><span class="sw open"></span><span>Services open<br><span class="t">Mon–Fri 09:00–17:00</span></span></div>
+              <div><span class="sw hard"></span><span>Hardest hours<br><span class="t">22:00–03:00</span></span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="blk">
+          <h3>Phone right now</h3>
+          <div class="phone">
+            <span class="chip low"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x=".75" y=".75" width="14.5" height="10.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="4" width="1.5" height="4" fill="currentColor"/><rect x="2.5" y="2.5" width="2" height="7" fill="currentColor"/></svg>12%</span>
+            <span class="chip low">Signal ▂</span>
+            <span class="chip low">Data: run out</span>
+            <span class="chip">Pay as you go</span>
+          </div>
+          <p class="note">Charges his phone at a friend's flat. Phone numbers change when it gets lost or sold.</p>
+        </section>
+
+        <section class="blk">
+          <h3>A night in Jamie's life</h3>
+          <ol class="night">
+            <li><time>16:40</time><span>Thinks about calling the drop-in. Decides to wait till tomorrow.</span></li>
+            <li><time>21:30</time><span>Alone in the flat. Feels low and starts using.</span></li>
+            <li><time>23:15</time><span>Wants to talk to someone. Every number he knows has closed.</span></li>
+            <li><time>01:00</time><span>Won't call 999: "they'll send the police".</span></li>
+          </ol>
+        </section>
+
+        <section class="blk">
+          <h3>What gets in the way</h3>
+          <ul class="bars">
+            <li><span>Shame about using again <span class="src">[1]</span></span><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+            <li><span>Doesn't trust services after a bad experience <span class="src">[2]</span></span><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span>No data, low battery, weak signal <span class="src">[4]</span></span><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span>Nearest service is two buses away <span class="src">[7]</span></span><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+            <li><span>Worried about who will find out <span class="src">[3]</span></span><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+          </ul>
+          <p class="note">Dots show how much each thing gets in the way. They're our guess, not measured.</p>
+        </section>
+
+        <section class="blk">
+          <h3>What Jamie needs</h3>
+          <ul class="needs">
+            <li>Someone to talk to at night who won't judge him</li>
+            <li>A way to reach out that works with no data and little battery</li>
+            <li>To feel less alone, without it turning into an emergency</li>
+            <li>To choose who knows, including his sister</li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Persona 2 -->
+      <article class="persona" aria-labelledby="p2">
+        <div class="p-head">
+          <span class="tag">Family and friends</span>
+          <h2 id="p2">Karen, 46</h2>
+          <p class="meta">Jamie's sister · Lives 20 minutes away · Works shifts as a care assistant · Has two teenagers</p>
+          <blockquote>"When he doesn't answer, I lie awake. I don't know if I should phone 999 or if I'm overreacting."</blockquote>
+        </div>
+
+        <section class="blk">
+          <h3>Help vs need, over 24 hours</h3>
+          <div class="clockrow">
+            <svg class="clock" viewBox="0 0 160 160" role="img" aria-label="24-hour clock. Services open 9:00 to 17:00. Karen's hardest hours are 21:00 to 01:00." data-open="9-17" data-hard="21-1"></svg>
+            <div class="legend">
+              <div><span class="sw open"></span><span>Services open<br><span class="t">Mon–Fri 09:00–17:00</span></span></div>
+              <div><span class="sw hard"></span><span>Hardest hours<br><span class="t">21:00–01:00, after her shift</span></span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="blk">
+          <h3>Phone right now</h3>
+          <div class="phone">
+            <span class="chip"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x=".75" y=".75" width="14.5" height="10.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="4" width="1.5" height="4" fill="currentColor"/><rect x="2.5" y="2.5" width="8" height="7" fill="currentColor"/></svg>64%</span>
+            <span class="chip">Signal ▂▄▆█</span>
+            <span class="chip">Contract + home wifi</span>
+          </div>
+          <p class="note">Her phone works fine. What she lacks is knowing who to call.</p>
+        </section>
+
+        <section class="blk">
+          <h3>A night in Karen's life</h3>
+          <ol class="night">
+            <li><time>20:00</time><span>Finishes her shift. Texts Jamie. No reply.</span></li>
+            <li><time>22:30</time><span>Calls twice. Straight to voicemail: his phone's probably dead.</span></li>
+            <li><time>23:45</time><span>Searches online for help. Finds services that open at 9am.</span></li>
+            <li><time>00:30</time><span>Hasn't told friends. Feels judged too. Stays up worrying.</span></li>
+          </ol>
+        </section>
+
+        <section class="blk">
+          <h3>What gets in the way</h3>
+          <ul class="bars">
+            <li><span>Doesn't know what help exists at night <span class="src">[7]</span></span><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+            <li><span>Unsure if it's serious enough for 999 <span class="src">[7]</span></span><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span>Shame: the family keeps it quiet <span class="src">[1]</span></span><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span>Can't reach Jamie when his phone dies <span class="src">[4]</span></span><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+            <li><span>Worn out, with no support for herself <span class="src">[7]</span></span><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+          </ul>
+          <p class="note">Dots show how much each thing gets in the way. They're our guess, not measured.</p>
+        </section>
+
+        <section class="blk">
+          <h3>What Karen needs</h3>
+          <ul class="needs">
+            <li>To know what to do tonight, step by step</li>
+            <li>Someone to talk to about how she's feeling</li>
+            <li>To be part of Jamie's support, if he agrees</li>
+            <li>To learn how to keep him safer, such as naloxone (a medicine that reverses an opioid overdose)</li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- Persona 3 -->
+      <article class="persona" aria-labelledby="p3">
+        <div class="p-head">
+          <span class="tag">Support workers</span>
+          <h2 id="p3">Priya, 31</h2>
+          <p class="meta">Outreach worker at a homelessness and drugs charity · Covers several small towns · About 30 people on her caseload</p>
+          <blockquote>"At five o'clock I log off and hope everyone gets through the weekend."</blockquote>
+        </div>
+
+        <section class="blk">
+          <h3>Help vs need, over 24 hours</h3>
+          <div class="clockrow">
+            <svg class="clock" viewBox="0 0 160 160" role="img" aria-label="24-hour clock. Priya works 9:00 to 17:00. The hours she worries about most are 17:00 to 23:00." data-open="9-17" data-hard="17-23"></svg>
+            <div class="legend">
+              <div><span class="sw open"></span><span>Her working hours<br><span class="t">Mon–Fri 09:00–17:00</span></span></div>
+              <div><span class="sw hard"></span><span>When she worries most<br><span class="t">17:00–23:00, and weekends</span></span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="blk">
+          <h3>Phone right now</h3>
+          <div class="phone">
+            <span class="chip"><svg viewBox="0 0 18 12" aria-hidden="true"><rect x=".75" y=".75" width="14.5" height="10.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="4" width="1.5" height="4" fill="currentColor"/><rect x="2.5" y="2.5" width="10.5" height="7" fill="currentColor"/></svg>80%</span>
+            <span class="chip low">Work phone: off at 17:00</span>
+            <span class="chip">Signal patchy on rural visits</span>
+          </div>
+          <p class="note">Notes live in her charity's own system. Other services can't see them, and she can't see theirs.</p>
+        </section>
+
+        <section class="blk">
+          <h3>A day in Priya's life</h3>
+          <ol class="night">
+            <li><time>10:00</time><span>Drives to a visit. Jamie isn't in. Leaves a card.</span></li>
+            <li><time>14:30</time><span>Rings three services to find out who opens at weekends.</span></li>
+            <li><time>16:55</time><span>A client calls, upset. She has five minutes before her shift ends.</span></li>
+            <li><time>Mon 09:00</time><span>Finds out a client went to A&amp;E on Saturday night.</span></li>
+          </ol>
+        </section>
+
+        <section class="blk">
+          <h3>What gets in the way</h3>
+          <ul class="bars">
+            <li><span>No one to hand over to after 17:00 <span class="src">[7]</span></span><span class="dots" aria-label="5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></li>
+            <li><span>Support split across many organisations <span class="src">[2]</span></span><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span>Clients' phones die or change number <span class="src">[4]</span></span><span class="dots" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></li>
+            <li><span>Rules on sharing sensitive information <span class="src">[3]</span></span><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+            <li><span>Hears about weekend crises too late <span class="src">[7]</span></span><span class="dots" aria-label="3 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></li>
+          </ul>
+          <p class="note">Dots show how much each thing gets in the way. They're our guess, not measured.</p>
+        </section>
+
+        <section class="blk">
+          <h3>What Priya needs</h3>
+          <ul class="needs">
+            <li>To hand someone over safely at the end of the day</li>
+            <li>To know who is covering tonight, and where</li>
+            <li>To hear the next morning what happened, with the person's consent</li>
+            <li>To show where the gaps in cover are</li>
+          </ul>
+          <p class="also">Priya stands in for all support workers: peer workers, charity outreach staff, NHS and Alcohol and Drug Partnership teams.</p>
+        </section>
+      </article>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Where this comes from</h2>
+    <p>Small numbers in square brackets point to these sources. Names, ages, places, phones and timelines are invented to make the research feel real.</p>
+    <ol>
+      <li><a href="https://www.ukdpc.org.uk/wp-content/uploads/Policy%20report%20-%20Getting%20serious%20about%20stigma%20in%20Scotland_%20the%20problem%20with%20stigmatising%20drug%20users%20(summary).pdf">UK Drug Policy Commission: Getting serious about stigma in Scotland</a> (2010)</li>
+      <li><a href="https://www.research.ed.ac.uk/en/publications/preventing-drug-related-deaths-in-scotland-perceptions-and-experi/">University of Edinburgh: Preventing drug-related deaths in Scotland, primary care study</a></li>
+      <li><a href="https://www.researchsquare.com/article/rs-10538433">Survey of Scottish treatment providers on barriers</a> (preprint, not yet peer-reviewed)</li>
+      <li><a href="https://digitalhealth.net/2024/04/digital-lifelines-support-vulnerable-people-in-scotland">Digital Health: Digital Lifelines supports vulnerable people in Scotland</a> (2024), and the <a href="https://harmreductionjournal.biomedcentral.com/articles/10.1186/s12954-024-01012-y">Harm Reduction Journal evaluation</a> (2024, small sample)</li>
+      <li><a href="https://publichealthscotland.scot/publications/national-drug-related-death-database-scotland/the-national-drug-related-deaths-database-scotland-report-analysis-of-deaths-registered-in-2019-and-2020/">Public Health Scotland: drug-related deaths database, 2019 and 2020</a>. 76% of people were living in their own home and 63% lived alone. That's why Jamie lives alone.</li>
+      <li><a href="https://pharmaceutical-journal.com/article/news/drug-related-deaths-in-scotland-at-lowest-level-since-2017">Pharmaceutical Journal on the 2024 figures</a>. Opioids were involved in 80% of drug misuse deaths and benzodiazepines in 56%. That's why Jamie uses both.</li>
+      <li>Our challenge sheet, based on <a href="https://www.civtech.scot/civtech-12-challenges">CivTech Challenge 12.1</a></li>
+    </ol>
+    <p><b>Not yet found:</b> evidence on night-time specifically, or on battery and signal. Test these with real people before building on them.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var NS = "http://www.w3.org/2000/svg", C = 80;
+  function pt(h, r) { var a = (h / 24) * 2 * Math.PI - Math.PI / 2; return [C + r * Math.cos(a), C + r * Math.sin(a)]; }
+  function arc(h1, h2, r) {
+    if (h2 <= h1) h2 += 24;
+    var p1 = pt(h1, r), p2 = pt(h2, r), large = (h2 - h1) > 12 ? 1 : 0;
+    return "M" + p1[0].toFixed(2) + " " + p1[1].toFixed(2) + " A" + r + " " + r + " 0 " + large + " 1 " + p2[0].toFixed(2) + " " + p2[1].toFixed(2);
+  }
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; }
+  function range(s) { return s.split("-").map(Number); }
+  document.querySelectorAll("svg.clock").forEach(function (svg) {
+    var o = range(svg.dataset.open), h = range(svg.dataset.hard);
+    el("circle", { cx: C, cy: C, r: 62, fill: "none", stroke: "var(--line)", "stroke-width": 10 }, svg);
+    el("circle", { cx: C, cy: C, r: 46, fill: "none", stroke: "var(--line)", "stroke-width": 10 }, svg);
+    el("path", { d: arc(h[0], h[1], 62), fill: "none", stroke: "var(--lamp)", "stroke-width": 10, "stroke-linecap": "butt" }, svg);
+    el("path", { d: arc(o[0], o[1], 46), fill: "none", stroke: "var(--open)", "stroke-width": 10, "stroke-linecap": "butt" }, svg);
+    for (var i = 0; i < 24; i++) {
+      var a = pt(i, 70), b = pt(i, i % 6 === 0 ? 76 : 73);
+      el("line", { x1: a[0], y1: a[1], x2: b[0], y2: b[1], stroke: "var(--muted)", "stroke-width": i % 6 === 0 ? 1.5 : .75 }, svg);
+    }
+    [[0, "00"], [6, "06"], [12, "12"], [18, "18"]].forEach(function (l) {
+      var p = pt(l[0], 28), t = el("text", { x: p[0], y: p[1] + 4, "text-anchor": "middle", "font-size": 10, "font-family": "IBM Plex Mono, monospace", fill: "var(--muted)" }, svg);
+      t.textContent = l[1];
+    });
+    var c = el("text", { x: C, y: C + 4, "text-anchor": "middle", "font-size": 11, "font-family": "IBM Plex Mono, monospace", fill: "var(--ink)" }, svg);
+    c.textContent = "24h";
+  });
+})();
+</script>
