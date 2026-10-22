@@ -166,3 +166,37 @@ td.num { text-align: right; }
 .phone-send label { color: #fff; }
 .phone-row { display: flex; gap: 0.5rem; }
 .phone-row input { flex: 1; min-width: 0; font: inherit; padding: 0.6rem; border: 2px solid var(--ink); border-radius: 6px; text-transform: uppercase; }
+
+/* Help point: when a volunteer next walks past */
+.visit { border-color: var(--night); border-left-width: 8px; font-weight: 600; }
+
+/* Text inputs, like the PIN */
+input.pin {
+  font: inherit;
+  font-size: 1.4rem;
+  letter-spacing: 0.4em;
+  padding: 0.6rem;
+  width: 8rem;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* A text message, as it would look on a phone */
+.sms {
+  background: #e9e9eb;
+  color: var(--ink);
+  border-radius: 18px 18px 18px 4px;
+  padding: 0.75rem 1rem;
+  max-width: 26rem;
+  margin: 0.25rem 0 1rem;
+}
+
+/* Volunteer's walk */
+.walk { list-style: none; padding: 0; margin: 0; }
+.walk li {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--line);
+}
+.walk li span { flex: 1 1 14rem; min-width: 0; }
+.walk button[aria-pressed="true"] { background: var(--lamp); border-color: var(--lamp); color: var(--ink); }
