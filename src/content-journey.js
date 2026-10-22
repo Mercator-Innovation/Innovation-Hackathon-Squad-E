@@ -1,6 +1,12 @@
 // Words for "How it works" on the home page: the core journey in five steps.
 // Kept in their own file so they don't clash with content.js. Load it after content.js.
 Object.assign(window.CONTENT, {
+  // The big button at the top of the home page, for anyone who needs someone right now
+  now: {
+    button: "I need someone tonight",
+    orText: "Or text HELP and your town to 60000, from any phone. No data needed."
+  },
+
   journey: {
     homeLink: "How it works, in 5 steps",
     title: "How it works",
@@ -48,7 +54,8 @@ Object.assign(window.CONTENT, {
         text: "Within minutes, a volunteer near you rings or texts. If you'd like, they come to you or meet you at a hub. Volunteers are checked, trained and never sent out alone.",
         links: [
           { href: "volunteer.html", label: "What the volunteer sees" },
-          { href: "join.html", label: "How volunteers join" }
+          { href: "join.html", label: "How volunteers join" },
+          { href: "worker.html#rota", label: "Who's on call tonight" }
         ]
       },
       {
@@ -69,8 +76,9 @@ Object.assign(window.CONTENT, {
       }
     ],
     behindTitle: "Behind it all",
-    behindText: "Local services share the night between them, and anonymised totals show where more volunteers are needed. Nothing is ever about one person.",
+    behindText: "Local charities share the night between them, on one rota, so someone is always on call. Anonymised totals show where more volunteers are needed. Nothing is ever about one person.",
     behindLinks: [
+      { href: "worker.html#rota", label: "Tonight's rota" },
       { href: "coordinator.html", label: "Where help is needed" },
       { href: "privacy.html", label: "What we keep about you" }
     ]
