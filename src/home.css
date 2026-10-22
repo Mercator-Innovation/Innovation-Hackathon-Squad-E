@@ -35,3 +35,20 @@ body:has(.explainer-embed) { overflow-x: clip; }   /* the band reaches the scree
 @media (min-width: 40rem) {
   .cards { grid-template-columns: 1fr 1fr; }
 }
+
+/* "I need someone tonight": the one big way in, at the top of the home page */
+.now { margin: 1.25rem 0 1.5rem; }
+.now-button {
+  display: block;
+  background: var(--lamp);
+  color: var(--ink);
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  padding: 1.1rem 1rem;
+  border-radius: var(--radius);
+  border: 3px solid var(--ink);
+}
+.now-button:hover { background: #f5c35f; text-decoration: underline; }
+.now-text { margin: 0.5rem 0 0; text-align: center; color: var(--muted); }
