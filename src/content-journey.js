@@ -80,7 +80,8 @@ Object.assign(window.CONTENT, {
     behindLinks: [
       { href: "worker.html#rota", label: "Tonight's rota" },
       { href: "coordinator.html", label: "Where help is needed" },
-      { href: "privacy.html", label: "What we keep about you" }
+      { href: "privacy.html", label: "What we keep about you" },
+      { href: "journey-maps.html", label: "Journey maps for each part" }
     ]
   }
 });
