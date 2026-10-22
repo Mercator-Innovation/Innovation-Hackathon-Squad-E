@@ -80,6 +80,44 @@ function addLanguageSwitch() {
 
 addLanguageSwitch();
 
+// Reassurance at the bottom of the pages people use to ask for help: it's private, no name needed, you choose.
+const REASSURE_PAGES = ["index", "help", "text", "help-point", "for", "plan"];
+const ICONS = {
+  lock: '<path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="5" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="16" r="1.4"/>',
+  mask: '<path d="M3 9c3-1.5 15-1.5 18 0 0 5-3 8-6 8-1.5 0-2-1.5-3-1.5S10.5 17 9 17c-3 0-6-3-6-8Z"/><path d="M8 11.5h2.5M13.5 11.5H16"/>',
+  hand: '<path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M11 10V4.5a1.5 1.5 0 0 1 3 0V11"/><path d="M14 10.5V6a1.5 1.5 0 0 1 3 0v7c0 4-2.5 7-6 7s-5-2-6.5-4.5L3 12.5a1.5 1.5 0 0 1 2.4-1.7L8 13"/>'
+};
+
+function addReassurance() {
+  const page = location.pathname.split("/").pop().replace(".html", "") || "index";
+  const main = document.querySelector("main");
+  if (!REASSURE_PAGES.includes(page) || !main || !window.CONTENT.reassure) return;
+  const english = (key) => LANG !== "en" && !translated(key) ? ' lang="en"' : "";
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  const footer = document.createElement("footer");
+  footer.className = "reassure";
+  footer.setAttribute("aria-labelledby", "reassure-title");
+  footer.innerHTML = `
+    <div class="reassure-inner">
+      <h2 id="reassure-title"${english("reassure.title")}>${esc(t("reassure.title"))}</h2>
+      <ul class="reassure-points"${english("reassure.points")}>
+        ${t("reassure.points").map((p) => `
+          <li>
+            <span class="reassure-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[p.icon]}</svg></span>
+            <span><strong>${esc(p.title)}</strong>${esc(p.text)}</span>
+          </li>`).join("")}
+      </ul>
+      <p class="reassure-foot">
+        <span${english("reassure.delete")}>${esc(t("reassure.delete"))}</span>
+        <a href="privacy.html"${english("reassure.more")}>${esc(t("reassure.more"))}</a>
+      </p>
+    </div>`;
+  main.after(footer);
+}
+
+addReassurance();
+
 // Pages with steps: show one step, hide the rest, and move focus to its heading.
 function showStep(id) {
   document.querySelectorAll(".step").forEach((step) => {

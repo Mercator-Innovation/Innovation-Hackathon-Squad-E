@@ -11,6 +11,19 @@ window.CONTENT = {
     emergency: "If someone isn't breathing normally, can't be woken up, or their life is in danger, call 999 now."
   },
 
+  // The reassurance at the bottom of the pages people use to ask for help.
+  // Keep it in line with the privacy page (content-more.js): don't promise more than that does.
+  reassure: {
+    title: "Private, and your choice",
+    points: [
+      { icon: "lock", title: "It's private", text: "We never ask why you need help, or whether you use drugs or alcohol." },
+      { icon: "mask", title: "No name needed", text: "Stay anonymous if you like. Text a code or use a help point. A nickname is fine." },
+      { icon: "hand", title: "You choose who knows", text: "We only tell the people you pick. Nothing goes to the police, your landlord or the job centre, unless someone's life is in danger." }
+    ],
+    delete: "Want us to forget you? Text STOP, then DELETE.",
+    more: "What we keep about you"
+  },
+
   home: {
     intro: "Local people who've signed up to help, and warm places to go, in the evening and at night.",
     choose: "Who are you?",

@@ -7,6 +7,16 @@ window.TRANSLATIONS = {
   pages: ["index", "help"],
 
   cy: {
+    reassure: {
+      title: "Preifat, a'ch dewis chi",
+      points: [
+        { icon: "lock", title: "Mae'n breifat", text: "Dydyn ni byth yn gofyn pam mae angen help arnoch, nac a ydych chi'n defnyddio cyffuriau neu alcohol." },
+        { icon: "mask", title: "Does dim angen enw", text: "Arhoswch yn ddienw os hoffech chi. Anfonwch god neu defnyddiwch bwynt cymorth. Mae llysenw'n iawn." },
+        { icon: "hand", title: "Chi sy'n dewis pwy sy'n gwybod", text: "Dim ond y bobl rydych chi'n eu dewis y byddwn ni'n dweud wrthynt. Does dim byd yn mynd at yr heddlu, eich landlord na'r ganolfan waith, oni bai bod bywyd rhywun mewn perygl." }
+      ],
+      delete: "Eisiau i ni eich anghofio? Anfonwch STOP, yna DELETE.",
+      more: "Beth rydyn ni'n ei gadw amdanoch chi"
+    },
     ui: {
       language: "Iaith",
       draft: "Cyfieithiad drafft: i'w wirio gan siaradwr Cymraeg rhugl. Mae rhai geiriau yn Saesneg o hyd.",
@@ -98,6 +108,16 @@ window.TRANSLATIONS = {
   },
 
   gd: {
+    reassure: {
+      title: "Prìobhaideach, agus do roghainn-sa",
+      points: [
+        { icon: "lock", title: "Tha e prìobhaideach", text: "Cha bhi sinn a-riamh a' faighneachd carson a tha feum agad air cobhair, no a bheil thu a' gabhail dhrugaichean no deoch-làidir." },
+        { icon: "mask", title: "Chan fheum thu ainm", text: "Fuirich gun ainm ma thogras tu. Cuir còd no cleachd ionad-cobhrach. Tha far-ainm ceart gu leòr." },
+        { icon: "hand", title: "Is tusa a thaghas cò aig a bhios fios", text: "Cha innis sinn ach do na daoine a thaghas tu. Cha tèid dad chun a' phoileis, an uachdarain agad no an ionaid-obrach, mura h-eil beatha cuideigin ann an cunnart." }
+      ],
+      delete: "Airson 's gun dìochuimhnich sinn thu? Cuir STOP, an uairsin DELETE.",
+      more: "Na chumas sinn mud dheidhinn"
+    },
     ui: {
       language: "Cànan",
       draft: "Eadar-theangachadh dreachd: ri sgrùdadh le neach aig a bheil Gàidhlig fhileanta. Tha cuid de dh'fhaclan fhathast ann am Beurla.",
