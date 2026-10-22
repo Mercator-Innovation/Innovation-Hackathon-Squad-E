@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Night Neighbours (prototype)</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
   <header class="top"><a href="index.html" data-text="service.name"></a></header>
@@ -13,6 +14,12 @@
     <p data-text="service.tagline"></p>
     <p data-text="home.intro"></p>
     <p class="note" data-text="service.prototypeNote"></p>
+
+    <!-- Daniel's explainer, playing right here on the home page -->
+    <section class="explainer-embed" aria-labelledby="explainer-heading">
+      <h2 id="explainer-heading" data-text="home.explainer"></h2>
+      <iframe id="explainer" src="explainer.html" title="Night Neighbours: three journeys, a self-playing explainer"></iframe>
+    </section>
 
     <h2 data-text="home.choose"></h2>
     <a class="card" href="help.html">
@@ -80,5 +87,6 @@
   <script src="content.js"></script>
   <script src="content-more.js"></script>
   <script src="app.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>
