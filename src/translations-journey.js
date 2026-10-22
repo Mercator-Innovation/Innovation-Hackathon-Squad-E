@@ -19,6 +19,7 @@
 
   T.cy.journey = {
     homeLink: "Sut mae'n gweithio, mewn 5 cam",
+    mapsLink: "Mapiau taith ar gyfer pob rhan (Saesneg)",
     intro: "Mae Night Neighbours yn syml yn ei hanfod: rydych chi'n anfon neges neu'n tapio, mae gwirfoddolwr lleol yn cysylltu â chi, ac mae lle cynnes i fynd iddo os hoffech chi.",
     noDetails: "Does dim rhaid i chi roi eich enw na chofrestru i gael help. Mae popeth arall yn ddewisol.",
     seeIt: "Gweld hyn",
@@ -94,6 +95,7 @@
 
   T.gd.journey = {
     homeLink: "Mar a tha e ag obair, ann an 5 ceumannan",
+    mapsLink: "Mapaichean turais airson gach pàirt (Beurla)",
     intro: "Tha Night Neighbours sìmplidh aig a chridhe: cuiridh tu teacsa no brùthaidh tu, gheibh saor-thoileach ionadail air ais thugad, agus tha àite blàth ri dhol ann ma tha thu ga iarraidh.",
     noDetails: "Chan fheum thu d' ainm a thoirt seachad no clàradh airson cuideachadh fhaighinn. Tha a h-uile càil eile roghainneil.",
     seeIt: "Faic e",
