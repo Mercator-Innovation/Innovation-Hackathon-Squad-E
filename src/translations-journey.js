@@ -19,7 +19,7 @@
 
   T.cy.journey = {
     homeLink: "Sut mae'n gweithio, mewn 5 cam",
-    mapsLink: "Mapiau taith ar gyfer pob rhan (Saesneg)",
+    mapsLink: "Gweld pob cam yn fanylach (Saesneg)",
     intro: "Mae Night Neighbours yn syml yn ei hanfod: rydych chi'n anfon neges neu'n tapio, mae gwirfoddolwr lleol yn cysylltu â chi, ac mae lle cynnes i fynd iddo os hoffech chi.",
     noDetails: "Does dim rhaid i chi roi eich enw na chofrestru i gael help. Mae popeth arall yn ddewisol.",
     seeIt: "Gweld hyn",
@@ -89,13 +89,13 @@
       { href: "worker.html#rota", label: "Rota heno" },
       { href: "coordinator.html", label: "Ble mae angen help" },
       { href: "privacy.html", label: "Beth rydyn ni'n ei gadw amdanoch chi" },
-      { href: "journey-maps.html", label: "Mapiau taith ar gyfer pob rhan (Saesneg)" }
+      { href: "journey-maps.html", label: "Gweld pob cam yn fanylach (Saesneg)" }
     ]
   };
 
   T.gd.journey = {
     homeLink: "Mar a tha e ag obair, ann an 5 ceumannan",
-    mapsLink: "Mapaichean turais airson gach pàirt (Beurla)",
+    mapsLink: "Faic gach ceum nas mionaidiche (Beurla)",
     intro: "Tha Night Neighbours sìmplidh aig a chridhe: cuiridh tu teacsa no brùthaidh tu, gheibh saor-thoileach ionadail air ais thugad, agus tha àite blàth ri dhol ann ma tha thu ga iarraidh.",
     noDetails: "Chan fheum thu d' ainm a thoirt seachad no clàradh airson cuideachadh fhaighinn. Tha a h-uile càil eile roghainneil.",
     seeIt: "Faic e",
@@ -165,7 +165,7 @@
       { href: "worker.html#rota", label: "Rota na h-oidhche seo" },
       { href: "coordinator.html", label: "Far a bheil feum air cuideachadh" },
       { href: "privacy.html", label: "Na chumas sinn mud dheidhinn" },
-      { href: "journey-maps.html", label: "Mapaichean turais airson gach pàirt (Beurla)" }
+      { href: "journey-maps.html", label: "Faic gach ceum nas mionaidiche (Beurla)" }
     ]
   };
 })();

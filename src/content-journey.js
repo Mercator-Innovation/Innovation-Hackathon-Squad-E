@@ -9,7 +9,7 @@ Object.assign(window.CONTENT, {
 
   journey: {
     homeLink: "How it works, in 5 steps",
-    mapsLink: "Journey maps for each part",
+    mapsLink: "See each step in more detail",
     title: "How it works",
     videoTitle: "Watch Jamie's night",
     videoFull: "Open the video full screen",
@@ -91,7 +91,7 @@ Object.assign(window.CONTENT, {
       { href: "worker.html#rota", label: "Tonight's rota" },
       { href: "coordinator.html", label: "Where help is needed" },
       { href: "privacy.html", label: "What we keep about you" },
-      { href: "journey-maps.html", label: "Journey maps for each part" }
+      { href: "journey-maps.html", label: "See each step in more detail" }
     ]
   }
 });
