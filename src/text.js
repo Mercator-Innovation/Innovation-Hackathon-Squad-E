@@ -42,6 +42,7 @@ function addText(who, words) {
   if (who === "service") {
     const size = document.createElement("span");
     size.className = "bubble-size";
+    size.setAttribute("aria-hidden", "true"); // useful to see, noisy to hear on every text
     size.textContent = t("text.size", { n: words.length });
     li.append(size);
   }
