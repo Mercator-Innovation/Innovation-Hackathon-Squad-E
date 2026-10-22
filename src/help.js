@@ -15,9 +15,13 @@ document.getElementById("code-list").innerHTML = t("codes.list")
   .join("");
 
 // Step 1
-document.querySelectorAll("[data-need]").forEach((button) => {
+const needButtons = document.querySelectorAll("[data-need]");
+needButtons.forEach((button) => {
+  button.setAttribute("aria-pressed", "false");
   button.addEventListener("click", () => {
     choice.need = button.dataset.need;
+    // Keep the chosen answer marked, so it's still yellow if they come back
+    needButtons.forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
     showStep("step-where");
   });
 });

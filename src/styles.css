@@ -127,7 +127,7 @@ select {
   background: #fff;
 }
 fieldset { border: 0; padding: 0; margin: 0; }
-.check { display: flex; gap: 0.6rem; align-items: center; margin: 0.5rem 0; font-weight: 400; }
+.check { display: flex; gap: 0.6rem; align-items: center; margin: 0.5rem 0; font-weight: 400; padding: 0.5rem 0.75rem; border: 2px solid transparent; border-radius: var(--radius); }
 .check input { width: 1.4rem; height: 1.4rem; }
 
 .status { min-height: 1.5rem; font-weight: 600; color: var(--night); }
@@ -282,7 +282,6 @@ input.pin {
 .script { margin: 0; background: var(--card); border-left: 6px solid var(--lamp); padding: 1rem; font-style: italic; border-radius: 4px; }
 .handout { flex: 1 1 8rem; min-height: 6rem; border-radius: 6px; background: var(--night); color: #fff; padding: 0.75rem; font-weight: 700; display: flex; align-items: center; }
 .handout-back { background: var(--card); color: var(--ink); border: 2px solid var(--line); font-weight: 400; }
-#partners button[aria-pressed="true"] { border-color: var(--night); background: #eef1f6; font-weight: 700; }
 
 /* Language switch in the header: English | Cymraeg | Gàidhlig */
 .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; }
@@ -336,3 +335,11 @@ input.pin {
 
 h4 { font-size: 1.05rem; margin: 0 0 0.25rem; }
 .field-error { color: var(--alert-ink); }
+
+/* Selected answers stay yellow, so you can always see what you've chosen.
+   A tick and bold text show it too, so it isn't shown by colour alone. */
+.check:has(input:checked) { background: var(--lamp); border-color: var(--ink); color: var(--ink); font-weight: 600; }
+.check input { accent-color: var(--night); }
+.choices button[aria-pressed="true"],
+.choices button[aria-pressed="true"]:hover { background: var(--lamp); border-color: var(--ink); color: var(--ink); font-weight: 700; }
+.choices button[aria-pressed="true"]::before { content: "✓ "; }
