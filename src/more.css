@@ -49,8 +49,8 @@ input.text.short { max-width: 8rem; letter-spacing: 0.3em; }
 .facts { list-style: none; padding: 0; margin: 0; }
 .facts li { padding: 0.4rem 0 0.4rem 1.6rem; position: relative; }
 .facts li::before { position: absolute; left: 0; font-weight: 700; }
-.facts li.yes::before { content: "✓"; color: #1d6b3a; }
-.facts li.no::before { content: "✕"; color: var(--alert-ink); }
+.facts li.yes::before { content: "✓" / ""; color: #1d6b3a; }
+.facts li.no::before { content: "✕" / ""; color: var(--alert-ink); }
 
 /* Handover list */
 .person { border-bottom: 1px solid var(--line); padding: 0.5rem 0 0.75rem; }
@@ -59,3 +59,8 @@ input.text.short { max-width: 8rem; letter-spacing: 0.3em; }
   border: 2px solid var(--ink); border-radius: 6px;
 }
 .time { font-variant-numeric: tabular-nums; color: var(--night); font-weight: 700; }
+
+/* Respect people who've asked their device for less movement */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
