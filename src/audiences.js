@@ -1,5 +1,5 @@
 // Who is this for? One entry per kind of person, and the pages for them.
-// The banner buttons and each person's page (for.html?who=...) are built from this list.
+// Each person's page (for.html?who=...) is built from this list. The banner buttons are in app.js.
 // To add a page: add a card to the right group. Words come from content.js (and content-more.js, content-refer.js).
 window.AUDIENCES = [
   {
@@ -42,13 +42,3 @@ window.AUDIENCES = [
     ]
   }
 ];
-
-// The banner: "Who is this for?" and a button per person. Marks the one you're on.
-function drawWhoNav() {
-  const nav = document.getElementById("who-nav");
-  if (!nav) return;
-  const current = new URLSearchParams(location.search).get("who");
-  nav.innerHTML = `<span class="who-label">${t("home.pickTitle")}</span>
-    <ul>${window.AUDIENCES.map((a) => `<li><a href="for.html?who=${a.id}"${a.id === current ? ' aria-current="page"' : ""}>${t(a.button)}</a></li>`).join("")}</ul>`;
-}
-drawWhoNav();
