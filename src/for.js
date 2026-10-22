@@ -12,3 +12,7 @@ document.getElementById("for-cards").innerHTML = audience.cards.map((card) => `
     <strong>${t(card.title)}</strong>
     <span>${t(card.hint)}</span>
   </a>`).join("");
+
+// Daniel's journey maps: a step-by-step picture of this part (journey-maps.html, English only for now)
+document.getElementById("for-cards").insertAdjacentHTML("afterend",
+  `<p class="map-link"><a href="journey-maps.html#${audience.id}"${LANG !== "en" ? ' lang="en"' : ""}>See how this part works, step by step</a></p>`);
