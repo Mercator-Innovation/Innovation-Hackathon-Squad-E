@@ -94,7 +94,13 @@ svg * { transform-box: fill-box; transform-origin: center; }
 @keyframes drop { from { opacity: 0; transform: translateY(-120px); } to { opacity: 1; transform: none; } }
 @keyframes grey { to { opacity: .25; } }
 @media (max-width: 40rem) { .spacer { margin-left: 0; } }
+/* Shown inside the home page (?embed=1): just the player, as the home page has its own heading and language switch */
+.embed main { padding: 0; max-width: none; }
+.embed .top, .embed h1, .embed .note, .embed details { display: none; }
+.embed .draft { margin: 0; }
+.embed .player { border: 0; border-radius: 0; }
 </style>
+<script>if (new URLSearchParams(location.search).has('embed')) document.documentElement.classList.add('embed');</script>
 </head>
 <body>
 <main>
@@ -267,13 +273,13 @@ $('bar').setAttribute('aria-label', ui('scene'));
 $('bar').innerHTML = S.map((s, n) => `<button class="seg" type="button" aria-label="${esc(ui('scene'))} ${n + 1}"><span></span></button>`).join('');
 
 // ---------- The player ----------
-const SPEED = 1.5; // the voice and the animation play at 1.5 times normal speed
-const GAP = 0.6; // seconds of quiet between scenes
+const SPEED = 1; // the voice and the animation play at normal speed (1.5 would be 1.5 times faster)
+const GAP = 0.9; // seconds of quiet between scenes
 let i = 0, playing = false, sound = true, started = 0, elapsed = 0, begun = false;
 const audio = new Audio();
 audio.preservesPitch = true; // faster, but Jamie's voice keeps its pitch
 // Long enough for Jamie's sped-up line, and for reading a longer translated caption
-const total = (n) => (Math.max(S[n].d / SPEED, W.lines[n].length / 20) + GAP) * 1000;
+const total = (n) => (Math.max(S[n].d / SPEED, W.lines[n].length / 15) + GAP) * 1000;
 const pad = (n) => String(n + 1).padStart(2, '0');
 
 function show() {

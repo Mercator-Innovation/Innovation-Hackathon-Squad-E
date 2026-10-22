@@ -43,7 +43,9 @@ window.TRANSLATIONS = {
       volunteer: "Rwy'n wirfoddolwr",
       volunteerHint: "Gweld ceisiadau gerllaw heno.",
       coordinator: "Rwy'n cynllunio cymorth lleol",
-      coordinatorHint: "Gweld ble a phryd mae angen help. Dim enwau, dim ond cyfansymiau."
+      coordinatorHint: "Gweld ble a phryd mae angen help. Dim enwau, dim ond cyfansymiau.",
+      explainer: "Gwyliwch sut mae'n gweithio",
+      explainerFull: "Agor ar dudalen lawn"
     },
     codes: {
       title: "Neu anfonwch god at 60000",
@@ -147,7 +149,9 @@ window.TRANSLATIONS = {
       volunteer: "'S e saor-thoileach a th' annam",
       volunteerHint: "Faic iarrtasan faisg ort a-nochd.",
       coordinator: "Bidh mi a' dealbhadh taic ionadail",
-      coordinatorHint: "Faic càite agus cuin a tha feum air cobhair. Gun ainmean, dìreach àireamhan iomlan."
+      coordinatorHint: "Faic càite agus cuin a tha feum air cobhair. Gun ainmean, dìreach àireamhan iomlan.",
+      explainer: "Coimhead mar a tha e ag obair",
+      explainerFull: "Fosgail e air duilleag slàn"
     },
     codes: {
       title: "No cuir còd gu 60000",
