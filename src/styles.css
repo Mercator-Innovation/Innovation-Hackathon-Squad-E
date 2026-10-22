@@ -343,3 +343,16 @@ h4 { font-size: 1.05rem; margin: 0 0 0.25rem; }
 .choices button[aria-pressed="true"],
 .choices button[aria-pressed="true"]:hover { background: var(--lamp); border-color: var(--ink); color: var(--ink); font-weight: 700; }
 .choices button[aria-pressed="true"]::before { content: "✓ "; }
+
+/* Thumb-friendly on a phone: everything you tap is at least 44px tall, and buttons are easy to reach */
+button, select, input.text, .phone-row input { min-height: 44px; }
+.top > a, .lang-switch a, .lang-switch span { min-height: 44px; display: inline-flex; align-items: center; }
+.check { min-height: 44px; }
+.check input { flex: 0 0 auto; width: 1.5rem; height: 1.5rem; }   /* never squashed by a long label */
+main p > a:only-child, .reassure-foot a { display: inline-block; padding: 0.7rem 0; }   /* links on their own line */
+.actions { gap: 0.75rem; }
+.actions button { flex: 1 1 8rem; }   /* buttons fill the row, so they're big and easy to hit with a thumb */
+@media (max-width: 30rem) {
+  .choices button { min-height: 56px; }
+  select { max-width: none; }
+}
