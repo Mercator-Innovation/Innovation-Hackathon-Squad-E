@@ -18,10 +18,12 @@ pace: right
 worked_best: [building, mixed-squad, screen-badges, setup]
 again: definitely
 # In the week after
-specialist:
-helped_squad: []
-idea_where: []
-ai_use_week_after:
+specialist: sometimes
+helped_squad: [screen, explaining, small-shares]
+idea_where: [my-team, client]
+ai_use_week_after: 4
+# Three-week check-in
+idea_tried: planned
 ---
 
 # Bose Adeyemi: learning log
@@ -62,11 +64,12 @@ ai_use_week_after:
 - One thing to change next time: The time given at the end for presenting.
 
 ## In the week after
-- Did I still need a human specialist: <answer>, for <what>
-- What helped most when building as a squad: <answers>
-- The most useful thing I learned: <in my words>
-- **One idea to carry forward:** <in my words>, and where it could fit: <answers>
-- How much I expect to use AI tools from now on: <answer>
+- Did I still need a human specialist: Sometimes, for: Not necessarily all the time, but occasionally for oversight, particularly with the technical aspects.
+- What helped most when building as a squad: The shared screen; Claude explaining what it did; Small, frequent shares
+- The most useful thing I learned: How AI can support collaboration, speed up problem solving and help turn ideas into working solutions, even when working outside our usual roles.
+- **One idea to carry forward:** I'd like to explore using AI more in my day to day BA work, particularly how AI can support API specification reviews, analyse requirements and improve efficiency, where the tools are permitted., and where it could fit: My team; Client work where the tools are permitted
+- How much I expect to use AI tools from now on: Every day
 
-## Three-week check-in (around 12 Nov)
-- Did I try, share or suggest my idea anywhere? What happened, or what got in the way?
+## Three-week check-in
+- Have I tried, shared or suggested my idea: Not yet, but I plan to
+- What happened, or what got in the way: I haven't had the opportunity to put it into practice yet, mainly due to the nature of my current project and the tools permitted. However, it's something I'd like to explore when the opportunity arises.
