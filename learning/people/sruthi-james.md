@@ -9,15 +9,21 @@ ai_use_before: 1
 hopes: [see-claude, new-people]
 feeling: excited
 # At 19:00
-worked_on: []
-outside_usual_job:
-got_in_way: []
-ai_use_after:
+worked_on: [code, content, research]
+outside_usual_job: a-lot
+got_in_way: [sharing]
+ai_use_after: 1
+enjoyed: loved
+pace: slow
+worked_best: [building, mixed-squad]
+again: definitely
 # In the week after
-specialist:
-helped_squad: []
-idea_where: []
-ai_use_week_after:
+specialist: often
+helped_squad: [explaining]
+idea_where: [internal, bid]
+ai_use_week_after: 4
+# Three-week check-in
+idea_tried:
 ---
 
 # Sruthi James: learning log
@@ -47,17 +53,23 @@ ai_use_week_after:
 - 18:17 what worked: Bringing different minds and disciplines together, and pulling each other back to the root of the problem. With a quick, iterative mindset, fast research and access to data, we could do a lot. I built the personas, then asked Claude to check what we'd missed.
 
 ## At 19:00
-- What I worked on: <answers>
-- How much of it was outside my usual job: <answer>
-- What got in the way: <answers>
-- How much I'd use AI tools in my work now: <answer>
+- What I worked on: Code or features; The words people see; Research or finding things out
+- How much of it was outside my usual job: A lot
+- What got in the way: Sharing or git
+- How much I'd use AI tools in my work now: Never or hardly ever
+- How much I enjoyed the hackathon: Loved it
+- The pace of the afternoon: Too slow
+- What worked best for me: Building with Claude; Working in a mixed squad
+- Would I take part in another: Definitely
+- One thing to change next time: probably don't need that long of a time to build and solve the case studies, but maybe more time for the show and tell.
 
 ## In the week after
-- Did I still need a human specialist: <answer>, for <what>
-- What helped most when building as a squad: <answers>
-- The most useful thing I learned: <in my words>
-- **One idea to carry forward:** <in my words>, and where it could fit: <answers>
-- How much I expect to use AI tools from now on: <answer>
+- Did I still need a human specialist: Often, for managing stakeholders' expectations, and prioritizing research.
+- What helped most when building as a squad: Claude explaining what it did
+- The most useful thing I learned: Hackathons can be for multidisciplinary teams, not just for coders. It enabled the world of doing hackathons in a way that I've never thought before, with the help of AI.
+- **One idea to carry forward:** keeping it multidisciplinary and including people from different perspectives., and where it could fit: Internal work; A bid
+- How much I expect to use AI tools from now on: Every day
 
-## Three-week check-in (around 12 Nov)
-- Did I try, share or suggest my idea anywhere? What happened, or what got in the way?
+## Three-week check-in
+- Have I tried, shared or suggested my idea: <answer>
+- What happened, or what got in the way: <in my words>
